@@ -1,0 +1,95 @@
+<?php
+//============
+//Model Report
+//============
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+
+
+class Report extends Model
+{
+  
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'report_title', 'about',
+    ];
+  
+  
+  //プライマリーキーの型を設定
+    protected $keyType = 'string';
+    
+    //日誌IDの桁数
+    const ID_LENGTH = 16;
+    
+    
+    //コンストラクタでsetId()を呼び出し
+    public function __construct(array $attributes = [])
+    {
+      parent::__construct($attributes);
+      // Arr::getでidがある = 正しく呼び出されている時 を判定
+      if(!Arr::get($this->attributes, 'id')) {
+        $this->setId();
+      }
+    }
+  
+  
+    //id属性に代入
+    private function setId()
+    {
+      $this->attributes['id'] = $this->makeRandomId();
+    }
+    
+    /**
+     * ランダムなIDを生成する関数
+     * @return string
+     */
+    private function makeRandomId()
+    {
+      $id = '';
+      //$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
+      $characters = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'), ['-', ['_']]);
+      $characters_length = count($characters);
+      
+      for ($i = 0; $i < self::ID_LENGTH; $i++){
+        $id .= $characters[random_int(0, $characters_length - 1)];
+      }
+      
+      return $id;
+    }
+  
+  
+  
+  
+    /**
+     * リレーション - usersテーブル
+     * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function users()
+    {
+      return $this->belongsTo('App\User', 'user_id', 'id', 'users');
+    }
+  
+    /**
+     * リレーション - commentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+      return $this->hasMany('App/Comment');
+    }
+  
+    /**
+     * リレーション - contentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function contents()
+    {
+      return $this->hasOne('App/Content');
+    }
+}
