@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,4 +71,13 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    
+    // ユーザー登録用のregisteredメソッド
+    // ①registerメソッドは、トレイトでregisteredメソッドを返すようになっている
+    // ②そのregisteredメソッド自体は実装が空なので、カスタマイズする必要があるから
+    protected function registered(Request $request, $user)
+    {
+      return $user;
+    }
+    
 }
