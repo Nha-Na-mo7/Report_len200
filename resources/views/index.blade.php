@@ -18,14 +18,11 @@
 
 
 <body>
-<h1>index.blade.phpのエリア</h1>
 <div id="app"></div>
+
+
+
 </body>
-
-
-
-
-
 
 
 </html>
