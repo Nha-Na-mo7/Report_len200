@@ -15,8 +15,10 @@ const state = {
 // ===============
 // getter
 // ===============
-const getter = {}
-
+const getters = {
+  loginCheck: state => !! state.user,
+  username: state => state.user ? state.user.name : ''
+}
 
 // ===============
 // mutations
@@ -54,8 +56,18 @@ const actions = {
   // ログアウト
   // -------------
   async logout (context) {
-    const response = await axios.post('/api/logout');
+    // const response = await axios.post('/api/logout');
+    await axios.post('/api/logout');
     context.commit('setUser', null);
+  },
+  
+  // --------------------
+  // 現在のユーザー情報を返却
+  // --------------------
+  async currentUser (context) {
+    const response = await axios.get('/api/user');
+    const currentUser = response.data || null;
+    context.commit('setUser', currentUser);
   }
 }
 
@@ -65,7 +77,7 @@ const actions = {
 export default {
   namespaced: true,
   state,
-  getter,
+  getters,
   mutations,
   actions
 }
