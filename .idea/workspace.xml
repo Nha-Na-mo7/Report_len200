@@ -20,17 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/LoginApiTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/LogoutApiTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/RegisterApiTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +170,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -192,7 +189,7 @@
       <workItem from="1597005127551" duration="1795000" />
       <workItem from="1597011569258" duration="16584000" />
       <workItem from="1597209640748" duration="4510000" />
-      <workItem from="1597289415934" duration="1334000" />
+      <workItem from="1597289415934" duration="3978000" />
     </task>
     <servers />
   </component>
@@ -235,10 +232,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state width="1513" height="311" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1597011474134" />
-    <state x="744" y="240" key="SettingsEditor" timestamp="1597282422197">
+    <state x="744" y="240" key="SettingsEditor" timestamp="1597370760793">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="744" y="240" key="SettingsEditor/0.23.1920.1177@0.23.1920.1177" timestamp="1597282422197" />
+    <state x="744" y="240" key="SettingsEditor/0.23.1920.1177@0.23.1920.1177" timestamp="1597370760793" />
     <state x="908" y="292" width="670" height="676" key="search.everywhere.popup" timestamp="1597287662595">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
