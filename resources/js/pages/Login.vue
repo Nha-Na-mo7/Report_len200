@@ -65,14 +65,15 @@ export default {
     }
   },
   methods: {
-    login() {
-      alert('loginメソッドです！');
+    // authストアのloginアクションを使用、loginFormのデータを付与。
+    async login() {
+      await this.$store.dispatch('auth/login', this.loginForm);
       this.$router.push('/');
     },
-    register() {
-      alert('registerメソッドです！')
+    // authストアのregisterアクションを使用、registerFormのデータを付与。
+    async register() {
+      await this.$store.dispatch('auth/register', this.registerForm);
       this.$router.push('/');
-
     }
   }
 }
