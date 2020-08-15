@@ -4,6 +4,9 @@ import VueRouter from "vue-router";
 // ページコンポーネントのインポート
 import Login from './pages/Login'
 
+// ストアのインポート
+import store from './store'
+
 // Vue Routerプラグインの使用
 Vue.use(VueRouter)
 
@@ -12,7 +15,15 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/login',
-    component: Login
+    component: Login,
+    beforeEnter(to, from, next) {
+      // ログイン画面はログイン済みの場合トップページにリダイレクト
+      if (store.getters['auth/loginCheck']) {
+        next('/')
+      } else {
+        next()
+      }
+    }
   }
 ]
 
