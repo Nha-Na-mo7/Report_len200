@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/UserApiTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,7 @@
       <workItem from="1597005127551" duration="1795000" />
       <workItem from="1597011569258" duration="16584000" />
       <workItem from="1597209640748" duration="4510000" />
-      <workItem from="1597289415934" duration="16492000" />
+      <workItem from="1597289415934" duration="18296000" />
     </task>
     <servers />
   </component>
