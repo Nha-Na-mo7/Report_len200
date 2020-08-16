@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 // ページコンポーネントのインポート
 import Login from './pages/Login'
+import SystemError from './pages/errors/System500.vue'
 
 // ストアのインポート
 import store from './store'
@@ -24,6 +25,10 @@ const routes = [
         next()
       }
     }
+  },
+  {
+    path: '/500',
+    component: SystemError
   }
 ]
 

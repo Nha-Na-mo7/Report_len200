@@ -15,18 +15,24 @@
 
 <script>
 export default {
-  methods: {
-    async logout() {
-      await this.$store.dispatch('auth/logout');
-      this.$router.push('/login');
-    }
-  },
   computed: {
     isLogin () {
       return this.$store.getters['auth/loginCheck']
     },
     username () {
       return this.$store.getters['auth/username']
+    },
+    apiStatus() {
+      return this.$store.state.auth.apiStatus;
+    }
+  },
+  methods: {
+    async logout() {
+      await this.$store.dispatch('auth/logout');
+
+      if(this.apiStatus) {
+        this.$router.push('/login');
+      }
     }
   }
 }

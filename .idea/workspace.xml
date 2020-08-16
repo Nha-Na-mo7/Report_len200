@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/errors/System500.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/error.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -185,7 +194,8 @@
       <workItem from="1597005127551" duration="1795000" />
       <workItem from="1597011569258" duration="16584000" />
       <workItem from="1597209640748" duration="4510000" />
-      <workItem from="1597289415934" duration="19637000" />
+      <workItem from="1597289415934" duration="19932000" />
+      <workItem from="1597533742469" duration="9437000" />
     </task>
     <servers />
   </component>
