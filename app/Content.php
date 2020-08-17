@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
-    /**
+    protected $fillable = ['content'];
+  
+  /**
      * リレーション - reportsテーブル
      * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

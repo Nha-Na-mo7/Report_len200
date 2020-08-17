@@ -10,16 +10,8 @@ use Illuminate\Support\Arr;
 
 class Report extends Model
 {
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'report_title', 'about',
-    ];
-  
+    // モデルがその属性以外を持たなくなる（fillメソッドに対応しやすいが、カラムが増えるほど足していく必要あり）
+    protected $fillable = ['user_id', 'report_title', 'about'];
   
   //プライマリーキーの型を設定
     protected $keyType = 'string';

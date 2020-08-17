@@ -27,3 +27,6 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 //ログインしているユーザー情報を取得するAPI
 Route::get('/user', fn() => Auth::user())->name('user');
+
+//レポートを新規投稿するAPI
+Route::post('/reports', 'ReportController@create')->name('report.create');
