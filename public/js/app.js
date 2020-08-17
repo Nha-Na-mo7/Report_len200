@@ -2308,8 +2308,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "New"
+  data: function data() {
+    return {
+      reportForm: {
+        report_title: '',
+        about: '',
+        content: ''
+      }
+    };
+  }
 });
 
 /***/ }),
@@ -39215,9 +39241,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("New Report Create")])
+  return _c("div", { staticClass: "report-form" }, [
+    _c("h2", { staticClass: "title" }, [_vm._v("日誌 新規作成")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        staticClass: "form",
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+          }
+        }
+      },
+      [
+        _c("label", { attrs: { for: "report_title" } }, [_vm._v("タイトル")]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form__item",
+          attrs: { type: "text", id: "report_title" }
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "about" } }, [_vm._v("副題(任意)")]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form__item",
+          attrs: { type: "text", id: "about" }
+        }),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "content" } }, [_vm._v("本文")]),
+        _vm._v(" "),
+        _c("textarea", { staticClass: "form__item", attrs: { id: "content" } }),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form__button" }, [
+      _c(
+        "button",
+        { staticClass: "button button--inverse", attrs: { type: "submit" } },
+        [_vm._v("投稿する")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
