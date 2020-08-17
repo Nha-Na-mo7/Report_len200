@@ -3,6 +3,9 @@ import VueRouter from "vue-router";
 
 // ページコンポーネントのインポート
 import Login from './pages/Login'
+import Mypage from './pages/Mypage.vue'
+import ReportNew from './pages/reports/New.vue'
+import ReportDetail from './pages/reports/ReportDetail.vue'
 import SystemError from './pages/errors/System500.vue'
 
 // ストアのインポート
@@ -23,6 +26,43 @@ const routes = [
         next('/')
       } else {
         next()
+      }
+    }
+  },
+  {
+    path: '/mypage',
+    component: Mypage,
+    beforeEnter(to, from, next) {
+      // ログイン画面はログインしていない場合ログインページにリダイレクト
+      if (store.getters['auth/loginCheck']) {
+        next()
+      } else {
+        next('/login')
+      }
+    }
+  },
+  {
+    path: '/reports/new',
+    component: ReportNew,
+    beforeEnter(to, from, next) {
+      // ログイン画面はログインしていない場合ログインページにリダイレクト
+      if (store.getters['auth/loginCheck']) {
+        next()
+      } else {
+        next('/login')
+      }
+    }
+  },
+  {
+    path: '/reports/:id',
+    component: ReportDetail,
+    props: true,
+    beforeEnter(to, from, next) {
+      // ログイン画面はログインしていない場合ログインページにリダイレクト
+      if (store.getters['auth/loginCheck']) {
+        next()
+      } else {
+        next('/login')
       }
     }
   },

@@ -2,7 +2,7 @@
   <nav class="navbar">
     <RouterLink class="navbar__brand" to="/"></RouterLink>
     <div class="navbar__menu">
-      <span class="navbar__item" v-if="username">{{ username }}</span>
+      <RouterLink class="navbar__item" to="/mypage" v-if="username">{{ username }}</RouterLink>
       <div class="navbar__item" v-else>
         <RouterLink class="button button--link" to="/login">ログイン/新規登録</RouterLink>
       </div>
