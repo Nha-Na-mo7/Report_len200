@@ -3,15 +3,16 @@
     <h2 class="title">日誌 新規作成</h2>
 
     <!-- エラーメッセージ -->
+    <h6>エラーメッセージ</h6>
 
     <!-- フォーム -->
     <form class="form" v-on:submit.prevent="submit">
       <label for="report_title">タイトル</label>
-      <input type="text" class="form__item" id="report_title">
+      <input type="text" class="form__item" id="report_title" v-model="reportForm.report_title">
       <label for="about">副題(任意)</label>
-      <input type="text" class="form__item" id="about">
+      <input type="text" class="form__item" id="about" v-model="reportForm.about">
       <label for="content">本文</label>
-      <textarea class="form__item" id="content"></textarea>
+      <textarea class="form__item" id="content" v-model="reportForm.content"></textarea>
       <div class="form__button">
         <button type="submit" class="button button--inverse">投稿する</button>
       </div>
@@ -52,7 +53,7 @@ export default {
       }
 
       // 投稿後にその詳細ページへ遷移させる
-      this.$router.push('/reports/${response.data.id}')
+      this.$router.push('/reportswwww/${response.data.id}')
     }
   }
 }

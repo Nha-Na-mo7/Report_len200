@@ -13,7 +13,7 @@ class Report extends Model
     // モデルがその属性以外を持たなくなる（fillメソッドに対応しやすいが、カラムが増えるほど足していく必要あり）
     protected $fillable = ['user_id', 'report_title', 'about'];
   
-  //プライマリーキーの型を設定
+    //プライマリーキーの型を設定
     protected $keyType = 'string';
     
     //日誌IDの桁数
@@ -25,7 +25,7 @@ class Report extends Model
     {
       parent::__construct($attributes);
       // Arr::getでidがある = 正しく呼び出されている時 を判定
-      if(!Arr::get($this->attributes, 'id')) {
+      if(! Arr::get($this->attributes, 'id')) {
         $this->setId();
       }
     }
@@ -43,7 +43,7 @@ class Report extends Model
      */
     private function makeRandomId()
     {
-      $id = '';
+      $id = "";
       //$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
       $characters = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'), ['-', ['_']]);
       $characters_length = count($characters);
@@ -73,7 +73,7 @@ class Report extends Model
      */
     public function comments()
     {
-      return $this->hasMany('App/Comment');
+      return $this->hasMany('App\Comment');
     }
   
     /**
@@ -82,6 +82,6 @@ class Report extends Model
      */
     public function contents()
     {
-      return $this->hasOne('App/Content');
+      return $this->hasOne('App\Content');
     }
 }

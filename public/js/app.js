@@ -2336,6 +2336,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2384,7 +2385,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 9:
                 // 投稿後にその詳細ページへ遷移させる
-                _this.$router.push('/reports/${response.data.id}');
+                _this.$router.push('/reportswwww/${response.data.id}');
 
               case 10:
               case "end":
@@ -39306,6 +39307,8 @@ var render = function() {
   return _c("div", { staticClass: "report-form" }, [
     _c("h2", { staticClass: "title" }, [_vm._v("日誌 新規作成")]),
     _vm._v(" "),
+    _c("h6", [_vm._v("エラーメッセージ")]),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -39321,20 +39324,74 @@ var render = function() {
         _c("label", { attrs: { for: "report_title" } }, [_vm._v("タイトル")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.reportForm.report_title,
+              expression: "reportForm.report_title"
+            }
+          ],
           staticClass: "form__item",
-          attrs: { type: "text", id: "report_title" }
+          attrs: { type: "text", id: "report_title" },
+          domProps: { value: _vm.reportForm.report_title },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.reportForm, "report_title", $event.target.value)
+            }
+          }
         }),
         _vm._v(" "),
         _c("label", { attrs: { for: "about" } }, [_vm._v("副題(任意)")]),
         _vm._v(" "),
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.reportForm.about,
+              expression: "reportForm.about"
+            }
+          ],
           staticClass: "form__item",
-          attrs: { type: "text", id: "about" }
+          attrs: { type: "text", id: "about" },
+          domProps: { value: _vm.reportForm.about },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.reportForm, "about", $event.target.value)
+            }
+          }
         }),
         _vm._v(" "),
         _c("label", { attrs: { for: "content" } }, [_vm._v("本文")]),
         _vm._v(" "),
-        _c("textarea", { staticClass: "form__item", attrs: { id: "content" } }),
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.reportForm.content,
+              expression: "reportForm.content"
+            }
+          ],
+          staticClass: "form__item",
+          attrs: { id: "content" },
+          domProps: { value: _vm.reportForm.content },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.reportForm, "content", $event.target.value)
+            }
+          }
+        }),
         _vm._v(" "),
         _vm._m(0)
       ]

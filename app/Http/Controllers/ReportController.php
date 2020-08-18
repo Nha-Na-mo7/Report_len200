@@ -8,6 +8,7 @@ use App\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class ReportController extends Controller
 {
@@ -26,14 +27,16 @@ class ReportController extends Controller
    */
   public function create(CreateReport $request)
   {
+    Log::debug('デバッグメッセージ');
     $report = new Report();
     $report->user_id = Auth::user()->id;
-    $report->report_title =$request->get('report_title');
-    $report->about = $request->get('about') || '';
-    $report->save();
+    $report->fill($request->all())->save();
+    // $report->report_title =$request->get('report_title');
+    // $report->about = $request->get('about') || '';
+    // $report->save();
     
   
-    Auth::user()->reports()->save($report->fill($request->all()));
+    // Auth::user()->reports()->save($report->fill($request->all()));
     
     return response($report, 201);
   }

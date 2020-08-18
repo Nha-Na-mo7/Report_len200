@@ -44,7 +44,7 @@ class User extends Authenticatable
      */
     public function reports()
     {
-      return $this->hasMany('App/Report');
+      return $this->hasMany('App\Report');
     }
     
     /**
@@ -53,6 +53,6 @@ class User extends Authenticatable
      */
     public function comments()
     {
-      return $this->hasMany('App/Comment');
+      return $this->hasMany('App\Comment');
     }
 }
