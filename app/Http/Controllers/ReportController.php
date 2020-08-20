@@ -42,7 +42,7 @@ class ReportController extends Controller
     $content->content = $request->get('content');
     $content->save();
     
-    return response($content, 201);
+    return response($report, 201);
   }
 }
 // // バリデーション

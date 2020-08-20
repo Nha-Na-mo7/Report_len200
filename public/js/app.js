@@ -2386,7 +2386,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 10:
                 // 投稿後にその詳細ページへ遷移させる
-                _this.$router.push('/reports/${response.data.id}');
+                _this.$router.push("/reports/".concat(response.data.id));
 
               case 11:
               case "end":

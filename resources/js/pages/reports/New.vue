@@ -54,7 +54,7 @@ export default {
       }
 
       // 投稿後にその詳細ページへ遷移させる
-      this.$router.push('/reports/${response.data.id}')
+      this.$router.push(`/reports/${response.data.id}`)
     }
   }
 }
