@@ -15,30 +15,34 @@ class ReportController extends Controller
   //コンストラクタで認証
   public function __construct()
   {
-    $this->middleware('auth');
+    // $this->middleware('auth');
   }
-  
-  
   
   /**
    * 日誌投稿
-   * @param CreateReport $request
-   * @return \Illuminate\Http\Response
    */
-  public function create(CreateReport $request)
+  public function create(Request $request)
   {
-    Log::debug('デバッグメッセージ');
+    Log::debug('ReportController : create : 日誌作成');
     $report = new Report();
-    $report->user_id = Auth::user()->id;
-    $report->fill($request->all())->save();
-    // $report->report_title =$request->get('report_title');
-    // $report->about = $request->get('about') || '';
-    // $report->save();
-    
+    $keep_id = $report->id;
+    $content = new Content();
+
+    // reportsテーブルへタイトル・副題を格納
+    Auth::user()->reports()->save($report->fill($request->all()));
+    $report->id = $keep_id;
+    Log::debug($report->id);
   
-    // Auth::user()->reports()->save($report->fill($request->all()));
+    Log::debug('id : '.$report->id);
+    Log::debug('user_id : '.$report->user_id);
+    Log::debug('report_title : '.$report->report_title);
     
-    return response($report, 201);
+    // contentsテーブルへ本文を格納
+    $content->report_id = $report->id;
+    $content->content = $request->get('content');
+    $content->save();
+    
+    return response($content, 201);
   }
 }
 // // バリデーション

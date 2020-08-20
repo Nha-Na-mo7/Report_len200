@@ -38,6 +38,7 @@ export default {
   },
   methods: {
     async submit () {
+      console.log('New.vue : async submit()');
       const response = await axios.post('../api/reports', this.reportForm);
 
       // バリデーションエラー
@@ -53,7 +54,7 @@ export default {
       }
 
       // 投稿後にその詳細ページへ遷移させる
-      this.$router.push('/reportswwww/${response.data.id}')
+      this.$router.push('/reports/${response.data.id}')
     }
   }
 }

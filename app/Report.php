@@ -6,6 +6,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 
 
 class Report extends Model
@@ -44,14 +45,13 @@ class Report extends Model
     private function makeRandomId()
     {
       $id = "";
-      //$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_';
-      $characters = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'), ['-', ['_']]);
+      //$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $characters = array_merge(range(0, 9), range('a', 'z'), range('A', 'Z'));
       $characters_length = count($characters);
       
       for ($i = 0; $i < self::ID_LENGTH; $i++){
         $id .= $characters[random_int(0, $characters_length - 1)];
       }
-      
       return $id;
     }
   

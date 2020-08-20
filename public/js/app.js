@@ -2359,23 +2359,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                console.log('New.vue : async submit()');
+                _context.next = 3;
                 return axios.post('../api/reports', _this.reportForm);
 
-              case 2:
+              case 3:
                 response = _context.sent;
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
                 _this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 6:
+              case 7:
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 9;
+                  _context.next = 10;
                   break;
                 }
 
@@ -2383,11 +2384,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 9:
-                // 投稿後にその詳細ページへ遷移させる
-                _this.$router.push('/reportswwww/${response.data.id}');
-
               case 10:
+                // 投稿後にその詳細ページへ遷移させる
+                _this.$router.push('/reports/${response.data.id}');
+
+              case 11:
               case "end":
                 return _context.stop();
             }
