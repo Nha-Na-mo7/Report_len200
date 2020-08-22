@@ -8,11 +8,11 @@
     <!-- フォーム -->
     <form class="form" v-on:submit.prevent="submit">
       <label for="report_title">タイトル</label>
-      <input type="text" class="form__item" id="report_title" v-model="reportForm.report_title">
-      <label for="about">副題(任意)</label>
-      <input type="text" class="form__item" id="about" v-model="reportForm.about">
+      <input type="text" class="form__item" id="report_title" v-model="reportForm.report_title" placeholder="入力必須です。">
+      <label for="about">副題</label>
+      <input type="text" class="form__item" id="about" v-model="reportForm.about" placeholder="こちらの入力は任意です。">
       <label for="content">本文</label>
-      <textarea class="form__item" id="content" v-model="reportForm.content"></textarea>
+      <textarea class="form__item" id="content" v-model="reportForm.content" placeholder="150字以上、250字以下で入力してください。"></textarea>
       <div class="form__button">
         <button type="submit" class="button button--inverse">投稿する</button>
       </div>

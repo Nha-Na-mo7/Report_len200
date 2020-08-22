@@ -39334,7 +39334,11 @@ var render = function() {
             }
           ],
           staticClass: "form__item",
-          attrs: { type: "text", id: "report_title" },
+          attrs: {
+            type: "text",
+            id: "report_title",
+            placeholder: "入力必須です。"
+          },
           domProps: { value: _vm.reportForm.report_title },
           on: {
             input: function($event) {
@@ -39346,7 +39350,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("label", { attrs: { for: "about" } }, [_vm._v("副題(任意)")]),
+        _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
         _vm._v(" "),
         _c("input", {
           directives: [
@@ -39358,7 +39362,11 @@ var render = function() {
             }
           ],
           staticClass: "form__item",
-          attrs: { type: "text", id: "about" },
+          attrs: {
+            type: "text",
+            id: "about",
+            placeholder: "こちらの入力は任意です。"
+          },
           domProps: { value: _vm.reportForm.about },
           on: {
             input: function($event) {
@@ -39382,7 +39390,10 @@ var render = function() {
             }
           ],
           staticClass: "form__item",
-          attrs: { id: "content" },
+          attrs: {
+            id: "content",
+            placeholder: "150字以上、250字以下で入力してください。"
+          },
           domProps: { value: _vm.reportForm.content },
           on: {
             input: function($event) {
