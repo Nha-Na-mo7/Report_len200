@@ -13,6 +13,8 @@
       <input type="text" class="form__item" id="about" v-model="reportForm.about" placeholder="こちらの入力は任意です。">
       <label for="content">本文</label>
       <textarea class="form__item" id="content" v-model="reportForm.content" placeholder="150字以上、250字以下で入力してください。"></textarea>
+      <span>入力文字数 : {{ content_length }}</span>
+
       <div class="form__button">
         <button type="submit" class="button button--inverse">投稿する</button>
       </div>
@@ -34,6 +36,11 @@ export default {
         content: ''
       },
       errors: null
+    }
+  },
+  computed: {
+    content_length() {
+      return this.reportForm.content.length;
     }
   },
   methods: {

@@ -2337,6 +2337,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2348,6 +2350,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       errors: null
     };
+  },
+  computed: {
+    content_length: function content_length() {
+      return this.reportForm.content.length;
+    }
   },
   methods: {
     submit: function submit() {
@@ -39404,6 +39411,8 @@ var render = function() {
             }
           }
         }),
+        _vm._v(" "),
+        _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))]),
         _vm._v(" "),
         _vm._m(0)
       ]
