@@ -20,7 +20,6 @@
       </div>
     </form>
 
-    <h6>文字数カウンタ(未作成) + twitter風の円形文字数カウンタ</h6>
   </div>
 </template>
 

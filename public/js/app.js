@@ -2338,7 +2338,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -39416,9 +39415,7 @@ var render = function() {
         _vm._v(" "),
         _vm._m(0)
       ]
-    ),
-    _vm._v(" "),
-    _c("h6", [_vm._v("文字数カウンタ(未作成) + twitter風の円形文字数カウンタ")])
+    )
   ])
 }
 var staticRenderFns = [
