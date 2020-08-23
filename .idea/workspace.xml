@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,7 @@
       <workItem from="1597780770148" duration="4013000" />
       <workItem from="1597818577984" duration="1195000" />
       <workItem from="1597820018470" duration="7272000" />
-      <workItem from="1597904811577" duration="7155000" />
+      <workItem from="1597904811577" duration="7409000" />
     </task>
     <servers />
   </component>
