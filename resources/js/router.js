@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 // ページコンポーネントのインポート
 import Login from './pages/Login'
+import ReportList from "./pages/ReportList"
 import Mypage from './pages/Mypage.vue'
 import ReportNew from './pages/reports/New.vue'
 import ReportDetail from './pages/reports/ReportDetail.vue'
@@ -17,6 +18,10 @@ Vue.use(VueRouter)
 
 // パスとコンポーネントをマッピングする
 const routes = [
+  {
+    path: '/',
+    component: ReportList
+  },
   {
     path: '/login',
     component: Login,
