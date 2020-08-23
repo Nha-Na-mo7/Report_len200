@@ -62,7 +62,7 @@ class Report extends Model
      * リレーション - usersテーブル
      * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function users()
+    public function owner()
     {
       return $this->belongsTo('App\User', 'user_id', 'id', 'users');
     }
