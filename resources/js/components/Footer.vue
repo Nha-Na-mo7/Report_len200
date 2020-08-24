@@ -5,7 +5,7 @@
 <!--      Footer - ログイン / 新規登録-->
 <!--    </RouterLink>-->
     <div>
-      <h3>現在時刻 : {{ nowtime }}</h3>
+      <h3>{{ nowtime }} ... リロード時刻</h3>
       <span>©️ Copyright 2020</span>
     </div>
   </footer>
