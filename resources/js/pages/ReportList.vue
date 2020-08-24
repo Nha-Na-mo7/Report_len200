@@ -1,13 +1,13 @@
 <template>
   <h1>Report List</h1>
-  <div class="report-list">
-    <Report
-        class="report__item"
-        v-for="report in reports"
-        :key="report.id"
-        :item="report"
-    />
-  </div>
+<!--  <div class="report-list">-->
+<!--    <Report-->
+<!--        class="report__item"-->
+<!--        v-for="report in reports"-->
+<!--        :key="report.id"-->
+<!--        :item="report"-->
+<!--    />-->
+<!--  </div>-->
 </template>
 
 <script>
@@ -22,8 +22,22 @@ export default {
     return {
       reports: []
     }
+  },
+  methods: {
+    async fetchReports() {
+      const response = await axios.get('/api/reports');
+
+      // エラー時
+      if (response.status !== OK) {
+        this.$store.commit('error/setErrorCode', response.status)
+        return false
+      }
+
+      this.reports = response.data.data
+    }
+  },
+  watch: {
+
   }
-  // method
-  // watch
 }
 </script>
