@@ -19,7 +19,7 @@ class ReportListApiTest extends TestCase
   {
     $this->withoutExceptionHandling();
   
-    factory(Report::class, 2)->create();
+    factory(Report::class, 10)->create();
     
     $response = $this->json('GET', route('report.index'));
     
@@ -38,7 +38,7 @@ class ReportListApiTest extends TestCase
     
     $response->assertStatus(200)
         // レスポンスJSONのdata項目に含まれる要素が10個であること
-        ->assertJsonCount(2, 'data')
+        ->assertJsonCount(10, 'data')
         // data項目が期待値と合致すること
         ->assertJsonFragment([
             "data" => $expected_data,
