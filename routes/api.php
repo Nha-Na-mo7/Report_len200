@@ -30,3 +30,6 @@ Route::get('/user', fn() => Auth::user())->name('user');
 
 //レポートを新規投稿するAPI
 Route::post('/reports', 'ReportController@create')->name('report.create');
+
+//レポート一覧を取得するAPI
+Route::get('/reports', 'ReportController@index')->name('report.index');

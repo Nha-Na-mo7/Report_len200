@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { OK } from '../util.js';
 import Report from "./reports/Report.vue";
 
 export default {
@@ -22,5 +23,7 @@ export default {
       reports: []
     }
   }
+  // method
+  // watch
 }
 </script>

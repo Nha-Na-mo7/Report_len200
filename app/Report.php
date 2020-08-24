@@ -7,6 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 
 class Report extends Model
@@ -16,6 +17,12 @@ class Report extends Model
   
     //プライマリーキーの型を設定
     protected $keyType = 'string';
+  
+    /** JSONに含める属性 */
+    protected $visible = [
+        'id', 'owner',
+    ];
+
     
     //日誌IDの桁数
     const ID_LENGTH = 16;
@@ -62,6 +69,7 @@ class Report extends Model
      * リレーション - usersテーブル
      * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    // モデル名と関係ない名前(owner)のため、belongsToメソッドの引数は省略せずに記載
     public function owner()
     {
       return $this->belongsTo('App\User', 'user_id', 'id', 'users');
@@ -84,4 +92,5 @@ class Report extends Model
     {
       return $this->hasOne('App\Content');
     }
+    
 }

@@ -15,7 +15,7 @@ class ReportController extends Controller
   //コンストラクタで認証
   public function __construct()
   {
-    // $this->middleware('auth');
+    // $this->middleware('auth')->except(['index']);
   }
   
   /**
@@ -43,6 +43,18 @@ class ReportController extends Controller
     $content->save();
     
     return response($report, 201);
+  }
+  
+  /**
+   * 日誌一覧の取得
+   */
+  public function index()
+  {
+    Log::debug('ReportController : index : 日誌一覧取得');
+    // withメソッドでリレーションを事前ロード
+    $reports = Report::with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
+    Log::debug($reports);
+    return $reports;
   }
 }
 // // バリデーション
