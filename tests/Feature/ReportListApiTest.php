@@ -42,9 +42,7 @@ class ReportListApiTest extends TestCase
         // data項目が期待値と合致すること
         ->assertJsonFragment([
             "data" => $expected_data,
-        ])
-    ;
-    
+        ]);
     
   }
 }
