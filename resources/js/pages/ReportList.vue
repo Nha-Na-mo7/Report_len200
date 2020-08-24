@@ -37,7 +37,12 @@ export default {
     }
   },
   watch: {
-
+    $route: {
+      async handler() {
+        await this.fetchReports()
+      },
+      immediate: true
+    }
   }
 }
 </script>
