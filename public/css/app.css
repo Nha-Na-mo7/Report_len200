@@ -10925,14 +10925,6 @@ main {
   margin-top: 7rem;
 }
 
-figure {
-  margin: 0;
-}
-
-img {
-  max-width: 100%;
-}
-
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -10962,7 +10954,7 @@ img {
   height: 4rem;
   justify-content: space-between;
   left: 0;
-  padding: 2%;
+  padding-right: 2%;
   position: fixed;
   right: 0;
   top: 0;
@@ -10982,7 +10974,7 @@ img {
 }
 
 .navbar__brand:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .navbar__menu {
@@ -10992,176 +10984,6 @@ img {
 
 .navbar__item {
   margin-left: 1rem;
-}
-
-.photo {
-  position: relative;
-}
-
-.photo:hover .photo__overlay {
-  visibility: visible;
-}
-
-.photo:nth-child(4n+1) .photo__wrapper {
-  background: #DBBCD5;
-}
-
-.photo:nth-child(4n+2) .photo__wrapper {
-  background: #DBDBBC;
-}
-
-.photo:nth-child(4n+3) .photo__wrapper {
-  background: #BCDBC8;
-}
-
-.photo:nth-child(4n) .photo__wrapper {
-  background: #BCC8DB;
-}
-
-.photo__wrapper {
-  overflow: hidden;
-  padding-top: 75%;
-  position: relative;
-}
-
-.photo__image {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.photo__overlay {
-  background: rgba(0, 0, 0, 0.3);
-  bottom: 0;
-  color: #fff;
-  cursor: zoom-in;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  left: 0;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  text-decoration: none;
-  top: 0;
-  visibility: hidden;
-}
-
-.photo__controls {
-  text-align: right;
-}
-
-.photo__action {
-  background: #fff;
-  border: 0;
-  border-radius: 0.25rem;
-  color: #222;
-  cursor: pointer;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1;
-  margin-left: 0.25rem;
-  opacity: 0.8;
-  outline: none;
-  padding: 0.5em 0.75em;
-}
-
-.photo__action:hover {
-  opacity: 1;
-}
-
-.photo__action--like .icon {
-  color: #e4406f;
-  margin-right: 0.5em;
-}
-
-.photo__action--liked {
-  background: #e4406f;
-  color: #fff;
-}
-
-.photo__action--liked .icon {
-  color: #fff;
-}
-
-.photo-detail {
-  display: flex;
-  justify-content: space-between;
-}
-
-.photo-detail--column {
-  flex-direction: column;
-}
-
-.photo-detail--column .photo-detail__pane {
-  width: 100%;
-}
-
-.photo-detail--column .photo-detail__image {
-  cursor: zoom-out;
-}
-
-.photo-detail__pane {
-  width: 49%;
-}
-
-.photo-detail__image {
-  cursor: zoom-in;
-  margin-bottom: 1.5rem;
-}
-
-.photo-detail__image figcaption {
-  margin-top: 0.5rem;
-}
-
-.photo-detail__title {
-  font-size: 1.2rem;
-  margin: 1.5rem 0;
-}
-
-.photo-detail__title .icon {
-  margin-right: 0.5em;
-}
-
-.photo-detail__comments {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.photo-detail__commentItem {
-  border-bottom: 1px solid #dedede;
-  margin-bottom: 1.5rem;
-  padding: 0 0 1.5rem 0;
-}
-
-.photo-detail__commentBody {
-  margin: 0 0 1rem 0;
-}
-
-.photo-detail__commentInfo {
-  color: #8a8a8a;
-  margin: 0;
-}
-
-.photo-form {
-  background: #fff;
-  border-radius: 0.25rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  max-height: 75vh;
-  max-width: 600px;
-  overflow: scroll;
-  padding: 1.5rem;
-  position: absolute;
-  right: 2%;
-  top: 3.5rem;
-  width: 90%;
 }
 
 .button {
@@ -11179,13 +11001,13 @@ img {
   transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
+.button .icon {
+  margin-right: 0.5em;
+}
+
 .button:hover {
   border-color: #333;
   color: inherit;
-}
-
-.button .icon {
-  margin-right: 0.5em;
 }
 
 .button--link {
@@ -11207,26 +11029,6 @@ img {
 
 .button--fluid {
   width: 100%;
-}
-
-.button--like .icon {
-  color: #e4406f;
-}
-
-.button--liked {
-  background: #e4406f;
-  border-color: #e4406f;
-  color: #fff;
-}
-
-.button--liked .icon {
-  color: #fff;
-}
-
-.button--liked:hover {
-  border-color: #e4406f;
-  color: #fff;
-  opacity: 0.8;
 }
 
 .form__item {
@@ -11275,6 +11077,8 @@ img {
 
 .footer {
   align-items: center;
+  background: #fff;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
   border-top: 1px solid #f1f1f1;
   display: flex;
   height: 5rem;
@@ -11331,7 +11135,6 @@ img {
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.loader__item--heart div:after,
 .loader__item--heart div:before {
   content: " ";
   position: absolute;
@@ -11339,14 +11142,17 @@ img {
   width: 26px;
   height: 26px;
   background: #e4406f;
-}
-
-.loader__item--heart div:before {
   left: -17px;
   border-radius: 50% 0 0 50%;
 }
 
 .loader__item--heart div:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: #e4406f;
   top: -17px;
   border-radius: 50% 50% 0 0;
 }
