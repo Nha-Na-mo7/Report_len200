@@ -1,0 +1,41 @@
+.button {
+  border: 1px solid #dedede;
+  border-radius: 0.25rem;
+  color: #8a8a8a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  -webkit-transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+  .icon {
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    border-color: #333;
+    color: inherit;
+  }
+  &--link {
+    border: 0;
+  }
+  &--inverse {
+    background: #222;
+    border-color: #222;
+    color: #fff;
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+      background: #222;
+      color: #fff;
+      opacity: 0.8;
+    }
+  }
+  &--fluid {
+    width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+.tab {
+  display: -webkit-box;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    border-bottom: 2px solid #dedede;
+    color: #8a8a8a;
+    cursor: pointer;
+    margin: 0 1rem 0 0;
+    padding: 1rem;
+    &--active {
+      border-bottom: 2px solid #222;
+      color: #222;
+      font-weight: bold;
+    }
+  }
+}

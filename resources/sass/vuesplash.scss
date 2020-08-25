@@ -19,252 +19,31 @@ main {
   margin-top: 7rem;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 2%;
-  &--small {
-    margin: 0 auto;
-    max-width: 600px;
-  }
-}
+@import 'container.scss';
 
+@import 'grid.scss';
 
-.grid {
-  display: grid;
-  grid-gap: 0 2%;
-  grid-template-columns: repeat(auto-fit, 32%);
-  &__item {
-    margin-bottom: 2rem;
-  }
-}
+@import 'navbar.scss';
 
-.navbar {
-  -webkit-box-align: center;
-  align-items: center;
-  background: #fff;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
-  display: -webkit-box;
-  display: flex;
-  height: 4rem;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  left: 0;
-  padding-right: 2%;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 3;
+@import 'button.scss';
 
-  &__brand {
-    color: inherit;
-    font-family: Merriweather, serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
+@import 'form.scss';
 
-    &:visited {
-      color: inherit;
-    }
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+@import 'tab.scss';
 
-  &__menu {
-    -webkit-box-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: flex;
-  }
+@import 'footer.scss';
 
-  &__item {
-    margin-left: 1rem;
-  }
-}
+@import 'errors.scss';
 
-.button {
-  border: 1px solid #dedede;
-  border-radius: 0.25rem;
-  color: #8a8a8a;
-  cursor: pointer;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1;
-  outline: none;
-  padding: 0.5rem 0.75rem;
-  text-decoration: none;
-  -webkit-transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
-  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
-  .icon {
-    margin-right: 0.5em;
-  }
+@import 'pagination.scss';
 
-  &:hover {
-    border-color: #333;
-    color: inherit;
-  }
-  &--link {
-    border: 0;
-  }
-  &--inverse {
-    background: #222;
-    border-color: #222;
-    color: #fff;
-    -webkit-transition: opacity 300ms ease-in-out;
-    transition: opacity 300ms ease-in-out;
-    &:hover {
-      background: #222;
-      color: #fff;
-      opacity: 0.8;
-    }
-  }
-  &--fluid {
-    width: 100%;
-  }
+@import 'panel.scss';
 
+@import 'title.scss';
 
-}
+@import 'loader.scss';
 
-.form {
-  &__item {
-    border: 1px solid #dedede;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5em 0.75em;
-    width: 100%;
-  }
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  &__output {
-    display: block;
-    margin-bottom: 1rem;
-  }
-  &__button {
-    text-align: right;
-  }
-}
-
-
-.tab {
-  display: -webkit-box;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  &__item {
-    border-bottom: 2px solid #dedede;
-    color: #8a8a8a;
-    cursor: pointer;
-    margin: 0 1rem 0 0;
-    padding: 1rem;
-    &--active {
-      border-bottom: 2px solid #222;
-      color: #222;
-      font-weight: bold;
-    }
-  }
-
-}
-
-
-.footer {
-  -webkit-box-align: center;
-  align-items: center;
-  background: #fff;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
-  border-top: 1px solid #f1f1f1;
-  display: -webkit-box;
-  display: flex;
-  height: 5rem;
-  -webkit-box-pack: center;
-  justify-content: center;
-}
-
-.errors {
-  border: 1px solid #c7004c;
-  border-radius: 0.25rem;
-  color: #c7004c;
-  margin-bottom: 1rem;
-}
-
-.pagination {
-  text-align: right;
-}
-
-.panel {
-  border: 1px solid #dedede;
-  margin-top: 1rem;
-  padding: 1.5rem;
-}
-
-.title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin: 0 0 1rem 0;
-}
-
-.loader {
-  -webkit-box-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  &__item {
-    &--heart {
-      display: inline-block;
-      position: relative;
-      width: 64px;
-      height: 64px;
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-      -webkit-transform-origin: 32px 32px;
-      transform-origin: 32px 32px;
-      div {
-        top: 23px;
-        left: 19px;
-        position: absolute;
-        width: 26px;
-        height: 26px;
-        background: #e4406f;
-        -webkit-animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-        animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-        &:before {
-          content: " ";
-          position: absolute;
-          display: block;
-          width: 26px;
-          height: 26px;
-          background: #e4406f;
-
-          left: -17px;
-          border-radius: 50% 0 0 50%;
-        }
-        &:after {
-          content: " ";
-          position: absolute;
-          display: block;
-          width: 26px;
-          height: 26px;
-          background: #e4406f;
-
-          top: -17px;
-          border-radius: 50% 50% 0 0;
-        }
-      }
-    }
-  }
-}
-
+@import 'message.scss';
 
 @-webkit-keyframes lds-heart {
   0% {
@@ -330,11 +109,4 @@ main {
   }
 }
 
-.message {
-  background: #D7F9EE;
-  border: 1px solid #41e2b2;
-  border-radius: 0.25rem;
-  color: #117355;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-}
+
