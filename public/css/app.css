@@ -10925,6 +10925,58 @@ main {
   margin-top: 7rem;
 }
 
+@-webkit-keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+
+  5% {
+    transform: scale(1.1);
+  }
+
+  39% {
+    transform: scale(0.85);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+
+  5% {
+    transform: scale(1.1);
+  }
+
+  39% {
+    transform: scale(0.85);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -10934,16 +10986,6 @@ main {
 .container--small {
   margin: 0 auto;
   max-width: 600px;
-}
-
-.grid {
-  display: grid;
-  grid-gap: 0 2%;
-  grid-template-columns: repeat(auto-fit, 32%);
-}
-
-.grid__item {
-  margin-bottom: 2rem;
 }
 
 .navbar {
@@ -10984,6 +11026,12 @@ main {
 
 .navbar__item {
   margin-left: 1rem;
+}
+
+.panel {
+  border: 1px solid #dedede;
+  margin-top: 1rem;
+  padding: 1.5rem;
 }
 
 .button {
@@ -11096,10 +11144,14 @@ main {
   text-align: right;
 }
 
-.panel {
-  border: 1px solid #dedede;
-  margin-top: 1rem;
-  padding: 1.5rem;
+.grid {
+  display: grid;
+  grid-gap: 0 2%;
+  grid-template-columns: repeat(auto-fit, 32%);
+}
+
+.grid__item {
+  margin-bottom: 2rem;
 }
 
 .title {
@@ -11164,57 +11216,5 @@ main {
   color: #117355;
   margin-bottom: 1.5rem;
   padding: 1rem;
-}
-
-@-webkit-keyframes lds-heart {
-  0% {
-    transform: scale(0.95);
-  }
-
-  5% {
-    transform: scale(1.1);
-  }
-
-  39% {
-    transform: scale(0.85);
-  }
-
-  45% {
-    transform: scale(1);
-  }
-
-  60% {
-    transform: scale(0.95);
-  }
-
-  100% {
-    transform: scale(0.9);
-  }
-}
-
-@keyframes lds-heart {
-  0% {
-    transform: scale(0.95);
-  }
-
-  5% {
-    transform: scale(1.1);
-  }
-
-  39% {
-    transform: scale(0.85);
-  }
-
-  45% {
-    transform: scale(1);
-  }
-
-  60% {
-    transform: scale(0.95);
-  }
-
-  100% {
-    transform: scale(0.9);
-  }
 }
 
