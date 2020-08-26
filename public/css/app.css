@@ -214,7 +214,19 @@ main {
 
 .container--small {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 768px;
+}
+
+@media screen and (min-width: 415px) and (max-width: 768px) {
+  .container--small {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .container--small {
+    max-width: 100%;
+  }
 }
 
 .panel {

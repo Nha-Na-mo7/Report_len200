@@ -2453,6 +2453,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -39461,111 +39464,113 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "report-form" }, [
-    _c("h2", { staticClass: "title" }, [_vm._v("日誌 新規作成")]),
-    _vm._v(" "),
-    _c("h6", [_vm._v("エラーメッセージ")]),
-    _vm._v(" "),
-    _c(
-      "form",
-      {
-        staticClass: "form",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.submit($event)
-          }
-        }
-      },
-      [
-        _c("label", { attrs: { for: "report_title" } }, [_vm._v("タイトル")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.reportForm.report_title,
-              expression: "reportForm.report_title"
-            }
-          ],
-          staticClass: "form__item",
-          attrs: {
-            type: "text",
-            id: "report_title",
-            placeholder: "入力必須です。"
-          },
-          domProps: { value: _vm.reportForm.report_title },
+  return _c("div", { staticClass: "container--small" }, [
+    _c("div", { staticClass: "report-form" }, [
+      _c("h2", { staticClass: "title" }, [_vm._v("日誌 新規作成")]),
+      _vm._v(" "),
+      _c("h6", [_vm._v("エラーメッセージ")]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          staticClass: "form",
           on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.$set(_vm.reportForm, "report_title", $event.target.value)
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.submit($event)
             }
           }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.reportForm.about,
-              expression: "reportForm.about"
-            }
-          ],
-          staticClass: "form__item",
-          attrs: {
-            type: "text",
-            id: "about",
-            placeholder: "こちらの入力は任意です。"
-          },
-          domProps: { value: _vm.reportForm.about },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+        },
+        [
+          _c("label", { attrs: { for: "report_title" } }, [_vm._v("タイトル")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.reportForm.report_title,
+                expression: "reportForm.report_title"
               }
-              _vm.$set(_vm.reportForm, "about", $event.target.value)
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("label", { attrs: { for: "content" } }, [_vm._v("本文")]),
-        _vm._v(" "),
-        _c("textarea", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.reportForm.content,
-              expression: "reportForm.content"
-            }
-          ],
-          staticClass: "form__item",
-          attrs: {
-            id: "content",
-            placeholder: "150字以上、250字以下で入力してください。"
-          },
-          domProps: { value: _vm.reportForm.content },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+            ],
+            staticClass: "form__item",
+            attrs: {
+              type: "text",
+              id: "report_title",
+              placeholder: "入力必須です。"
+            },
+            domProps: { value: _vm.reportForm.report_title },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.reportForm, "report_title", $event.target.value)
               }
-              _vm.$set(_vm.reportForm, "content", $event.target.value)
             }
-          }
-        }),
-        _vm._v(" "),
-        _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))]),
-        _vm._v(" "),
-        _vm._m(0)
-      ]
-    )
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.reportForm.about,
+                expression: "reportForm.about"
+              }
+            ],
+            staticClass: "form__item",
+            attrs: {
+              type: "text",
+              id: "about",
+              placeholder: "こちらの入力は任意です。"
+            },
+            domProps: { value: _vm.reportForm.about },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.reportForm, "about", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "content" } }, [_vm._v("本文")]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.reportForm.content,
+                expression: "reportForm.content"
+              }
+            ],
+            staticClass: "form__item",
+            attrs: {
+              id: "content",
+              placeholder: "150字以上、250字以下で入力してください。"
+            },
+            domProps: { value: _vm.reportForm.content },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.reportForm, "content", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))]),
+          _vm._v(" "),
+          _vm._m(0)
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
