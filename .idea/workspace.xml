@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/sass/object/component/c-loader-heart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/foundation/base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/base.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,8 +171,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/sass/foundation" />
       <recent name="$PROJECT_DIR$/resources/sass/object/component" />
+      <recent name="$PROJECT_DIR$/resources/sass/foundation" />
       <recent name="$PROJECT_DIR$/resources/sass/layout" />
       <recent name="$PROJECT_DIR$/resources/sass/object/project" />
       <recent name="$PROJECT_DIR$/resources/js/pages/reports" />
@@ -207,7 +207,7 @@
       <workItem from="1597904811577" duration="11087000" />
       <workItem from="1598192736268" duration="8571000" />
       <workItem from="1598278793226" duration="1866000" />
-      <workItem from="1598323404416" duration="11626000" />
+      <workItem from="1598323404416" duration="11911000" />
     </task>
     <servers />
   </component>
