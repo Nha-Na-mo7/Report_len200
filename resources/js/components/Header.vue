@@ -2,12 +2,12 @@
   <nav class="navbar">
     <RouterLink class="navbar__brand" to="/"></RouterLink>
     <div class="navbar__menu">
-      <RouterLink class="button button--link" to="/mypage" v-if="username">{{ username }}</RouterLink>
+      <RouterLink class="btn btn--link" to="/mypage" v-if="username">{{ username }}</RouterLink>
       <div class="navbar__item" v-else>
-        <RouterLink class="button button--link" to="/login">ログイン/新規登録</RouterLink>
+        <RouterLink class="btn btn--link" to="/login">ログイン/新規登録</RouterLink>
       </div>
 
-      <button class="button button--link" v-on:click="logout" v-if="isLogin">ログアウトする</button>
+      <button class="btn btn--link" v-on:click="logout" v-if="isLogin">ログアウトする</button>
 
     </div>
   </nav>

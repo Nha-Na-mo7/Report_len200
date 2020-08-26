@@ -38992,10 +38992,7 @@ var render = function() {
           _vm.username
             ? _c(
                 "RouterLink",
-                {
-                  staticClass: "button button--link",
-                  attrs: { to: "/mypage" }
-                },
+                { staticClass: "btn btn--link", attrs: { to: "/mypage" } },
                 [_vm._v(_vm._s(_vm.username))]
               )
             : _c(
@@ -39004,10 +39001,7 @@ var render = function() {
                 [
                   _c(
                     "RouterLink",
-                    {
-                      staticClass: "button button--link",
-                      attrs: { to: "/login" }
-                    },
+                    { staticClass: "btn btn--link", attrs: { to: "/login" } },
                     [_vm._v("ログイン/新規登録")]
                   )
                 ],
@@ -39017,10 +39011,7 @@ var render = function() {
           _vm.isLogin
             ? _c(
                 "button",
-                {
-                  staticClass: "button button--link",
-                  on: { click: _vm.logout }
-                },
+                { staticClass: "btn btn--link", on: { click: _vm.logout } },
                 [_vm._v("ログアウトする")]
               )
             : _vm._e()
@@ -39370,8 +39361,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form__button" }, [
-      _c("button", { staticClass: "button button--inverse" }, [
+    return _c("div", { staticClass: "form__btn" }, [
+      _c("button", { staticClass: "btn btn--inverse" }, [
         _vm._v("ログインする")
       ])
     ])
@@ -39380,10 +39371,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form__button" }, [
+    return _c("div", { staticClass: "form__btn" }, [
       _c(
         "button",
-        { staticClass: "button button--inverse", attrs: { type: "submit" } },
+        { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
         [_vm._v("新規登録")]
       )
     ])
@@ -39582,10 +39573,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form__button" }, [
+    return _c("div", { staticClass: "form__btn" }, [
       _c(
         "button",
-        { staticClass: "button button--inverse", attrs: { type: "submit" } },
+        { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
         [_vm._v("投稿する")]
       )
     ])

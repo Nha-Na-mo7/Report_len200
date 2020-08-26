@@ -23,6 +23,8 @@
 // base
 @import "foundation/base";
 
+
+
 // ==============
 //  header
 //  =============
@@ -43,7 +45,7 @@
 // =============
 //  btn
 // =============
-@import 'object/component/c-button';
+@import 'object/component/c-btn';
 // =============
 //  form & tab
 // =============
@@ -91,3 +93,5 @@
 // ==============
 //  utility
 //  =============
+@import "./object/utility/u-space.scss";
+@import "./object/utility/u-color.scss";

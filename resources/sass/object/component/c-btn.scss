@@ -1,8 +1,8 @@
 // ==============
 //  c-button
 //  =============
-.button {
-  border: 1px solid #dedede;
+.btn {
+  border: 1px solid $color-corp-hover;
   border-radius: 0.25rem;
   color: #8a8a8a;
   cursor: pointer;
@@ -11,7 +11,7 @@
   font-size: 1rem;
   line-height: 1;
   outline: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   -webkit-transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
   transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
@@ -20,25 +20,27 @@
   }
 
   &:hover {
-    border-color: #333;
     color: inherit;
+
   }
   &--link {
     border: 0;
   }
   &--inverse {
-    background: #222;
-    border-color: #222;
-    color: #fff;
+    background: $color-corp;
+    border-color: $color-corp;
+    color: $font-color_dark;
     -webkit-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
     &:hover {
-      background: #222;
-      color: #fff;
+      background: $color-corp-hover;
+      color: $font-color_dark;
       opacity: 0.8;
     }
   }
   &--fluid {
     width: 100%;
   }
+
+
 }

@@ -223,8 +223,8 @@ main {
   padding: 1.5rem;
 }
 
-.button {
-  border: 1px solid #dedede;
+.btn {
+  border: 1px solid #ed8ed5;
   border-radius: 0.25rem;
   color: #8a8a8a;
   cursor: pointer;
@@ -233,38 +233,37 @@ main {
   font-size: 1rem;
   line-height: 1;
   outline: none;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
-.button .icon {
+.btn .icon {
   margin-right: 0.5em;
 }
 
-.button:hover {
-  border-color: #333;
+.btn:hover {
   color: inherit;
 }
 
-.button--link {
+.btn--link {
   border: 0;
 }
 
-.button--inverse {
-  background: #222;
-  border-color: #222;
-  color: #fff;
+.btn--inverse {
+  background: #ffd0ee;
+  border-color: #ffd0ee;
+  color: #222;
   transition: opacity 300ms ease-in-out;
 }
 
-.button--inverse:hover {
-  background: #222;
-  color: #fff;
+.btn--inverse:hover {
+  background: #ed8ed5;
+  color: #222;
   opacity: 0.8;
 }
 
-.button--fluid {
+.btn--fluid {
   width: 100%;
 }
 
@@ -287,7 +286,7 @@ main {
   margin-bottom: 1rem;
 }
 
-.form__button {
+.form__btn {
   text-align: right;
 }
 
@@ -457,5 +456,37 @@ main {
   color: #117355;
   margin-bottom: 1.5rem;
   padding: 1rem;
+}
+
+.u__mt-l {
+  margin-top: 15px;
+}
+
+.u__mt-xl {
+  margin-top: 20px;
+}
+
+.u__mt-3l {
+  margin-top: 40px;
+}
+
+.u__mb-l {
+  margin-bottom: 15px;
+}
+
+.u__mb-xl {
+  margin-bottom: 20px;
+}
+
+.u__mb-3l {
+  margin-bottom: 40px;
+}
+
+.u__pd {
+  padding: 5px 5px;
+}
+
+.u-overflow__hidden {
+  overflow: hidden;
 }
 
