@@ -22,6 +22,7 @@
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/vuesplash.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/foundation/base.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +206,7 @@
       <workItem from="1597904811577" duration="11087000" />
       <workItem from="1598192736268" duration="8571000" />
       <workItem from="1598278793226" duration="1866000" />
-      <workItem from="1598323404416" duration="11290000" />
+      <workItem from="1598323404416" duration="11482000" />
     </task>
     <servers />
   </component>
