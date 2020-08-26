@@ -37,6 +37,12 @@
       color: $font-color_dark;
       opacity: 0.8;
     }
+    @include mq($breakpoint: sm) {
+      width: 100%;
+      padding: 1rem 1rem;
+      font-size: 1.2rem;
+
+    }
   }
   &--fluid {
     width: 100%;

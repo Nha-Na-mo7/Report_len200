@@ -39538,7 +39538,10 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("label", { attrs: { for: "content" } }, [_vm._v("本文")]),
+          _c("label", { attrs: { for: "content" } }, [
+            _vm._v("本文 "),
+            _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))])
+          ]),
           _vm._v(" "),
           _c("textarea", {
             directives: [
@@ -39564,8 +39567,6 @@ var render = function() {
               }
             }
           }),
-          _vm._v(" "),
-          _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))]),
           _vm._v(" "),
           _vm._m(0)
         ]

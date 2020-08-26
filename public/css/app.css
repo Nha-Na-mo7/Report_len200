@@ -275,6 +275,14 @@ main {
   opacity: 0.8;
 }
 
+@media screen and (max-width: 414px) {
+  .btn--inverse {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+
 .btn--fluid {
   width: 100%;
 }
