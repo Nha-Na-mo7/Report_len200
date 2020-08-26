@@ -39466,7 +39466,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container--small" }, [
     _c("div", { staticClass: "report-form" }, [
-      _c("h2", { staticClass: "title" }, [_vm._v("日誌 新規作成")]),
+      _c("h2", { staticClass: "title u__mb-3l" }, [_vm._v("日誌 新規作成")]),
       _vm._v(" "),
       _c("h6", [_vm._v("エラーメッセージ")]),
       _vm._v(" "),
@@ -39549,7 +39549,7 @@ var render = function() {
                 expression: "reportForm.content"
               }
             ],
-            staticClass: "form__item",
+            staticClass: "form__item form__textarea",
             attrs: {
               id: "content",
               placeholder: "150字以上、250字以下で入力してください。"

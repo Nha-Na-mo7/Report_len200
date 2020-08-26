@@ -1,7 +1,7 @@
 <template>
   <div class="container--small">
     <div class="report-form">
-      <h2 class="title">日誌 新規作成</h2>
+      <h2 class="title u__mb-3l">日誌 新規作成</h2>
 
       <!-- エラーメッセージ -->
       <h6>エラーメッセージ</h6>
@@ -13,7 +13,7 @@
         <label for="about">副題</label>
         <input type="text" class="form__item" id="about" v-model="reportForm.about" placeholder="こちらの入力は任意です。">
         <label for="content">本文</label>
-        <textarea class="form__item" id="content" v-model="reportForm.content" placeholder="150字以上、250字以下で入力してください。"></textarea>
+        <textarea class="form__item form__textarea" id="content" v-model="reportForm.content" placeholder="150字以上、250字以下で入力してください。"></textarea>
         <span>入力文字数 : {{ content_length }}</span>
 
         <div class="form__btn">

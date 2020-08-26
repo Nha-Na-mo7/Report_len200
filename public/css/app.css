@@ -283,7 +283,7 @@ main {
   border: 1px solid #dedede;
   border-radius: 0.25rem;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   padding: 0.5em 0.75em;
   width: 100%;
 }
@@ -300,6 +300,17 @@ main {
 
 .form__btn {
   text-align: right;
+}
+
+.form__textarea {
+  resize: none;
+  height: 13rem;
+}
+
+@media screen and (max-width: 414px) {
+  .form__textarea {
+    height: 20rem;
+  }
 }
 
 .tab {
@@ -355,9 +366,9 @@ main {
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .loader {
