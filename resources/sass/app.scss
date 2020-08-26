@@ -9,10 +9,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'foundation/variables';
+
+// mixin
+@import "./foundation/mixin.scss";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
 
 // vuesplash_css (削除予定)
 @import "vuesplash";
@@ -20,63 +23,64 @@
 // ==============
 //  header
 //  =============
-@import 'container.scss';
+@import 'object/component/c-navbar';
+
+
 // ==============
 //  container
 //  =============
-@import 'navbar.scss';
+@import 'object/project/p-container';
+
+
 // ==============
 //  panel
 //  =============
-@import 'panel.scss';
+@import 'object/component/c-panel';
 
 // =============
 //  btn
 // =============
-@import 'button.scss';
+@import 'object/component/c-button';
 // =============
-//  form
+//  form & tab
 // =============
-@import 'form.scss';
-// =============
-//  tab
-// =============
-@import 'tab.scss';
+@import 'object/project/p-form';
+@import 'object/component/c-tab';
 
 // =============
 //  footer
 // =============
-@import 'footer.scss';
+@import 'layout/l-footer';
 
 // =============
 //  errors
 // =============
-@import 'errors.scss';
+@import 'object/component/c-errors';
 
 // =============
 //  pagination
 // =============
-@import 'pagination.scss';
+@import 'object/component/c-pagination';
 
 // =============
 //  grid
 // =============
-@import 'grid.scss';
+@import 'layout/l-grid';
 
 // =============
 //  title
 // =============
-@import 'title.scss';
+@import 'object/component/c-title';
 
 // =============
 //  loader
 // =============
-@import 'loader.scss';
+@import 'object/project/p-loader';
 
 // =============
 //  message
 // =============
-@import 'message.scss';
+@import 'object/component/c-message';
 
 
 
