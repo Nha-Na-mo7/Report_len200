@@ -61,15 +61,7 @@ const routes = [
   {
     path: '/reports/:id',
     component: ReportDetail,
-    props: true,
-    beforeEnter(to, from, next) {
-      // ログイン画面はログインしていない場合ログインページにリダイレクト
-      if (store.getters['auth/loginCheck']) {
-        next()
-      } else {
-        next('/login')
-      }
-    }
+    props: true
   },
   {
     path: '/500',

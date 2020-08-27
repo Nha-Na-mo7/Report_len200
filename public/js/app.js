@@ -2584,6 +2584,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ReportDetail"
 });
@@ -39721,9 +39739,60 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Report Detail")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "report-detail" }, [
+        _c("h1", { staticClass: "report-detail__title" }, [
+          _vm._v("Report Detail - メモアプリ -")
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "report-detail__about" }, [
+          _vm._v("ここには副題が入ります。短ければ何も入りません。")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "report-detail__tips" }, [
+          _c("span", { staticClass: "report-detail__date" }, [
+            _vm._v("記入日: 2020 08/28 16:56:46")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "report-detail__username" }, [
+            _vm._v("氏名: ユーザーネーム")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "report-detail__content-area" }, [
+          _c("span", { staticClass: "report-detail__content" }, [
+            _vm._v("或日の暮方の事である。"),
+            _c("br"),
+            _vm._v(
+              "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
+            ),
+            _c("br"),
+            _vm._v(
+              "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+            ),
+            _c("br"),
+            _vm._v("それが、この男の外には誰もゐない。")
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -57115,15 +57184,7 @@ var routes = [{
 }, {
   path: '/reports/:id',
   component: _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-  props: true,
-  beforeEnter: function beforeEnter(to, from, next) {
-    // ログイン画面はログインしていない場合ログインページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].getters['auth/loginCheck']) {
-      next();
-    } else {
-      next('/login');
-    }
-  }
+  props: true
 }, {
   path: '/500',
   component: _pages_errors_System500_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
