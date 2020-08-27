@@ -50,9 +50,9 @@
         </div>
 
         <label for="username">ユーザーネーム</label>
-        <input type="text" class="form__item" id="username" v-model="registerForm.name">
+        <input type="text" class="form__item" id="username" v-model="registerForm.name" autocomplete="off">
         <label for="email">メールアドレス</label>
-        <input type="text" class="form__item" id="email" v-model="registerForm.email">
+        <input type="text" class="form__item" id="email" v-model="registerForm.email" autocomplete="off">
         <label for="password">パスワード</label>
         <input type="password" class="form__item" id="password" v-model="registerForm.password">
         <label for="password-confirmation">パスワードの再入力</label>

@@ -39260,7 +39260,7 @@ var render = function() {
                 }
               ],
               staticClass: "form__item",
-              attrs: { type: "text", id: "username" },
+              attrs: { type: "text", id: "username", autocomplete: "off" },
               domProps: { value: _vm.registerForm.name },
               on: {
                 input: function($event) {
@@ -39286,7 +39286,7 @@ var render = function() {
                 }
               ],
               staticClass: "form__item",
-              attrs: { type: "text", id: "email" },
+              attrs: { type: "text", id: "email", autocomplete: "off" },
               domProps: { value: _vm.registerForm.email },
               on: {
                 input: function($event) {
@@ -39497,7 +39497,8 @@ var render = function() {
             attrs: {
               type: "text",
               id: "report_title",
-              placeholder: "入力必須です。"
+              placeholder: "入力必須です。",
+              autocomplete: "off"
             },
             domProps: { value: _vm.reportForm.report_title },
             on: {
@@ -39525,7 +39526,8 @@ var render = function() {
             attrs: {
               type: "text",
               id: "about",
-              placeholder: "こちらの入力は任意です。"
+              placeholder: "こちらの入力は任意です。",
+              autocomplete: "off"
             },
             domProps: { value: _vm.reportForm.about },
             on: {
