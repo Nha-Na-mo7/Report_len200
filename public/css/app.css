@@ -366,7 +366,14 @@ main {
 .grid {
   display: grid;
   grid-gap: 0 2%;
-  grid-template-columns: repeat(auto-fit, 32%);
+  grid-template-columns: repeat(auto-fit, 49%);
+}
+
+@media screen and (max-width: 414px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, 100%);
+    margin: 0 auto;
+  }
 }
 
 .grid__item {
@@ -377,6 +384,71 @@ main {
   font-size: 2.2rem;
   font-weight: bold;
   margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.reports {
+  box-sizing: border-box;
+  box-shadow: 0 4px 5px #cdcdcd;
+  width: 100%;
+  height: 320px;
+  border: 1px solid #222;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding: 0.5em 0.75em;
+  position: relative;
+}
+
+.reports:nth-child(4n+1) {
+  background: #fff6fd;
+}
+
+.reports:nth-child(4n+2) {
+  background: #eefff9;
+}
+
+.reports:nth-child(4n+3) {
+  background: #fcfff6;
+}
+
+.reports:nth-child(4n) {
+  background: #fff6ee;
+}
+
+.reports__main {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #222;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reports__main .reports__date {
+  color: #32536e;
+}
+
+.reports__title {
+  font-size: 2.4rem;
+  color: #222;
+  border-bottom: 1px solid #222;
+  padding: 5px 10px;
+}
+
+.reports__title :hover {
+  cursor: pointer;
+}
+
+.reports__about {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  white-space: pre-wrap;
+}
+
+.reports__about--title {
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .loader {

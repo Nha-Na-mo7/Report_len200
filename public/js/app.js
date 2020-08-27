@@ -2314,6 +2314,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2534,6 +2538,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39424,8 +39439,31 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container--small" }, [
+    _c("h1", { staticClass: "title" }, [_vm._v("日 誌 一 覧")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "report-list" }, [
+      _c(
+        "div",
+        { staticClass: "grid" },
+        _vm._l(_vm.reports, function(report) {
+          return _c("Report", {
+            key: report.id,
+            staticClass: "report__item",
+            attrs: { item: report }
+          })
+        }),
+        1
+      )
+    ])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -39607,8 +39645,41 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "reports" }, [
+      _c("div", { staticClass: "reports__main" }, [
+        _c("span", { staticClass: "reports__date" }, [
+          _vm._v("2020/8/27 12:22:30")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "reports__username" }, [
+          _vm._v("ユーザーネーム")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "reports__title" }, [_vm._v("Report title")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "reports__about--title" }, [_vm._v("about...")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "reports__about" }, [
+        _vm._v(
+          "或日の暮方の事である。一人の下人が、羅生門の下で雨やみを待つてゐた。廣い門の下には、この男の外に誰もゐない。"
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -56964,7 +57035,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/pages/Login.vue");
-/* harmony import */ var _pages_ReportList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/ReportList */ "./resources/js/pages/ReportList.vue");
+/* harmony import */ var _pages_ReportList_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/ReportList.vue */ "./resources/js/pages/ReportList.vue");
 /* harmony import */ var _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Mypage.vue */ "./resources/js/pages/Mypage.vue");
 /* harmony import */ var _pages_reports_New_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/reports/New.vue */ "./resources/js/pages/reports/New.vue");
 /* harmony import */ var _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/reports/ReportDetail.vue */ "./resources/js/pages/reports/ReportDetail.vue");
@@ -56985,8 +57056,8 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // パスとコンポーネントをマッピングする
 
 var routes = [{
-  path: '/reports',
-  component: _pages_ReportList__WEBPACK_IMPORTED_MODULE_3__["default"]
+  path: '/reports/',
+  component: _pages_ReportList_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/login',
   component: _pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"],

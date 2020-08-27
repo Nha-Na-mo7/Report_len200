@@ -1,15 +1,19 @@
 <template>
-  <h1>Report List</h1>
-  <div class="photo-list">
-    <div class="grid">
-      <Report
-          class="report__item"
-          v-for="report in reports"
-          :key="report.id"
-          :item="report"
-      />
+  <div class="container--small">
+    <h1 class="title">日 誌 一 覧</h1>
+    <div class="report-list">
+      <div class="grid">
+        <Report
+            class="report__item"
+            v-for="report in reports"
+            :key="report.id"
+            :item="report"
+        />
+      </div>
     </div>
   </div>
+
+
 </template>
 
 <script>
