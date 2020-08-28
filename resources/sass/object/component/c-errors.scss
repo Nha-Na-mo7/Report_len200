@@ -2,8 +2,10 @@
 //  c-errors
 //  =============
 .errors {
-  border: 1px solid #c7004c;
-  border-radius: 0.25rem;
   color: #c7004c;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  li {
+    margin-bottom: .5rem;
+  }
 }
