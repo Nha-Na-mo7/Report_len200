@@ -231,7 +231,6 @@ main {
 
 .panel {
   border: 1px solid #dedede;
-  margin-top: 1rem;
   padding: 1.5rem;
 }
 
@@ -329,14 +328,16 @@ main {
 }
 
 .tab__item {
-  border-bottom: 2px solid #dedede;
-  color: #8a8a8a;
+  border: 1px solid #dedede;
+  border-bottom: 2.5px solid #dedede;
+  border-radius: 4px;
+  color: #9f9f9f;
   cursor: pointer;
-  margin: 0 1rem 0 0;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 .tab__item--active {
+  background: #f6fff0;
   border-bottom: 2px solid #222;
   color: #222;
   font-weight: bold;

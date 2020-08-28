@@ -9,12 +9,15 @@
   padding: 0;
 
   &__item {
-    border-bottom: 2px solid #dedede;
-    color: #8a8a8a;
+    border: 1px solid #dedede;
+    border-bottom: 2.5px solid #dedede;
+    border-radius: 4px;
+
+    color: #9f9f9f;
     cursor: pointer;
-    margin: 0 1rem 0 0;
-    padding: 1rem;
+    padding: 1.2rem;
     &--active {
+      background: #f6fff0;
       border-bottom: 2px solid $font-color_dark;
       color: #222;
       font-weight: bold;
