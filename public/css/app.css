@@ -344,19 +344,23 @@ main {
 
 .footer {
   align-items: center;
-  background: #fff;
+  background: #4c4c4c;
+  color: #f1f1f1;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid #4c4c4c;
   display: flex;
   height: 5rem;
   justify-content: center;
 }
 
 .errors {
-  border: 1px solid #c7004c;
-  border-radius: 0.25rem;
   color: #c7004c;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.errors li {
+  margin-bottom: 0.5rem;
 }
 
 .pagination {
@@ -509,7 +513,8 @@ main {
 }
 
 .report-detail__title {
-  font-size: 4.5rem;
+  font-weight: bold;
+  font-size: 3.5rem;
   padding: 10px 0;
   border-bottom: 1px solid #222;
 }
