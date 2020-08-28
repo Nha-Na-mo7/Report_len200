@@ -167,6 +167,7 @@
   border: 1px solid $font-color_dark;
   border-radius: 4px;
   min-height: 800px;
+  margin-bottom: $space_3l;
   padding: $space_l $space_xxl;
   @include mq($breakpoint: sm) {
     min-height: 400px;
@@ -251,22 +252,29 @@
 
   &__comments {
     list-style: none;
-    margin: 0;
+    margin: $space_l 0;
     padding: 0;
   }
 
   &__comment {
+    &Title {
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
     &Item {
       border-bottom: 1px solid #dedede;
       margin-bottom: 1.5rem;
-      padding: 0 0 1.5rem 0;
+      padding: $space_xl 0;
     }
-    &Body {
+    &Text {
       margin: 0 0 1rem 0;
+      line-height: 1.5;
+      font-size: 1.4rem;
+
     }
     &Info {
       color: #8a8a8a;
-      margin: 0;
+      margin-top: $space_l;
     }
   }
 

@@ -2602,6 +2602,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ReportDetail"
 });
@@ -39739,56 +39769,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("h2", { staticClass: "report-detail__commentTitle" }, [
+      _vm._v("コメント")
+    ]),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("h2", { staticClass: "report-detail__commentTitle" }, [
+      _vm._v("投稿する")
+    ]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        staticClass: "form",
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+          }
+        }
+      },
+      [
+        _c("textarea", { staticClass: "form__item form__textarea" }),
+        _vm._v(" "),
+        _vm._m(2)
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "report-detail" }, [
-        _c("h1", { staticClass: "report-detail__title" }, [
-          _vm._v("Report Detail - メモアプリ -")
+    return _c("div", { staticClass: "report-detail" }, [
+      _c("h1", { staticClass: "report-detail__title" }, [
+        _vm._v("Report Detail - メモアプリ -")
+      ]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "report-detail__about" }, [
+        _vm._v("ここには副題が入ります。短ければ何も入りません。")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "report-detail__info" }, [
+        _c("span", { staticClass: "report-detail__date" }, [
+          _vm._v("記入日: 2020 08/28 16:56:46")
         ]),
         _vm._v(" "),
-        _c("h2", { staticClass: "report-detail__about" }, [
-          _vm._v("ここには副題が入ります。短ければ何も入りません。")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "report-detail__info" }, [
-          _c("span", { staticClass: "report-detail__date" }, [
-            _vm._v("記入日: 2020 08/28 16:56:46")
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "report-detail__username" }, [
-            _vm._v("氏名: ユーザーネーム")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "report-detail__content-area" }, [
-          _c("span", { staticClass: "report-detail__content" }, [
-            _vm._v("或日の暮方の事である。"),
-            _c("br"),
-            _vm._v(
-              "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
-            ),
-            _c("br"),
-            _vm._v(
-              "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-            ),
-            _c("br"),
-            _vm._v(
-              "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
-            ),
-            _c("br"),
-            _vm._v(
-              "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-            ),
-            _c("br"),
-            _vm._v("それが、この男の外には誰もゐない。")
-          ])
+        _c("span", { staticClass: "report-detail__username" }, [
+          _vm._v("氏名: ユーザーネーム")
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "report-detail__content-area" }, [
+        _c("span", { staticClass: "report-detail__content" }, [
+          _vm._v("或日の暮方の事である。"),
+          _c("br"),
+          _vm._v(
+            "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
+          ),
+          _c("br"),
+          _vm._v(
+            "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+          ),
+          _c("br"),
+          _vm._v("それが、この男の外には誰もゐない。")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "report-detail__comments" }, [
+      _c("li", { staticClass: "report-detail__commentItem" }, [
+        _c("p", { staticClass: "report-detail__commentText" }, [
+          _vm._v("\n        草"),
+          _c("br"),
+          _vm._v("\n      何がしたいのか")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "report-detail__commentInfo" }, [
+          _vm._v("やきう 2020/08/26 15:25")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "report-detail__commentItem" }, [
+        _c("p", { staticClass: "report-detail__commentText" }, [
+          _vm._v("は？")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "report-detail__commentInfo" }, [
+          _vm._v("投稿主 2020/08/26 15:25")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "report-detail__commentItem" }, [
+        _c("p", { staticClass: "report-detail__commentText" }, [_vm._v("334")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "report-detail__commentInfo" }, [
+          _vm._v("2161667676 2020/08/26 15:25")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form__btn" }, [
+      _c("button", { staticClass: "btn btn--inverse" }, [
+        _vm._v("コメントを送信")
       ])
     ])
   }

@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/ReportDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/ReportDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" afterDir="false" />
     </list>
@@ -208,7 +211,7 @@
       <workItem from="1598278793226" duration="1866000" />
       <workItem from="1598323404416" duration="22044000" />
       <workItem from="1598497280962" duration="185000" />
-      <workItem from="1598497532461" duration="10434000" />
+      <workItem from="1598497532461" duration="13632000" />
     </task>
     <servers />
   </component>

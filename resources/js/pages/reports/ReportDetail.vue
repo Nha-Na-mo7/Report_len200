@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <div class="report-detail">
       <h1 class="report-detail__title">Report Detail - メモアプリ -</h1>
       <h2 class="report-detail__about">ここには副題が入ります。短ければ何も入りません。</h2>
@@ -16,6 +17,35 @@
           羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。<br>それが、この男の外には誰もゐない。</span>
       </div>
     </div>
+
+    <!--コメント欄-->
+    <h2 class="report-detail__commentTitle">コメント</h2>
+    <ul class="report-detail__comments">
+      <li class="report-detail__commentItem">
+        <p class="report-detail__commentText">
+          草<br>
+        何がしたいのか</p>
+        <p class="report-detail__commentInfo">やきう 2020/08/26 15:25</p>
+      </li>
+      <li class="report-detail__commentItem">
+        <p class="report-detail__commentText">は？</p>
+        <p class="report-detail__commentInfo">投稿主 2020/08/26 15:25</p>
+      </li>
+      <li class="report-detail__commentItem">
+        <p class="report-detail__commentText">334</p>
+        <p class="report-detail__commentInfo">2161667676 2020/08/26 15:25</p>
+      </li>
+    </ul>
+
+    <!--コメント投稿フォーム-->
+    <h2 class="report-detail__commentTitle">投稿する</h2>
+    <form @submit.prevent="" class="form">
+
+      <textarea class="form__item form__textarea"></textarea>
+      <div class="form__btn">
+        <button class="btn btn--inverse">コメントを送信</button>
+      </div>
+    </form>
 
   </div>
 </template>
