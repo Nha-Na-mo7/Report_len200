@@ -3,7 +3,7 @@
     <div class="report-detail">
       <h1 class="report-detail__title">Report Detail - メモアプリ -</h1>
       <h2 class="report-detail__about">ここには副題が入ります。短ければ何も入りません。</h2>
-      <div class="report-detail__tips">
+      <div class="report-detail__info">
         <span class="report-detail__date">記入日: 2020 08/28 16:56:46</span>
         <span class="report-detail__username">氏名: ユーザーネーム</span>
       </div>

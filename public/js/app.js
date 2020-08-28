@@ -39756,7 +39756,7 @@ var staticRenderFns = [
           _vm._v("ここには副題が入ります。短ければ何も入りません。")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "report-detail__tips" }, [
+        _c("div", { staticClass: "report-detail__info" }, [
           _c("span", { staticClass: "report-detail__date" }, [
             _vm._v("記入日: 2020 08/28 16:56:46")
           ]),

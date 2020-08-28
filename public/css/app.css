@@ -492,7 +492,7 @@ main {
   margin-top: 0.5rem;
 }
 
-.report-detail__tips {
+.report-detail__info {
   font-size: 18px;
   display: flex;
   justify-content: space-between;
@@ -502,7 +502,7 @@ main {
 }
 
 @media screen and (max-width: 414px) {
-  .report-detail__tips {
+  .report-detail__info {
     display: none;
   }
 }
