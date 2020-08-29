@@ -388,7 +388,7 @@ main {
 .title {
   font-size: 2.2rem;
   font-weight: bold;
-  margin: 0 0 2rem 0;
+  margin: 2rem 0;
   text-align: center;
 }
 
@@ -715,6 +715,58 @@ main {
   color: #117355;
   margin-bottom: 1.5rem;
   padding: 1rem;
+}
+
+.mypage__container {
+  display: flex;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 414px) {
+  .mypage__container {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+}
+
+.mypage__containerInfo {
+  background: #f6f6f6;
+  border-radius: 4px;
+  height: 200px;
+  padding: 15px 10px;
+  margin-right: 15px;
+  width: 33%;
+}
+
+@media screen and (max-width: 414px) {
+  .mypage__containerInfo {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.mypage__containerReports {
+  width: 66%;
+}
+
+@media screen and (max-width: 414px) {
+  .mypage__containerReports {
+    width: 100%;
+  }
+}
+
+.mypage__username {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mypage__userInfo {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 .u__mt-l {

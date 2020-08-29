@@ -1,0 +1,53 @@
+// =============
+//  p-mypage
+// =============
+
+.mypage {
+  &__container {
+    display: flex;
+    box-sizing: border-box;
+    @include mq($breakpoint: sm){
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    &Info {
+      //完成後削除予定
+      background: #f6f6f6;
+      border-radius: 4px;
+      height: 200px;
+      padding: $space_l $space_m;
+      // ↑まで
+      margin-right: $space_l;
+      width: 33%;
+      @include mq($breakpoint: sm) {
+        margin: 0;
+        width: 100%;
+      }
+    }
+    &Reports {
+      //完成後削除予定
+      //  ↑まで
+      width: 66%;
+
+      @include mq($breakpoint: sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__username {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: $space_xxl;
+  }
+  &__userInfo {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: $space_xxl;
+
+  }
+
+}
