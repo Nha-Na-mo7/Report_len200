@@ -1,22 +1,18 @@
 <template>
   <div class="reports">
     <div class="reports__main">
-      <span class="reports__date">2020/8/27 12:22:30</span>
-      <span class="reports__username">ユーザーネーム</span>
+      <span class="reports__date">{{ item.created_at }}</span>
+      <span class="reports__username">{{ item.owner.name }}</span>
     </div>
-    <h2 class="reports__title">Report title</h2>
-<!--    <RouterLink-->
-<!--        class="report__overlay"-->
-<!--        :to="`/reports/${report.id}`" -->
-<!--        :title="`Report by ${report.owner.name}`"-->
-<!--    >-->
-<!--    </RouterLink>-->
+    <h2 class="reports__title">{{ item.report_title }}</h2>
+    <RouterLink
+        class="report__overlay"
+        :to="`/reports/${item.id}`"
+        :title="`{{${item.report_title}}}`"
+    >
+    </RouterLink>
     <p class="reports__about--title">about...</p>
-    <p class="reports__about">或日の暮方の事である。一人の下人が、羅生門の下で雨やみを待つてゐた。廣い門の下には、この男の外に誰もゐない。</p>
-
-    <!--  <div class="report__username">-->
-    <!--    {{ report.owner.name }}-->
-    <!--  </div>-->
+    <p class="reports__about">{{ item.about }}</p>
   </div>
 
 
@@ -25,6 +21,11 @@
 
 <script>
 export default {
-  name: "Report.vue"
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

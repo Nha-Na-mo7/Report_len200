@@ -2669,12 +2669,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Report.vue"
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  }
 });
 
 /***/ }),
@@ -39864,36 +39865,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "reports" }, [
+  return _c(
+    "div",
+    { staticClass: "reports" },
+    [
       _c("div", { staticClass: "reports__main" }, [
         _c("span", { staticClass: "reports__date" }, [
-          _vm._v("2020/8/27 12:22:30")
+          _vm._v(_vm._s(_vm.item.created_at))
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "reports__username" }, [
-          _vm._v("ユーザーネーム")
+          _vm._v(_vm._s(_vm.item.owner.name))
         ])
       ]),
       _vm._v(" "),
-      _c("h2", { staticClass: "reports__title" }, [_vm._v("Report title")]),
+      _c("h2", { staticClass: "reports__title" }, [
+        _vm._v(_vm._s(_vm.item.report_title))
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", {
+        staticClass: "report__overlay",
+        attrs: {
+          to: "/reports/" + _vm.item.id,
+          title: "{{" + _vm.item.report_title + "}}"
+        }
+      }),
       _vm._v(" "),
       _c("p", { staticClass: "reports__about--title" }, [_vm._v("about...")]),
       _vm._v(" "),
       _c("p", { staticClass: "reports__about" }, [
-        _vm._v(
-          "或日の暮方の事である。一人の下人が、羅生門の下で雨やみを待つてゐた。廣い門の下には、この男の外に誰もゐない。"
-        )
+        _vm._v(_vm._s(_vm.item.about))
       ])
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

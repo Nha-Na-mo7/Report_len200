@@ -33,6 +33,9 @@ class ReportListApiTest extends TestCase
           'owner' => [
               'name' => $report->owner->name,
           ],
+          'created_at' => $report->created_at,
+          'report_title' => $report->report_title,
+          'about' => $report->about
       ];
     })->all();
     

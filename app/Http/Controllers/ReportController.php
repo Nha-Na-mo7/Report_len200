@@ -54,6 +54,7 @@ class ReportController extends Controller
     // withメソッドでリレーションを事前ロード
     $reports = Report::with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
     Log::debug($reports);
+
     return $reports;
   }
 }
