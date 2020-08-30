@@ -39640,7 +39640,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container--small" }, [
-    _c("h1", { staticClass: "title" }, [_vm._v("日 誌 一 覧")]),
+    _c("h1", { staticClass: "title" }, [_vm._v("日誌一覧")]),
     _vm._v(" "),
     _c("div", { staticClass: "report-list" }, [
       _c(

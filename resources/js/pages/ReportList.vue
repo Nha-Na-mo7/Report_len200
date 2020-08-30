@@ -1,6 +1,6 @@
 <template>
   <div class="container--small">
-    <h1 class="title">日 誌 一 覧</h1>
+    <h1 class="title">日誌一覧</h1>
     <div class="report-list">
       <div class="grid">
         <Report
