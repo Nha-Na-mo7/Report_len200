@@ -57395,7 +57395,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // パスとコンポーネントをマッピングする
 
 var routes = [{
-  path: '/reports/',
+  path: '/',
   component: _pages_ReportList_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
   path: '/login',

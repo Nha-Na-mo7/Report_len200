@@ -19,7 +19,7 @@ Vue.use(VueRouter)
 // パスとコンポーネントをマッピングする
 const routes = [
   {
-    path: '/reports/',
+    path: '/',
     component: ReportList
   },
   {
