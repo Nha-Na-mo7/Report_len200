@@ -59,7 +59,7 @@ const routes = [
     }
   },
   {
-    path: '/reports/:id',
+    path: '/reports/:report_id',
     component: ReportDetail,
     props: true
   },

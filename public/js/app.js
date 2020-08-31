@@ -2698,6 +2698,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util.js */ "./resources/js/util.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2750,8 +2761,87 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ReportDetail"
+  props: {
+    report_id: {
+      type: String,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      report: null,
+      content: null
+    };
+  },
+  methods: {
+    fetchReport: function fetchReport() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios.get("/api/reports/".concat(_this.report_id));
+
+              case 2:
+                response = _context.sent;
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _this.$store.commit('error/setErrorCode', response.status);
+
+                return _context.abrupt("return", false);
+
+              case 6:
+                _this.report = response.data;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  },
+  watch: {
+    $route: {
+      handler: function handler() {
+        var _this2 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return _this2.fetchReport();
+
+                case 2:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }))();
+      },
+      immediate: true
+    }
+  },
+  filters: {
+    moment: function moment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('YYYY年M月D日 HH時mm分');
+    }
+  }
 });
 
 /***/ }),
@@ -61124,7 +61214,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "report-detail" }, [
+      _c("h1", { staticClass: "report-detail__title" }, [
+        _vm._v(_vm._s(this.report.report_title))
+      ]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "report-detail__about" }, [
+        _vm._v(_vm._s(this.report.about))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "report-detail__info" }, [
+        _c("span", { staticClass: "report-detail__date" }, [
+          _vm._v(_vm._s(_vm._f("moment")(this.report.created_at)))
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "report-detail__username" }, [
+          _vm._v(_vm._s(this.report.owner.name))
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]),
     _vm._v(" "),
     _c("h2", { staticClass: "report-detail__commentTitle" }, [
       _vm._v("コメント")
@@ -61159,47 +61269,27 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "report-detail" }, [
-      _c("h1", { staticClass: "report-detail__title" }, [
-        _vm._v("Report Detail - メモアプリ -")
-      ]),
-      _vm._v(" "),
-      _c("h2", { staticClass: "report-detail__about" }, [
-        _vm._v("ここには副題が入ります。短ければ何も入りません。")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "report-detail__info" }, [
-        _c("span", { staticClass: "report-detail__date" }, [
-          _vm._v("記入日: 2020 08/28 16:56:46")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "report-detail__username" }, [
-          _vm._v("氏名: ユーザーネーム")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "report-detail__content-area" }, [
-        _c("span", { staticClass: "report-detail__content" }, [
-          _vm._v("或日の暮方の事である。"),
-          _c("br"),
-          _vm._v(
-            "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
-          ),
-          _c("br"),
-          _vm._v(
-            "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-          ),
-          _c("br"),
-          _vm._v(
-            "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
-          ),
-          _c("br"),
-          _vm._v(
-            "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-          ),
-          _c("br"),
-          _vm._v("それが、この男の外には誰もゐない。")
-        ])
+    return _c("div", { staticClass: "report-detail__content-area" }, [
+      _c("span", { staticClass: "report-detail__content" }, [
+        _vm._v("或日の暮方の事である。"),
+        _c("br"),
+        _vm._v(
+          "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
+        ),
+        _c("br"),
+        _vm._v(
+          "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+        ),
+        _c("br"),
+        _vm._v(
+          "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
+        ),
+        _c("br"),
+        _vm._v(
+          "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
+        ),
+        _c("br"),
+        _vm._v("それが、この男の外には誰もゐない。")
       ])
     ])
   },
@@ -78639,7 +78729,7 @@ var routes = [{
     }
   }
 }, {
-  path: '/reports/:id',
+  path: '/reports/:report_id',
   component: _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   props: true
 }, {

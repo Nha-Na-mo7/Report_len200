@@ -2,11 +2,11 @@
   <div class="container">
 
     <div class="report-detail">
-      <h1 class="report-detail__title">Report Detail - メモアプリ -</h1>
-      <h2 class="report-detail__about">ここには副題が入ります。短ければ何も入りません。</h2>
+      <h1 class="report-detail__title">{{ this.report.report_title }}</h1>
+      <h2 class="report-detail__about">{{ this.report.about }}</h2>
       <div class="report-detail__info">
-        <span class="report-detail__date">記入日: 2020 08/28 16:56:46</span>
-        <span class="report-detail__username">氏名: ユーザーネーム</span>
+        <span class="report-detail__date">{{ this.report.created_at | moment }}</span>
+        <span class="report-detail__username">{{ this.report.owner.name }}</span>
       </div>
       <div class="report-detail__content-area">
         <span class="report-detail__content">或日の暮方の事である。<br>
@@ -51,8 +51,48 @@
 </template>
 
 <script>
+import { OK } from '../../util.js';
+import moment from 'moment';
+
+
 export default {
-name: "ReportDetail"
+  props: {
+    report_id: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return{
+      report: null,
+      content: null
+    }
+  },
+  methods: {
+    async fetchReport() {
+      const response = await axios.get(`/api/reports/${this.report_id}`);
+
+      if (response.status !== OK) {
+        this.$store.commit('error/setErrorCode', response.status);
+        return false
+      }
+      this.report = response.data
+
+    }
+  },
+  watch: {
+    $route: {
+      async handler() {
+        await this.fetchReport()
+      },
+      immediate: true
+    }
+  },
+  filters: {
+    moment: function (date) {
+      return moment(date).format('YYYY年M月D日 HH時mm分')
+    }
+  }
 }
 </script>
 

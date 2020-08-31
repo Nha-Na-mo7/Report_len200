@@ -57,6 +57,21 @@ class ReportController extends Controller
 
     return $reports;
   }
+
+  
+  /**
+   * 日誌詳細の取得
+   */
+  public function show(string $report_id)
+  {
+    Log::debug('ReportController : show : 日誌詳細取得');
+    // withメソッドでリレーションを事前ロード
+    // whereを使って事前にレポートIDで絞り込みをする
+    $reports = Report::where('id', $report_id)->with(['owner'])->first();
+    Log::debug($reports);
+
+    return $reports ?? abort(404);
+  }
 }
 // // バリデーション
 // public function create(DrillRequest $request)

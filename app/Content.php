@@ -12,7 +12,7 @@ class Content extends Model
      * リレーション - reportsテーブル
      * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function reports()
+    public function author()
     {
       return $this->belongsTo('App\Report', 'report_id', 'id', 'reports');
     }
