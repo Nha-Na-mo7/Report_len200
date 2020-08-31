@@ -8,7 +8,12 @@ class Content extends Model
 {
     protected $fillable = ['content'];
   
-  /**
+    /** JSONに含める属性 */
+    protected $visible = [
+        'author', 'content'
+    ];
+    
+    /**
      * リレーション - reportsテーブル
      * @returns \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

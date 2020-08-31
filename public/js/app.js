@@ -2756,11 +2756,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2772,8 +2767,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      report: null,
-      content: null
+      report: null
     };
   },
   methods: {
@@ -61233,14 +61227,18 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "report-detail__content-area" }, [
+        _c("span", { staticClass: "report-detail__content" }, [
+          _vm._v(_vm._s(this.report.contents.content))
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("h2", { staticClass: "report-detail__commentTitle" }, [
       _vm._v("コメント")
     ]),
     _vm._v(" "),
-    _vm._m(1),
+    _vm._m(0),
     _vm._v(" "),
     _c("h2", { staticClass: "report-detail__commentTitle" }, [
       _vm._v("投稿する")
@@ -61259,40 +61257,12 @@ var render = function() {
       [
         _c("textarea", { staticClass: "form__item form__textarea" }),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(1)
       ]
     )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "report-detail__content-area" }, [
-      _c("span", { staticClass: "report-detail__content" }, [
-        _vm._v("或日の暮方の事である。"),
-        _c("br"),
-        _vm._v(
-          "\n        一人の下人が、羅生門の下で雨やみを待つてゐた。\n        廣い門の下には、この男の外に誰もゐない。唯、所々丹塗の剥げた、大きな圓柱に、蟋蟀が一匹とまつてゐる。"
-        ),
-        _c("br"),
-        _vm._v(
-          "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-        ),
-        _c("br"),
-        _vm._v(
-          "\n        それが、この男の外には誰もゐない。一匹とまつてゐる。"
-        ),
-        _c("br"),
-        _vm._v(
-          "\n        羅生門が、朱雀大路にある以上は、この男の外にも、雨やみをする市女笠や揉烏帽子が、もう二三人にんはありさうなものである。"
-        ),
-        _c("br"),
-        _vm._v("それが、この男の外には誰もゐない。")
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
