@@ -20,7 +20,7 @@ class Report extends Model
   
     /** JSONに含める属性 */
     protected $visible = [
-        'id', 'owner', 'created_at', 'report_title', 'about', 'contents'
+        'id', 'owner', 'created_at', 'report_title', 'about', 'contents', 'comments'
     ];
 
     

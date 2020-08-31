@@ -19,7 +19,6 @@ class ReportDetailApiTest extends TestCase
     {
       factory(Report::class)->create();
       $report = Report::first();
-      Log::debug('huhuhu: '.$report->id);
       
       $response = $this->json('GET', route('report.show', ['report_id' => $report->id]));
       
@@ -29,7 +28,18 @@ class ReportDetailApiTest extends TestCase
               'owner' => [
                   'name' => $report->owner->name,
               ],
-              'report_title' => $report->report_title
+              'report_title' => $report->report_title,
+              'comments' => $report->comments
+                  ->sortByDesc('id')
+                  ->map(function ($comment) {
+                    return [
+                        'author' => [
+                            'name' => $comment->author->name,
+                        ],
+                        'content' => $comment->content,
+                    ];
+                  })
+                  ->all(),
           ]);
     }
   

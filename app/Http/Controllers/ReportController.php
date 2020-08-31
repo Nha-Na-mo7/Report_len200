@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Content;
 use App\Http\Requests\CreateReport;
+use App\Http\Requests\StoreComment;
 use App\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,9 +35,9 @@ class ReportController extends Controller
     $report->id = $keep_id;
     Log::debug($report->id);
   
-    Log::debug('id : '.$report->id);
-    Log::debug('user_id : '.$report->user_id);
-    Log::debug('report_title : '.$report->report_title);
+    Log::debug('create : id : '.$report->id);
+    Log::debug('create : user_id : '.$report->user_id);
+    Log::debug('create : report_title : '.$report->report_title);
     
     // contentsテーブルへ本文を格納
     $content->report_id = $report->id;
@@ -53,7 +55,6 @@ class ReportController extends Controller
     Log::debug('ReportController : index : 日誌一覧取得');
     // withメソッドでリレーションを事前ロード
     $reports = Report::with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
-    Log::debug($reports);
 
     return $reports;
   }
@@ -67,9 +68,33 @@ class ReportController extends Controller
     Log::debug('ReportController : show : 日誌詳細取得');
     // withメソッドでリレーションを事前ロード
     // whereを使って事前にレポートIDで絞り込みをする
-    $reports = Report::where('id', $report_id)->with(['owner', 'contents'])->first();
+    $reports = Report::where('id', $report_id)->with(['owner', 'contents', 'comments.author'])->first();
 
     return $reports ?? abort(404);
+  }
+  
+  /**
+   * 日誌へコメントを投稿
+   * @param Report $report
+   * @param StoreComment $request
+   * @return \Illuminate\Http\Response
+   */
+  public function addComment(Report $report, StoreComment $request)
+  {
+    Log::debug('ReportController : addComment : 日誌へコメントを投稿');
+    Log::debug('addComment :Auth::user()->id : '.Auth::user()->id);
+    Log::debug('addComment :$request : '.$request->get('comment'));
+    
+    $comment = new Comment();
+    $comment->comment = $request->get('comment');
+    $comment->user_id = Auth::user()->id;
+    $report->comments()->save($comment);
+  
+    //authorリレーションをロードするためにコメントを取得し直す
+    $new_comment = Comment::where('id', $comment->id)->with('author')->first();
+    Log::debug('new_comment : '.$new_comment);
+  
+    return response($new_comment, 201);
   }
 }
 // // バリデーション

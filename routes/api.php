@@ -39,3 +39,6 @@ Route::get('/reports', 'ReportController@index')->name('report.index');
 
 //レポート詳細取得
 Route::get('/reports/{report_id}', 'ReportController@show')->name('report.show');
+
+//コメントの投稿
+Route::post('/reports/{report_id}/comments', 'ReportController@addComment')->name('report.comment');
