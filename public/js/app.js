@@ -2705,10 +2705,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_2__);
 
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2767,8 +2787,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      report: null
+      report: null,
+      commentContent: '',
+      commentErrors: null
     };
+  },
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/loginCheck'];
+    }
   },
   methods: {
     fetchReport: function fetchReport() {
@@ -2805,35 +2832,90 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    // コメント投稿
+    addComment: function addComment() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.post("/api/reports/".concat(_this2.report_id, "/comments"), {
+                  content: _this2.commentContent
+                });
+
+              case 2:
+                response = _context2.sent;
+
+                if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context2.next = 6;
+                  break;
+                }
+
+                _this2.commentErrors = response.data.errors;
+                return _context2.abrupt("return", false);
+
+              case 6:
+                // 投稿フォームクリア
+                _this2.commentContent = ''; // エラーメッセージクリア
+
+                _this2.commentErrors = null; // その他エラー(201以外の何かの時)
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+                  _context2.next = 11;
+                  break;
+                }
+
+                _this2.$store.commit('error/setErrorCode', response.status);
+
+                return _context2.abrupt("return", false);
+
+              case 11:
+                _this2.report.comments = [response.data].concat(_toConsumableArray(_this2.report.comments));
+
+              case 12:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   watch: {
     $route: {
       handler: function handler() {
-        var _this2 = this;
+        var _this3 = this;
 
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
             while (1) {
-              switch (_context2.prev = _context2.next) {
+              switch (_context3.prev = _context3.next) {
                 case 0:
-                  _context2.next = 2;
-                  return _this2.fetchReport();
+                  _context3.next = 2;
+                  return _this3.fetchReport();
 
                 case 2:
                 case "end":
-                  return _context2.stop();
+                  return _context3.stop();
               }
             }
-          }, _callee2);
+          }, _callee3);
         }))();
       },
       immediate: true
     }
   },
   filters: {
-    moment: function moment(date) {
+    moment_report: function moment_report(date) {
       return moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('YYYY年M月D日 HH時mm分');
+    },
+    moment_comment: function moment_comment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_2___default()(date).format('YYYY/M/D HH:mm');
     }
   }
 });
@@ -61219,7 +61301,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "report-detail__info" }, [
         _c("span", { staticClass: "report-detail__date" }, [
-          _vm._v(_vm._s(_vm._f("moment")(this.report.created_at)))
+          _vm._v(_vm._s(_vm._f("moment_report")(this.report.created_at)))
         ]),
         _vm._v(" "),
         _c("span", { staticClass: "report-detail__username" }, [
@@ -61238,28 +61320,81 @@ var render = function() {
       _vm._v("コメント")
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _vm.report.comments.length > 0
+      ? _c(
+          "ul",
+          { staticClass: "report-detail__comments" },
+          _vm._l(_vm.report.comments, function(comment) {
+            return _c(
+              "li",
+              {
+                key: comment.comment,
+                staticClass: "report-detail__commentItem"
+              },
+              [
+                _c("p", { staticClass: "report-detail__commentText" }, [
+                  _vm._v("\n        " + _vm._s(comment.comment) + "\n      ")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "report-detail__commentInfo" }, [
+                  _vm._v(
+                    "\n        " + _vm._s(comment.author.name) + "\n        "
+                  ),
+                  _c("span", { staticClass: "report-detail__date" }, [
+                    _vm._v(_vm._s(_vm._f("moment_comment")(comment.created_at)))
+                  ])
+                ])
+              ]
+            )
+          }),
+          0
+        )
+      : _c("ul", { staticClass: "report-detail__comments" }, [_vm._m(0)]),
     _vm._v(" "),
-    _c("h2", { staticClass: "report-detail__commentTitle" }, [
-      _vm._v("投稿する")
-    ]),
+    _vm.isLogin
+      ? _c("h2", { staticClass: "report-detail__commentTitle" }, [
+          _vm._v("投稿する")
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c(
-      "form",
-      {
-        staticClass: "form",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-          }
-        }
-      },
-      [
-        _c("textarea", { staticClass: "form__item form__textarea" }),
-        _vm._v(" "),
-        _vm._m(1)
-      ]
-    )
+    _vm.isLogin
+      ? _c(
+          "form",
+          {
+            staticClass: "form",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.addComment($event)
+              }
+            }
+          },
+          [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.commentContent,
+                  expression: "commentContent"
+                }
+              ],
+              staticClass: "form__item form__textarea",
+              domProps: { value: _vm.commentContent },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.commentContent = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(1)
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -61267,35 +61402,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "report-detail__comments" }, [
-      _c("li", { staticClass: "report-detail__commentItem" }, [
-        _c("p", { staticClass: "report-detail__commentText" }, [
-          _vm._v("\n        草"),
-          _c("br"),
-          _vm._v("\n      何がしたいのか")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "report-detail__commentInfo" }, [
-          _vm._v("やきう 2020/08/26 15:25")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "report-detail__commentItem" }, [
-        _c("p", { staticClass: "report-detail__commentText" }, [
-          _vm._v("は？")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "report-detail__commentInfo" }, [
-          _vm._v("投稿主 2020/08/26 15:25")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "report-detail__commentItem" }, [
-        _c("p", { staticClass: "report-detail__commentText" }, [_vm._v("334")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "report-detail__commentInfo" }, [
-          _vm._v("2161667676 2020/08/26 15:25")
-        ])
+    return _c("li", { staticClass: "report-detail__commentItem" }, [
+      _c("p", { staticClass: "report-detail__commentText u-glay" }, [
+        _vm._v("\n        ( コメントは投稿されていません )\n      ")
       ])
     ])
   },
@@ -61304,9 +61413,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form__btn" }, [
-      _c("button", { staticClass: "btn btn--inverse" }, [
-        _vm._v("コメントを送信")
-      ])
+      _c(
+        "button",
+        { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
+        [_vm._v("コメントを送信")]
+      )
     ])
   }
 ]
@@ -78011,15 +78122,14 @@ window.axios.interceptors.response.use(function (response) {
 /*!********************************************!*\
   !*** ./resources/js/components/Footer.vue ***!
   \********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Footer_vue_vue_type_template_id_61a7c374___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.vue?vue&type=template&id=61a7c374& */ "./resources/js/components/Footer.vue?vue&type=template&id=61a7c374&");
 /* harmony import */ var _Footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Footer.vue?vue&type=script&lang=js& */ "./resources/js/components/Footer.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -78049,7 +78159,7 @@ component.options.__file = "resources/js/components/Footer.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Footer.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

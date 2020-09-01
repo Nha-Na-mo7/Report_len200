@@ -88,6 +88,7 @@ class ReportController extends Controller
     $comment = new Comment();
     $comment->comment = $request->get('comment');
     $comment->user_id = Auth::user()->id;
+    $comment->report_id = $request->get('id');
     $report->comments()->save($comment);
   
     //authorリレーションをロードするためにコメントを取得し直す

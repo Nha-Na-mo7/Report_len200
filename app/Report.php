@@ -81,7 +81,7 @@ class Report extends Model
      */
     public function comments()
     {
-      return $this->hasMany('App\Comment')->orderBy('id', 'desc');
+      return $this->hasMany('App\Comment')->orderBy('created_at', 'asc');
     }
   
     /**

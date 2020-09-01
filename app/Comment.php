@@ -8,7 +8,7 @@ class Comment extends Model
 {
     /** jsonに含める属性 */
     protected $visible = [
-        'author', 'comment',
+        'author', 'comment', 'created_at'
     ];
     
     //
