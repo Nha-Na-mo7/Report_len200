@@ -2873,7 +2873,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return", false);
 
               case 11:
-                _this2.report.comments = [response.data].concat(_toConsumableArray(_this2.report.comments));
+                // response.dataが一番後ろに表示されるよう設定
+                _this2.report.comments = [].concat(_toConsumableArray(_this2.report.comments), [response.data]);
 
               case 12:
               case "end":

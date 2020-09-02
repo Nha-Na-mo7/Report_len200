@@ -103,9 +103,10 @@ export default {
         this.$store.commit('error/setErrorCode', response.status)
         return false
       }
+      // response.dataが一番後ろに表示されるよう設定
       this.report.comments = [
-          response.data,
-          ...this.report.comments
+        ...this.report.comments,
+        response.data
       ]
 
     }
