@@ -41,4 +41,4 @@ Route::get('/reports', 'ReportController@index')->name('report.index');
 Route::get('/reports/{report_id}', 'ReportController@show')->name('report.show');
 
 //コメントの投稿
-Route::post('/reports/{report_id}/comments', 'ReportController@addComment')->name('report.comment');
+Route::post('/reports/{report}/comments', 'ReportController@addComment')->name('report.comment');

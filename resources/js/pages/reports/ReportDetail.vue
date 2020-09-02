@@ -42,8 +42,6 @@
     <!--コメント投稿フォーム-->
     <h2 v-if="isLogin" class="report-detail__commentTitle">投稿する</h2>
     <form v-if="isLogin" @submit.prevent="addComment" class="form">
-
-
       <textarea class="form__item form__textarea" v-model="commentContent"></textarea>
       <div class="form__btn">
         <button type="submit" class="btn btn--inverse">コメントを送信</button>
@@ -89,7 +87,7 @@ export default {
     // コメント投稿
     async addComment() {
       const response = await axios.post(`/api/reports/${this.report_id}/comments`, {
-        content: this.commentContent
+        comment: this.commentContent
       })
       // バリデーション
       if(response.status === UNPROCESSABLE_ENTITY) {

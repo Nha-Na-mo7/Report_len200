@@ -23,7 +23,7 @@ class ReportController extends Controller
   /**
    * 日誌投稿
    */
-  public function create(Request $request)
+  public function create(CreateReport $request)
   {
     Log::debug('ReportController : create : 日誌作成');
     $report = new Report();
@@ -83,12 +83,11 @@ class ReportController extends Controller
   {
     Log::debug('ReportController : addComment : 日誌へコメントを投稿');
     Log::debug('addComment :Auth::user()->id : '.Auth::user()->id);
-    Log::debug('addComment :$request : '.$request->get('comment'));
+    Log::debug('addComment :リクエスト $request->get("comment") : '.$request->comment);
     
     $comment = new Comment();
     $comment->comment = $request->get('comment');
     $comment->user_id = Auth::user()->id;
-    $comment->report_id = $request->get('id');
     $report->comments()->save($comment);
   
     //authorリレーションをロードするためにコメントを取得し直す

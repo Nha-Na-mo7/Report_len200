@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Comment;
 use App\Report;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -17,10 +18,14 @@ class ReportDetailApiTest extends TestCase
      */
     public function _日誌詳細ページ、正しいJSONがレスポンスされる()
     {
-      factory(Report::class)->create();
+      factory(Report::class)->create()->each(function ($report) {
+        $report->comments()->saveMany(factory(Comment::class, 3)->make());
+      });;
       $report = Report::first();
       
-      $response = $this->json('GET', route('report.show', ['report_id' => $report->id]));
+      $response = $this->json('GET', route('report.show', [
+          'report_id' => $report->id,
+      ]));
       
       $response->assertStatus(200)
           ->assertJsonFragment([

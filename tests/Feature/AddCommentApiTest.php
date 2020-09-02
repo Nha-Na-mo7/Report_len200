@@ -32,15 +32,12 @@ class AddCommentApiTest extends TestCase
       factory(Report::class)->create();
       $report = Report::first();
   
-      $comment = 'これはsample comment です';
-      Log::debug('投稿用のサンプルコメントを用意します : '.$comment);
+      $sample = 'これはsample comment です';
   
       $response = $this->actingAs($this->user)
           ->json('POST', route('report.comment', [
-              'report_id' => $report->id,
-          ]), compact('comment'));
-      Log::debug('そしてルーティングの通りにAPIにアクセスします。');
-
+              'report' => $report->id,
+          ]), compact('sample'));
       
       $comments = $report->comments()->get();
       Log::debug('getしたcommentsを変数に入れます : '.$comments);
@@ -51,13 +48,13 @@ class AddCommentApiTest extends TestCase
               'author' => [
                   'name' => $this->user->name,
               ],
-              'comment' => $comment
+              'comment' => $sample
           ]);
       
       // DBにコメントが1件登録されていること
       $this->assertEquals(1, $comments->count());
       // その内容がAPIによってリクエストしたものであること
-      $this->assertEquals($comment, $comments[0]->comment);
+      $this->assertEquals($sample, $comments[0]->comment);
       
     }
 }

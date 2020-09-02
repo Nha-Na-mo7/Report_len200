@@ -11,15 +11,15 @@ class Comment extends Model
         'author', 'comment', 'created_at'
     ];
     
-    //
-    // /**
-    //  * リレーション - reportsテーブル
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  */
-    // public function reports()
-    // {
-    //   return $this->belongsTo('App\Report', 'report_id', 'id', 'reports');
-    // }
+    
+    /**
+     * リレーション - reportsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function reports()
+    {
+      return $this->belongsTo('App\Report', 'report_id', 'id', 'reports');
+    }
     
     /**
      * リレーション - usersテーブル

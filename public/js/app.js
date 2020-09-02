@@ -2774,8 +2774,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2845,7 +2843,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context2.next = 2;
                 return axios.post("/api/reports/".concat(_this2.report_id, "/comments"), {
-                  content: _this2.commentContent
+                  comment: _this2.commentContent
                 });
 
               case 2:
