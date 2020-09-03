@@ -79,6 +79,10 @@ const routes = [
 // VueRouterインスタンスの作成
 const router = new VueRouter({
   mode: 'history',
+  // ページ遷移時のスクロール位置
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  },
   routes
 });
 
