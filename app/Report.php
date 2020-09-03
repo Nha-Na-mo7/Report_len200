@@ -24,7 +24,7 @@ class Report extends Model
     ];
   
     // ページネーションで表示させる数
-    protected $perPage = 6;
+    protected $perPage = 10;
     
     //日誌IDの桁数
     const ID_LENGTH = 16;
