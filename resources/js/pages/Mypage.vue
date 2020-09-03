@@ -52,6 +52,7 @@ export default {
         this.$store.commit('error/setErrorCode', response.status)
         return false
       }
+      console.log(response.data.data)
 
       this.reports = response.data.data;
     }

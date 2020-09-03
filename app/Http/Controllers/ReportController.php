@@ -50,12 +50,22 @@ class ReportController extends Controller
   /**
    * 日誌一覧の取得
    */
-  public function index()
+  public function index($user_id = null)
   {
     Log::debug('ReportController : index : 日誌一覧取得');
+    // 引数に指定がなかった場合、全ての日誌一覧を取得する
+    if($user_id == null) {
+      Log::debug('日誌一覧取得 : 引数オプショナルの場合(全部取得)');
+      // withメソッドでリレーションを事前ロード
+      $reports = Report::with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
+  
+      return $reports;
+    }
+    Log::debug('日誌一覧取得 : $user_idがある場合');
     // withメソッドでリレーションを事前ロード
-    $reports = Report::with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
-
+    $reports = Report::where('user_id', $user_id)->with(['owner'])->orderBy(Report::CREATED_AT, 'desc')->paginate();
+  
+  
     return $reports;
   }
 
