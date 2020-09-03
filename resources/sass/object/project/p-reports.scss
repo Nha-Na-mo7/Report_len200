@@ -31,6 +31,7 @@
   margin-bottom: $space_xl;
   padding: 0.5em 0.75em;
   position: relative;
+  overflow: hidden;
   &__main {
     font-size: 1.1rem;
     border-bottom: 1px solid $font-color_dark;
@@ -46,7 +47,7 @@
     }
   }
   &__title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: $font-color_dark;
     border-bottom: 1px solid $font-color_dark;
     padding: $space_s $space_m;

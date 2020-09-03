@@ -403,6 +403,7 @@ main {
   margin-bottom: 20px;
   padding: 0.5em 0.75em;
   position: relative;
+  overflow: hidden;
 }
 
 .reports:nth-child(4n+1) {
@@ -434,7 +435,7 @@ main {
 }
 
 .reports__title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #222;
   border-bottom: 1px solid #222;
   padding: 5px 10px;
