@@ -34,6 +34,9 @@ Route::post('/reports', 'ReportController@create')->name('report.create');
 //レポート一覧を取得するAPI
 Route::get('/reports', 'ReportController@index')->name('report.index');
 
+//指定ユーザーのレポート一覧を取得するAPI
+Route::get('/mypage/reports/{user_id}', 'ReportController@index')->name('report.mypage_index');
+
 //レポートを削除するAPI
 // Route::delete('/reports', 'ReportController@delete')->name('report.delete');
 

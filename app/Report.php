@@ -22,7 +22,9 @@ class Report extends Model
     protected $visible = [
         'id', 'owner', 'created_at', 'report_title', 'about', 'contents', 'comments'
     ];
-
+  
+    // ページネーションで表示させる数
+    protected $perPage = 6;
     
     //日誌IDの桁数
     const ID_LENGTH = 16;
