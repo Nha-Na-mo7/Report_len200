@@ -2111,6 +2111,11 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
+  data: function data() {
+    return {
+      currentPath: this.$route.path
+    };
+  },
   computed: {
     isFirstPage: function isFirstPage() {
       return this.currentPage === 1;
@@ -60674,7 +60679,7 @@ var render = function() {
             "RouterLink",
             {
               staticClass: "btn",
-              attrs: { to: "/?page=" + (_vm.currentPage - 1) }
+              attrs: { to: this.currentPath + "?page=" + (_vm.currentPage - 1) }
             },
             [_vm._v("« PREV")]
           )
@@ -60685,7 +60690,7 @@ var render = function() {
             "RouterLink",
             {
               staticClass: "btn",
-              attrs: { to: "/?page=" + (_vm.currentPage + 1) }
+              attrs: { to: this.currentPath + "?page=" + (_vm.currentPage + 1) }
             },
             [_vm._v("NEXT »")]
           )

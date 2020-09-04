@@ -2,12 +2,12 @@
   <div class="pagination">
     <RouterLink
         v-if="! isFirstPage"
-        :to="`/?page=${currentPage - 1}`"
+        :to="`${this.currentPath}?page=${currentPage - 1}`"
         class="btn"
     >&laquo; PREV</RouterLink>
     <RouterLink
         v-if="! isLastPage"
-        :to="`/?page=${currentPage + 1}`"
+        :to="`${this.currentPath}?page=${currentPage + 1}`"
         class="btn"
     >NEXT &raquo;</RouterLink>
   </div>
@@ -23,6 +23,11 @@ export default {
     lastPage: {
       type: Number,
       required: true
+    }
+  },
+  data(){
+    return {
+      currentPath: this.$route.path
     }
   },
   computed: {
