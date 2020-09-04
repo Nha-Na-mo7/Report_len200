@@ -47,7 +47,6 @@ export default {
   },
   methods: {
     async submit () {
-      console.log('New.vue : async submit()');
       const response = await axios.post('../api/reports', this.reportForm);
 
       // バリデーションエラー

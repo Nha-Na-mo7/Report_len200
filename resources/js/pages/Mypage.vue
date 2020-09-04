@@ -25,6 +25,8 @@
             />
           </div>
         </div>
+        <Pagination :current-page="currentPage" :last-page="lastPage"></Pagination>
+
       </div>
     </div>
   </div>
@@ -33,19 +35,31 @@
 <script>
 import { OK } from '../util.js';
 import Report from "./reports/Report.vue";
+import Pagination from "../components/Pagination.vue";
+
 
 export default {
+  props: {
+    page: {
+      type: Number,
+      required: false,
+      default: 1
+    }
+  },
   components: {
-    Report
+    Report,
+    Pagination
   },
   data() {
     return {
-      reports: []
+      reports: [],
+      currentPage: 0,
+      lastPage: 0
     }
   },
   methods: {
     async fetchReports() {
-      const response = await axios.get('/api/reports');
+      const response = await axios.get(`/api/reports/?page=${this.page}`);
 
       //エラー時
       if (response.status !== OK) {
@@ -55,6 +69,9 @@ export default {
       console.log(response.data.data)
 
       this.reports = response.data.data;
+      this.currentPage = response.data.current_page
+      this.lastPage = response.data.last_page
+
     }
   },
   watch: {

@@ -51,6 +51,13 @@ const routes = [
       } else {
         next('/login')
       }
+    },
+    props: route => {
+      const page = route.query.page
+      return {
+        // 整数でない値を1扱いにする
+        page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
+      }
     }
   },
   {

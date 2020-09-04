@@ -2322,6 +2322,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util.js */ "./resources/js/util.js");
 /* harmony import */ var _reports_Report_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reports/Report.vue */ "./resources/js/pages/reports/Report.vue");
+/* harmony import */ var _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Pagination.vue */ "./resources/js/components/Pagination.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2360,15 +2361,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    page: {
+      type: Number,
+      required: false,
+      "default": 1
+    }
+  },
   components: {
-    Report: _reports_Report_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Report: _reports_Report_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Pagination: _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
-      reports: []
+      reports: [],
+      currentPage: 0,
+      lastPage: 0
     };
   },
   methods: {
@@ -2382,7 +2396,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get('/api/reports');
+                return axios.get("/api/reports/?page=".concat(_this.page));
 
               case 2:
                 response = _context.sent;
@@ -2399,8 +2413,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 6:
                 console.log(response.data.data);
                 _this.reports = response.data.data;
+                _this.currentPage = response.data.current_page;
+                _this.lastPage = response.data.last_page;
 
-              case 8:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -2660,24 +2676,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('New.vue : async submit()');
-                _context.next = 3;
+                _context.next = 2;
                 return axios.post('../api/reports', _this.reportForm);
 
-              case 3:
+              case 2:
                 response = _context.sent;
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 7;
+                  _context.next = 6;
                   break;
                 }
 
                 _this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 7:
+              case 6:
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 10;
+                  _context.next = 9;
                   break;
                 }
 
@@ -2685,11 +2700,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 10:
+              case 9:
                 // 投稿後にその詳細ページへ遷移させる
                 _this.$router.push("/reports/".concat(response.data.id));
 
-              case 11:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -61062,24 +61077,36 @@ var render = function() {
     _c("div", { staticClass: "mypage__container" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "mypage__containerReports" }, [
-        _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "report-list" }, [
-          _c(
-            "div",
-            { staticClass: "grid" },
-            _vm._l(_vm.reports, function(report) {
-              return _c("Report", {
-                key: report.id,
-                staticClass: "report__item",
-                attrs: { item: report }
-              })
-            }),
-            1
-          )
-        ])
-      ])
+      _c(
+        "div",
+        { staticClass: "mypage__containerReports" },
+        [
+          _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "report-list" }, [
+            _c(
+              "div",
+              { staticClass: "grid" },
+              _vm._l(_vm.reports, function(report) {
+                return _c("Report", {
+                  key: report.id,
+                  staticClass: "report__item",
+                  attrs: { item: report }
+                })
+              }),
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("Pagination", {
+            attrs: {
+              "current-page": _vm.currentPage,
+              "last-page": _vm.lastPage
+            }
+          })
+        ],
+        1
+      )
     ])
   ])
 }
@@ -78994,6 +79021,13 @@ var routes = [{
     } else {
       next('/login');
     }
+  },
+  props: function props(route) {
+    var page = route.query.page;
+    return {
+      // 整数でない値を1扱いにする
+      page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
+    };
   }
 }, {
   path: '/reports/new',
