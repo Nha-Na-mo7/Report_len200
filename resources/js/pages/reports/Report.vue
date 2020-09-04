@@ -5,14 +5,14 @@
       <span class="reports__username">{{ item.owner.name }}</span>
     </div>
     <h2 class="reports__title">{{ item.report_title }}</h2>
-    <RouterLink
-        class="report__overlay"
-        :to="`/reports/${item.id}`"
-        :title="`{{${item.report_title}}}`"
-    >
-    </RouterLink>
     <p class="reports__about--title">about...</p>
     <p class="reports__about">{{ item.about }}</p>
+    <RouterLink
+    class="report__overlay"
+    :to="`/reports/${item.id}`"
+    :title="`${item.report_title}`"
+    >
+    </RouterLink>
   </div>
 
 

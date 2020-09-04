@@ -439,6 +439,7 @@ main {
   color: #222;
   border-bottom: 1px solid #222;
   padding: 5px 10px;
+  text-decoration: none;
 }
 
 .reports__title :hover {
@@ -450,11 +451,32 @@ main {
   font-size: 1.2rem;
   line-height: 2rem;
   white-space: pre-wrap;
+  text-decoration: none;
 }
 
 .reports__about--title {
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.report__overlay {
+  background: #a4c3ff;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  opacity: 0;
+}
+
+.report__overlay:hover {
+  opacity: 0.3;
 }
 
 .report-detail {

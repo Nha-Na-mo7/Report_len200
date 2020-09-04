@@ -61404,19 +61404,19 @@ var render = function() {
         _vm._v(_vm._s(_vm.item.report_title))
       ]),
       _vm._v(" "),
-      _c("RouterLink", {
-        staticClass: "report__overlay",
-        attrs: {
-          to: "/reports/" + _vm.item.id,
-          title: "{{" + _vm.item.report_title + "}}"
-        }
-      }),
-      _vm._v(" "),
       _c("p", { staticClass: "reports__about--title" }, [_vm._v("about...")]),
       _vm._v(" "),
       _c("p", { staticClass: "reports__about" }, [
         _vm._v(_vm._s(_vm.item.about))
-      ])
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", {
+        staticClass: "report__overlay",
+        attrs: {
+          to: "/reports/" + _vm.item.id,
+          title: "" + _vm.item.report_title
+        }
+      })
     ],
     1
   )
