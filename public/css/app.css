@@ -461,11 +461,6 @@ main {
 
 .report__overlay {
   background: #a4c3ff;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
   transition: all 0.5s;
   padding: 1rem;
   position: absolute;

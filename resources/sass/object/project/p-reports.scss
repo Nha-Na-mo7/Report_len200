@@ -114,15 +114,6 @@
 //
 .report__overlay {
   background: rgb(164, 195, 255);
-  color: #fff;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  text-decoration: none;
   transition: all 0.5s;
   padding: 1rem;
   position: absolute;
