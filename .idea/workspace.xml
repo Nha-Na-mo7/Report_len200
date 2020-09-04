@@ -22,9 +22,7 @@
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +212,7 @@
       <workItem from="1598497532461" duration="37420000" />
       <workItem from="1598884105881" duration="523000" />
       <workItem from="1598884955022" duration="16699000" />
-      <workItem from="1599162699374" duration="7473000" />
+      <workItem from="1599162699374" duration="7923000" />
     </task>
     <servers />
   </component>

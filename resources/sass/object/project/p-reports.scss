@@ -114,7 +114,6 @@
 //
 .report__overlay {
   background: rgb(164, 195, 255);
-  bottom: 0;
   color: #fff;
   display: -webkit-box;
   display: flex;
@@ -123,12 +122,14 @@
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  left: 0;
+  text-decoration: none;
+  transition: all 0.5s;
   padding: 1rem;
   position: absolute;
+  left: 0;
   right: 0;
-  text-decoration: none;
   top: 0;
+  bottom: 0;
   opacity: 0;
   &:hover {
     opacity: 0.3;
