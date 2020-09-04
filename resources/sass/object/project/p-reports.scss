@@ -213,7 +213,6 @@
     }
     padding: $space_m 0;
     border-bottom: 1px solid $font-color_dark;
-
     .icon {
       margin-right: 0.5em;
     }
@@ -257,6 +256,7 @@
     &Title {
       font-weight: bold;
       font-size: 1.6rem;
+      margin-bottom: $space_l;
     }
     &Item {
       border-bottom: 1px solid #dedede;

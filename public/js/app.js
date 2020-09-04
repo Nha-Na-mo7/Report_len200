@@ -2401,7 +2401,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get("/api/reports/?page=".concat(_this.page));
+                return axios.get("/api/reports/?page=".concat(_this.page), {
+                  user_id: 2
+                });
 
               case 2:
                 response = _context.sent;
@@ -2857,6 +2859,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2876,6 +2879,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {
     isLogin: function isLogin() {
       return this.$store.getters['auth/loginCheck'];
+    },
+    content_length: function content_length() {
+      return this.commentContent.length;
     }
   },
   methods: {
@@ -61507,9 +61513,11 @@ var render = function() {
     _vm._v(" "),
     _vm.isLogin
       ? _c("h2", { staticClass: "report-detail__commentTitle" }, [
-          _vm._v("投稿する")
+          _vm._v("投稿する (250字以内)")
         ])
       : _vm._e(),
+    _vm._v(" "),
+    _c("span", [_vm._v(_vm._s(_vm.content_length) + " / 250")]),
     _vm._v(" "),
     _vm.isLogin
       ? _c(

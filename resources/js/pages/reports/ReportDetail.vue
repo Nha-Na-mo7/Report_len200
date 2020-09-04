@@ -40,7 +40,8 @@
     </ul>
 
     <!--コメント投稿フォーム-->
-    <h2 v-if="isLogin" class="report-detail__commentTitle">投稿する</h2>
+    <h2 v-if="isLogin" class="report-detail__commentTitle">投稿する (250字以内)</h2>
+    <span>{{ content_length }} / 250</span>
     <form v-if="isLogin" @submit.prevent="addComment" class="form">
       <textarea class="form__item form__textarea" v-model="commentContent"></textarea>
       <div class="form__btn">
@@ -72,6 +73,9 @@ export default {
   computed: {
     isLogin() {
       return this.$store.getters['auth/loginCheck']
+    },
+    content_length() {
+      return this.commentContent.length;
     }
   },
   methods: {

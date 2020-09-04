@@ -311,6 +311,7 @@ main {
 
 .form__textarea {
   resize: none;
+  font-size: 1.2rem;
   height: 13rem;
 }
 
@@ -593,6 +594,7 @@ main {
 .report-detail__commentTitle {
   font-weight: bold;
   font-size: 1.6rem;
+  margin-bottom: 15px;
 }
 
 .report-detail__commentItem {
