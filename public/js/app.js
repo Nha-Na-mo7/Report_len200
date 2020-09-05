@@ -60615,7 +60615,11 @@ var render = function() {
     "nav",
     { staticClass: "navbar" },
     [
-      _c("RouterLink", { staticClass: "navbar__brand", attrs: { to: "/" } }),
+      _c(
+        "RouterLink",
+        { staticClass: "navbar__brand btn", attrs: { to: "/" } },
+        [_vm._v("日誌投稿アプリ")]
+      ),
       _vm._v(" "),
       _c(
         "div",
