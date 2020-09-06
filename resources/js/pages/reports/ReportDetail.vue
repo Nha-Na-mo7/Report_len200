@@ -49,6 +49,9 @@
       </div>
     </form>
 
+<!--    トップへ戻る-->
+    <RouterLink class="btn" to="/">日誌一覧へ戻る</RouterLink>
+
   </div>
 </template>
 

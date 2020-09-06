@@ -2034,6 +2034,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     isLogin: function isLogin() {
@@ -2656,6 +2657,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2806,6 +2809,9 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
 //
 //
 //
@@ -60625,6 +60631,14 @@ var render = function() {
         "div",
         { staticClass: "navbar__menu" },
         [
+          _vm.isLogin
+            ? _c(
+                "RouterLink",
+                { staticClass: "btn btn--link", attrs: { to: "/reports/new" } },
+                [_vm._v("新規作成")]
+              )
+            : _vm._e(),
+          _vm._v(" "),
           _vm.username
             ? _c(
                 "RouterLink",
@@ -61249,117 +61263,126 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container--small" }, [
-    _c("div", { staticClass: "report-form" }, [
-      _c("h2", { staticClass: "title u__mb-3l" }, [_vm._v("日誌 新規作成")]),
+  return _c(
+    "div",
+    { staticClass: "container--small" },
+    [
+      _c("div", { staticClass: "report-form" }, [
+        _c("h2", { staticClass: "title u__mb-3l" }, [_vm._v("日誌 新規作成")]),
+        _vm._v(" "),
+        _c("h6", [_vm._v("エラーメッセージ")]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "form",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.submit($event)
+              }
+            }
+          },
+          [
+            _c("label", { attrs: { for: "report_title" } }, [
+              _vm._v("タイトル")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.reportForm.report_title,
+                  expression: "reportForm.report_title"
+                }
+              ],
+              staticClass: "form__item",
+              attrs: {
+                type: "text",
+                id: "report_title",
+                placeholder: "入力必須です。",
+                autocomplete: "off"
+              },
+              domProps: { value: _vm.reportForm.report_title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.reportForm, "report_title", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.reportForm.about,
+                  expression: "reportForm.about"
+                }
+              ],
+              staticClass: "form__item",
+              attrs: {
+                type: "text",
+                id: "about",
+                placeholder: "こちらの入力は任意です。",
+                autocomplete: "off"
+              },
+              domProps: { value: _vm.reportForm.about },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.reportForm, "about", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "content" } }, [
+              _vm._v("本文 "),
+              _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))])
+            ]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.reportForm.content,
+                  expression: "reportForm.content"
+                }
+              ],
+              staticClass: "form__item form__textarea",
+              attrs: {
+                id: "content",
+                placeholder: "150字以上、250字以下で入力してください。"
+              },
+              domProps: { value: _vm.reportForm.content },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.reportForm, "content", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _c("h6", [_vm._v("エラーメッセージ")]),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          staticClass: "form",
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submit($event)
-            }
-          }
-        },
-        [
-          _c("label", { attrs: { for: "report_title" } }, [_vm._v("タイトル")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.reportForm.report_title,
-                expression: "reportForm.report_title"
-              }
-            ],
-            staticClass: "form__item",
-            attrs: {
-              type: "text",
-              id: "report_title",
-              placeholder: "入力必須です。",
-              autocomplete: "off"
-            },
-            domProps: { value: _vm.reportForm.report_title },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.reportForm, "report_title", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.reportForm.about,
-                expression: "reportForm.about"
-              }
-            ],
-            staticClass: "form__item",
-            attrs: {
-              type: "text",
-              id: "about",
-              placeholder: "こちらの入力は任意です。",
-              autocomplete: "off"
-            },
-            domProps: { value: _vm.reportForm.about },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.reportForm, "about", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("label", { attrs: { for: "content" } }, [
-            _vm._v("本文 "),
-            _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))])
-          ]),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.reportForm.content,
-                expression: "reportForm.content"
-              }
-            ],
-            staticClass: "form__item form__textarea",
-            attrs: {
-              id: "content",
-              placeholder: "150字以上、250字以下で入力してください。"
-            },
-            domProps: { value: _vm.reportForm.content },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.reportForm, "content", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _vm._m(0)
-        ]
-      )
-    ])
-  ])
+      _c("RouterLink", { attrs: { to: "/" } }, [_vm._v("日誌一覧へ戻る")])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -61453,115 +61476,130 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "report-detail" }, [
-      _c("h1", { staticClass: "report-detail__title" }, [
-        _vm._v(_vm._s(this.report.report_title))
-      ]),
-      _vm._v(" "),
-      _c("h2", { staticClass: "report-detail__about" }, [
-        _vm._v(_vm._s(this.report.about))
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "report-detail__info" }, [
-        _c("span", { staticClass: "report-detail__date" }, [
-          _vm._v(_vm._s(_vm._f("moment_report")(this.report.created_at)))
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "report-detail" }, [
+        _c("h1", { staticClass: "report-detail__title" }, [
+          _vm._v(_vm._s(this.report.report_title))
         ]),
         _vm._v(" "),
-        _c("span", { staticClass: "report-detail__username" }, [
-          _vm._v(_vm._s(this.report.owner.name))
+        _c("h2", { staticClass: "report-detail__about" }, [
+          _vm._v(_vm._s(this.report.about))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "report-detail__info" }, [
+          _c("span", { staticClass: "report-detail__date" }, [
+            _vm._v(_vm._s(_vm._f("moment_report")(this.report.created_at)))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "report-detail__username" }, [
+            _vm._v(_vm._s(this.report.owner.name))
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "report-detail__content-area" }, [
+          _c("span", { staticClass: "report-detail__content" }, [
+            _vm._v(_vm._s(this.report.contents.content))
+          ])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "report-detail__content-area" }, [
-        _c("span", { staticClass: "report-detail__content" }, [
-          _vm._v(_vm._s(this.report.contents.content))
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("h2", { staticClass: "report-detail__commentTitle" }, [
-      _vm._v("コメント")
-    ]),
-    _vm._v(" "),
-    _vm.report.comments.length > 0
-      ? _c(
-          "ul",
-          { staticClass: "report-detail__comments" },
-          _vm._l(_vm.report.comments, function(comment) {
-            return _c(
-              "li",
-              {
-                key: comment.comment,
-                staticClass: "report-detail__commentItem"
-              },
-              [
-                _c("p", { staticClass: "report-detail__commentText" }, [
-                  _vm._v("\n        " + _vm._s(comment.comment) + "\n      ")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "report-detail__commentInfo" }, [
-                  _vm._v(
-                    "\n        " + _vm._s(comment.author.name) + "\n        "
-                  ),
-                  _c("span", { staticClass: "report-detail__date" }, [
-                    _vm._v(_vm._s(_vm._f("moment_comment")(comment.created_at)))
-                  ])
-                ])
-              ]
-            )
-          }),
-          0
-        )
-      : _c("ul", { staticClass: "report-detail__comments" }, [_vm._m(0)]),
-    _vm._v(" "),
-    _vm.isLogin
-      ? _c("h2", { staticClass: "report-detail__commentTitle" }, [
-          _vm._v("投稿する (250字以内)")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("span", [_vm._v(_vm._s(_vm.content_length) + " / 250")]),
-    _vm._v(" "),
-    _vm.isLogin
-      ? _c(
-          "form",
-          {
-            staticClass: "form",
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.addComment($event)
-              }
-            }
-          },
-          [
-            _c("textarea", {
-              directives: [
+      _c("h2", { staticClass: "report-detail__commentTitle" }, [
+        _vm._v("コメント")
+      ]),
+      _vm._v(" "),
+      _vm.report.comments.length > 0
+        ? _c(
+            "ul",
+            { staticClass: "report-detail__comments" },
+            _vm._l(_vm.report.comments, function(comment) {
+              return _c(
+                "li",
                 {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.commentContent,
-                  expression: "commentContent"
-                }
-              ],
-              staticClass: "form__item form__textarea",
-              domProps: { value: _vm.commentContent },
+                  key: comment.comment,
+                  staticClass: "report-detail__commentItem"
+                },
+                [
+                  _c("p", { staticClass: "report-detail__commentText" }, [
+                    _vm._v(
+                      "\n          " + _vm._s(comment.comment) + "\n        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "report-detail__commentInfo" }, [
+                    _vm._v(
+                      "\n          " +
+                        _vm._s(comment.author.name) +
+                        "\n          "
+                    ),
+                    _c("span", { staticClass: "report-detail__date" }, [
+                      _vm._v(
+                        _vm._s(_vm._f("moment_comment")(comment.created_at))
+                      )
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        : _c("ul", { staticClass: "report-detail__comments" }, [_vm._m(0)]),
+      _vm._v(" "),
+      _vm.isLogin
+        ? _c("h2", { staticClass: "report-detail__commentTitle" }, [
+            _vm._v("投稿する (250字以内)")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("span", [_vm._v(_vm._s(_vm.content_length) + " / 250")]),
+      _vm._v(" "),
+      _vm.isLogin
+        ? _c(
+            "form",
+            {
+              staticClass: "form",
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.commentContent = $event.target.value
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.addComment($event)
                 }
               }
-            }),
-            _vm._v(" "),
-            _vm._m(1)
-          ]
-        )
-      : _vm._e()
-  ])
+            },
+            [
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.commentContent,
+                    expression: "commentContent"
+                  }
+                ],
+                staticClass: "form__item form__textarea",
+                domProps: { value: _vm.commentContent },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.commentContent = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
+        _vm._v("日誌一覧へ戻る")
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -61570,7 +61608,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "report-detail__commentItem" }, [
       _c("p", { staticClass: "report-detail__commentText u-glay" }, [
-        _vm._v("\n        ( コメントは投稿されていません )\n      ")
+        _vm._v("\n          ( コメントは投稿されていません )\n        ")
       ])
     ])
   },

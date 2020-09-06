@@ -22,6 +22,8 @@
       </form>
 
     </div>
+    <!--    トップへ戻る-->
+    <RouterLink class="" to="/">日誌一覧へ戻る</RouterLink>
 
   </div>
 </template>
