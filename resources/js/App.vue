@@ -39,6 +39,7 @@ export default {
       async handler(val) {
         if(val === INTERNAL_SERVER_ERROR) {
           this.$router.push('/500')
+
         }else if(val === UNAUTHORIZED) {
           // トークンをリフレッシュ
           await axios.get('/api/reflesh-token');
@@ -46,6 +47,7 @@ export default {
           this.$store.commit('auth/setUser', null);
           // ログイン画面へ遷移させる
           this.$router.push('/login');
+
         }else if(val === NOT_FOUND) {
           this.$router.push('/404');
         }

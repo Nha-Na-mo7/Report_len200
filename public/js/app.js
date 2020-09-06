@@ -61309,9 +61309,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container--small" }, [
-      _c("h2", { staticClass: "title" }, [_vm._v(" - 404 NOT FOUND - ")]),
+      _c("h2", { staticClass: "title er-StatusCode" }, [
+        _vm._v(" - 404 NOT FOUND - ")
+      ]),
       _vm._v(" "),
-      _c("p", [_vm._v("お探しのページは見つかりませんでした＾＾")])
+      _c("p", { staticClass: "er-StatusCode_text" }, [
+        _vm._v("お探しのページは見つかりませんでした＾＾")
+      ])
     ])
   }
 ]
@@ -61344,11 +61348,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container--small" }, [
-      _c("h2", { staticClass: "title" }, [
+      _c("h2", { staticClass: "title er-StatusCode" }, [
         _vm._v(" - システムエラーが発生しました - ")
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v("ご迷惑をおかけいたしますが、しばらくお待ちください。")])
+      _c("p", { staticClass: "er-StatusCode_text" }, [
+        _vm._v("ご迷惑をおかけいたしますが、しばらくお待ちください。")
+      ])
     ])
   }
 ]

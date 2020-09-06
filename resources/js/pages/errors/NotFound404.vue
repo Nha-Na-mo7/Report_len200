@@ -1,7 +1,7 @@
 <template>
   <div class="container--small">
-    <h2 class="title"> - 404 NOT FOUND - </h2>
-    <p>お探しのページは見つかりませんでした＾＾</p>
+    <h2 class="title er-StatusCode"> - 404 NOT FOUND - </h2>
+    <p class="er-StatusCode_text">お探しのページは見つかりませんでした＾＾</p>
   </div>
 </template>
 
