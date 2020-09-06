@@ -166,6 +166,12 @@ main {
   margin-top: 7rem;
 }
 
+.allWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   align-items: center;
   background: #fff;
@@ -351,8 +357,9 @@ main {
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
   border-top: 1px solid #4c4c4c;
   display: flex;
-  height: 5rem;
+  height: 15rem;
   justify-content: center;
+  margin-top: auto;
 }
 
 .errors {

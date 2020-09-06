@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="allWrapper">
     <!-- ヘッダ ー-->
     <header>
       <Header />
