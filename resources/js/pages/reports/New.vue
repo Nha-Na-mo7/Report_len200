@@ -4,15 +4,19 @@
       <h2 class="title u__mb-3l">日誌 新規作成</h2>
 
       <!-- エラーメッセージ -->
-      <h6>エラーメッセージ</h6>
+      <div class="errors" v-if="errors">
+        <ul v-if="errors">
+          <li v-for="msg in errors" :key="msg.title">{{ msg }}</li>
+        </ul>
+      </div>
 
       <!-- フォーム -->
       <form class="form" v-on:submit.prevent="submit">
-        <label for="report_title">タイトル</label>
-        <input type="text" class="form__item" id="report_title" v-model="reportForm.report_title" placeholder="入力必須です。" autocomplete="off">
-        <label for="about">副題</label>
-        <input type="text" class="form__item" id="about" v-model="reportForm.about" placeholder="こちらの入力は任意です。"  autocomplete="off">
-        <label for="content">本文 <span>入力文字数 : {{ content_length }}</span></label>
+        <label for="report_title">タイトル <span>( {{ title_length }} / 50文字 )</span></label>
+        <input type="text" class="form__item" id="report_title" v-model="reportForm.report_title" placeholder="入力必須です。50文字以内で入力してください。" autocomplete="off">
+        <label for="about">副題 <span>( {{ about_length }} / 150文字)</span></label>
+        <input type="text" class="form__item" id="about" v-model="reportForm.about" placeholder="こちらの入力は任意です。150文字以内で入力してください。"  autocomplete="off">
+        <label for="content">本文 <span>( 入力文字数 : {{ content_length }} )</span></label>
         <textarea class="form__item form__textarea" id="content" v-model="reportForm.content" placeholder="150字以上、250字以下で入力してください。"></textarea>
 
 
@@ -43,9 +47,15 @@ export default {
     }
   },
   computed: {
+    title_length() {
+      return this.reportForm.report_title.length;
+    },
+    about_length() {
+      return this.reportForm.about.length;
+    },
     content_length() {
       return this.reportForm.content.length;
-    }
+    },
   },
   methods: {
     async submit () {
@@ -53,6 +63,7 @@ export default {
 
       // バリデーションエラー
       if (response.status === UNPROCESSABLE_ENTITY) {
+        console.log('422エラーです！')
         this.errors = response.data.errors;
         return false
       }

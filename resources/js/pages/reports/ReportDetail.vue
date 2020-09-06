@@ -43,6 +43,13 @@
     <h2 v-if="isLogin" class="report-detail__commentTitle">投稿する (250字以内)</h2>
     <span>{{ content_length }} / 250</span>
     <form v-if="isLogin" @submit.prevent="addComment" class="form">
+      <!-- エラーメッセージ -->
+      <div class="errors" v-if="commentErrors">
+        <ul v-if="commentErrors">
+          <li v-for="msg in commentErrors" :key="msg.comment">{{ msg }}</li>
+        </ul>
+      </div>
+
       <textarea class="form__item form__textarea" v-model="commentContent"></textarea>
       <div class="form__btn">
         <button type="submit" class="btn btn--inverse">コメントを送信</button>
@@ -101,6 +108,7 @@ export default {
         this.commentErrors = response.data.errors
         return false
       }
+
       // 投稿フォームクリア
       this.commentContent = '';
       // エラーメッセージクリア

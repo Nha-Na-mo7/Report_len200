@@ -2743,6 +2743,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2756,6 +2760,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   computed: {
+    title_length: function title_length() {
+      return this.reportForm.report_title.length;
+    },
+    about_length: function about_length() {
+      return this.reportForm.about.length;
+    },
     content_length: function content_length() {
       return this.reportForm.content.length;
     }
@@ -2777,16 +2787,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context.sent;
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
+                console.log('422エラーです！');
                 _this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 6:
+              case 7:
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 9;
+                  _context.next = 10;
                   break;
                 }
 
@@ -2794,11 +2805,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 9:
+              case 10:
                 // 投稿後にその詳細ページへ遷移させる
                 _this.$router.push("/reports/".concat(response.data.id));
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -2893,6 +2904,13 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61400,7 +61418,19 @@ var render = function() {
       _c("div", { staticClass: "report-form" }, [
         _c("h2", { staticClass: "title u__mb-3l" }, [_vm._v("日誌 新規作成")]),
         _vm._v(" "),
-        _c("h6", [_vm._v("エラーメッセージ")]),
+        _vm.errors
+          ? _c("div", { staticClass: "errors" }, [
+              _vm.errors
+                ? _c(
+                    "ul",
+                    _vm._l(_vm.errors, function(msg) {
+                      return _c("li", { key: msg.title }, [_vm._v(_vm._s(msg))])
+                    }),
+                    0
+                  )
+                : _vm._e()
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "form",
@@ -61415,7 +61445,10 @@ var render = function() {
           },
           [
             _c("label", { attrs: { for: "report_title" } }, [
-              _vm._v("タイトル")
+              _vm._v("タイトル "),
+              _c("span", [
+                _vm._v("( " + _vm._s(_vm.title_length) + " / 50文字 )")
+              ])
             ]),
             _vm._v(" "),
             _c("input", {
@@ -61431,7 +61464,7 @@ var render = function() {
               attrs: {
                 type: "text",
                 id: "report_title",
-                placeholder: "入力必須です。",
+                placeholder: "入力必須です。50文字以内で入力してください。",
                 autocomplete: "off"
               },
               domProps: { value: _vm.reportForm.report_title },
@@ -61445,7 +61478,12 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("label", { attrs: { for: "about" } }, [_vm._v("副題")]),
+            _c("label", { attrs: { for: "about" } }, [
+              _vm._v("副題 "),
+              _c("span", [
+                _vm._v("( " + _vm._s(_vm.about_length) + " / 150文字)")
+              ])
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -61460,7 +61498,8 @@ var render = function() {
               attrs: {
                 type: "text",
                 id: "about",
-                placeholder: "こちらの入力は任意です。",
+                placeholder:
+                  "こちらの入力は任意です。150文字以内で入力してください。",
                 autocomplete: "off"
               },
               domProps: { value: _vm.reportForm.about },
@@ -61476,7 +61515,9 @@ var render = function() {
             _vm._v(" "),
             _c("label", { attrs: { for: "content" } }, [
               _vm._v("本文 "),
-              _c("span", [_vm._v("入力文字数 : " + _vm._s(_vm.content_length))])
+              _c("span", [
+                _vm._v("( 入力文字数 : " + _vm._s(_vm.content_length) + " )")
+              ])
             ]),
             _vm._v(" "),
             _c("textarea", {
@@ -61698,6 +61739,22 @@ var render = function() {
               }
             },
             [
+              _vm.commentErrors
+                ? _c("div", { staticClass: "errors" }, [
+                    _vm.commentErrors
+                      ? _c(
+                          "ul",
+                          _vm._l(_vm.commentErrors, function(msg) {
+                            return _c("li", { key: msg.comment }, [
+                              _vm._v(_vm._s(msg))
+                            ])
+                          }),
+                          0
+                        )
+                      : _vm._e()
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
               _c("textarea", {
                 directives: [
                   {
