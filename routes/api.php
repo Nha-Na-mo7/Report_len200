@@ -45,3 +45,12 @@ Route::get('/reports/{report_id}', 'ReportController@show')->name('report.show')
 
 //コメントの投稿
 Route::post('/reports/{report}/comments', 'ReportController@addComment')->name('report.comment');
+
+
+
+//トークンリフレッシュ
+Route::get('/reflesh-token', function (Illuminate\Http\Request $request) {
+  $request->session()->regenerateToken();
+  
+  return response()->json();
+});

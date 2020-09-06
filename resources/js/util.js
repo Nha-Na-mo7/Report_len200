@@ -32,4 +32,5 @@ export const OK = 200
 export const CREATED = 201
 export const INTERNAL_SERVER_ERROR = 500
 export const UNPROCESSABLE_ENTITY = 422 //バリデーションエラー
+export const UNAUTHORIZED = 419 //認証切れ
 export const NOT_FOUND = 404
