@@ -2658,6 +2658,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NotFound404"
 });
@@ -2673,6 +2677,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -61302,24 +61311,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container--small" }, [
+  return _c(
+    "div",
+    { staticClass: "container--small" },
+    [
       _c("h2", { staticClass: "title er-StatusCode" }, [
         _vm._v(" - 404 NOT FOUND - ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "er-StatusCode_text" }, [
         _vm._v("お探しのページは見つかりませんでした＾＾")
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", { staticClass: "btn u-m-0_auto", attrs: { to: "/" } }, [
+        _vm._v("日誌一覧へ戻る")
       ])
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -61341,24 +61352,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container--small" }, [
+  return _c(
+    "div",
+    { staticClass: "container--small" },
+    [
       _c("h2", { staticClass: "title er-StatusCode" }, [
         _vm._v(" - システムエラーが発生しました - ")
       ]),
       _vm._v(" "),
       _c("p", { staticClass: "er-StatusCode_text" }, [
         _vm._v("ご迷惑をおかけいたしますが、しばらくお待ちください。")
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
+        _vm._v("日誌一覧へ戻る")
       ])
-    ])
-  }
-]
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

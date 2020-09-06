@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/sass/layout/l-allWrapper.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/l-footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/l-footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/errors/NotFound404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/errors/NotFound404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/errors/System500.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/errors/System500.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +215,7 @@
       <workItem from="1598884105881" duration="523000" />
       <workItem from="1598884955022" duration="16699000" />
       <workItem from="1599162699374" duration="8748000" />
-      <workItem from="1599249421416" duration="6608000" />
+      <workItem from="1599249421416" duration="7347000" />
     </task>
     <servers />
   </component>
