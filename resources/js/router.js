@@ -8,6 +8,7 @@ import Mypage from './pages/Mypage.vue'
 import ReportNew from './pages/reports/New.vue'
 import ReportDetail from './pages/reports/ReportDetail.vue'
 import SystemError from './pages/errors/System500.vue'
+import NotFound from './pages/errors/NotFound404.vue'
 
 // ストアのインポート
 import store from './store'
@@ -80,6 +81,10 @@ const routes = [
   {
     path: '/500',
     component: SystemError
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 

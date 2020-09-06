@@ -22,7 +22,7 @@
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import {UNAUTHORIZED ,INTERNAL_SERVER_ERROR} from "./util";
+import {NOT_FOUND, UNAUTHORIZED ,INTERNAL_SERVER_ERROR} from "./util";
 
 export default {
   components: {
@@ -46,6 +46,8 @@ export default {
           this.$store.commit('auth/setUser', null);
           // ログイン画面へ遷移させる
           this.$router.push('/login');
+        }else if(val === NOT_FOUND) {
+          this.$router.push('/404');
         }
       },
       immediate: true

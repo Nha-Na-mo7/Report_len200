@@ -1982,12 +1982,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                   _this.$router.push('/500');
 
-                  _context.next = 9;
+                  _context.next = 12;
                   break;
 
                 case 4:
                   if (!(val === _util__WEBPACK_IMPORTED_MODULE_3__["UNAUTHORIZED"])) {
-                    _context.next = 9;
+                    _context.next = 11;
                     break;
                   }
 
@@ -2001,7 +2001,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                   _this.$router.push('/login');
 
-                case 9:
+                  _context.next = 12;
+                  break;
+
+                case 11:
+                  if (val === _util__WEBPACK_IMPORTED_MODULE_3__["NOT_FOUND"]) {
+                    _this.$router.push('/404');
+                  }
+
+                case 12:
                 case "end":
                   return _context.stop();
               }
@@ -2630,6 +2638,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       immediate: true
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "NotFound404"
 });
 
 /***/ }),
@@ -61256,6 +61286,41 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container--small" }, [
+      _c("h2", { staticClass: "title" }, [_vm._v(" - 404 NOT FOUND - ")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("お探しのページは見つかりませんでした＾＾")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/errors/System500.vue?vue&type=template&id=7a8411ea&":
 /*!**************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/errors/System500.vue?vue&type=template&id=7a8411ea& ***!
@@ -78781,6 +78846,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/errors/NotFound404.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/pages/errors/NotFound404.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true& */ "./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true&");
+/* harmony import */ var _NotFound404_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NotFound404.vue?vue&type=script&lang=js& */ "./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NotFound404_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6735ac4e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/errors/NotFound404.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound404_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound404.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/errors/NotFound404.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound404_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/errors/NotFound404.vue?vue&type=template&id=6735ac4e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotFound404_vue_vue_type_template_id_6735ac4e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/errors/System500.vue":
 /*!*************************************************!*\
   !*** ./resources/js/pages/errors/System500.vue ***!
@@ -79075,9 +79209,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_reports_New_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/reports/New.vue */ "./resources/js/pages/reports/New.vue");
 /* harmony import */ var _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/reports/ReportDetail.vue */ "./resources/js/pages/reports/ReportDetail.vue");
 /* harmony import */ var _pages_errors_System500_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/errors/System500.vue */ "./resources/js/pages/errors/System500.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _pages_errors_NotFound404_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/errors/NotFound404.vue */ "./resources/js/pages/errors/NotFound404.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 
  // ページコンポーネントのインポート
+
 
 
 
@@ -79105,7 +79241,7 @@ var routes = [{
   component: _pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログイン済みの場合トップページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].getters['auth/loginCheck']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
       next('/');
     } else {
       next();
@@ -79116,7 +79252,7 @@ var routes = [{
   component: _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログインしていない場合ログインページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].getters['auth/loginCheck']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
       next();
     } else {
       next('/login');
@@ -79134,7 +79270,7 @@ var routes = [{
   component: _pages_reports_New_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログインしていない場合ログインページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_8__["default"].getters['auth/loginCheck']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
       next();
     } else {
       next('/login');
@@ -79147,6 +79283,9 @@ var routes = [{
 }, {
   path: '/500',
   component: _pages_errors_System500_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+}, {
+  path: '*',
+  component: _pages_errors_NotFound404_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
 }]; // VueRouterインスタンスの作成
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
