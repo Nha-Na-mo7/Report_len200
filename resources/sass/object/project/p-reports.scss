@@ -158,7 +158,7 @@
 //.report-detail : 日誌詳細
 //--------------------------
 .report-detail {
-  background: #f4f9fd;
+  background: $color-report__detail-blue;
   box-shadow: 0 0 10px #c8c5c5;
   border: 1px solid $font-color_dark;
   border-radius: 4px;
@@ -272,6 +272,12 @@
     &Info {
       color: #8a8a8a;
       margin-top: $space_l;
+    }
+    &Area {
+      margin: $space_3l 0;
+      padding: $space_l $space_m;
+      box-shadow: 0 0 2px #c8c5c5;
+      background: $color-report__detail-blue;
     }
   }
 }

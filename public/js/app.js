@@ -2968,6 +2968,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -61719,68 +61721,66 @@ var render = function() {
         : _c("ul", { staticClass: "report-detail__comments" }, [_vm._m(0)]),
       _vm._v(" "),
       _vm.isLogin
-        ? _c("h2", { staticClass: "report-detail__commentTitle" }, [
-            _vm._v("投稿する (250字以内)")
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.isLogin
-        ? _c("span", [_vm._v(_vm._s(_vm.content_length) + " / 250")])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.isLogin
-        ? _c(
-            "form",
-            {
-              staticClass: "form",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.addComment($event)
-                }
-              }
-            },
-            [
-              _vm.commentErrors
-                ? _c("div", { staticClass: "errors" }, [
-                    _vm.commentErrors
-                      ? _c(
-                          "ul",
-                          _vm._l(_vm.commentErrors, function(msg) {
-                            return _c("li", { key: msg.comment }, [
-                              _vm._v(_vm._s(msg))
-                            ])
-                          }),
-                          0
-                        )
-                      : _vm._e()
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.commentContent,
-                    expression: "commentContent"
-                  }
-                ],
-                staticClass: "form__item form__textarea",
-                domProps: { value: _vm.commentContent },
+        ? _c("div", { staticClass: "report-detail__commentArea" }, [
+            _c("h2", { staticClass: "report-detail__commentTitle" }, [
+              _vm._v("投稿する (250字以内)")
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.content_length) + " / 250")]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "form",
                 on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.commentContent = $event.target.value
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.addComment($event)
                   }
                 }
-              }),
-              _vm._v(" "),
-              _vm._m(1)
-            ]
-          )
+              },
+              [
+                _vm.commentErrors
+                  ? _c("div", { staticClass: "errors" }, [
+                      _vm.commentErrors
+                        ? _c(
+                            "ul",
+                            _vm._l(_vm.commentErrors, function(msg) {
+                              return _c("li", { key: msg.comment }, [
+                                _vm._v(_vm._s(msg))
+                              ])
+                            }),
+                            0
+                          )
+                        : _vm._e()
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.commentContent,
+                      expression: "commentContent"
+                    }
+                  ],
+                  staticClass: "form__item form__textarea",
+                  domProps: { value: _vm.commentContent },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.commentContent = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ])
         : _vm._e(),
       _vm._v(" "),
       _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [

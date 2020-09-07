@@ -630,6 +630,13 @@ main {
   margin-top: 15px;
 }
 
+.report-detail__commentArea {
+  margin: 40px 0;
+  padding: 15px 10px;
+  box-shadow: 0 0 2px #c8c5c5;
+  background: #f4f9fd;
+}
+
 .report-form {
   background: #fff;
   border-radius: 0.25rem;
