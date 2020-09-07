@@ -37,11 +37,11 @@ Route::get('/reports', 'ReportController@index')->name('report.index');
 //指定ユーザーのレポート一覧を取得するAPI
 Route::get('/mypage/reports/{user_id}', 'ReportController@index')->name('report.mypage_index');
 
-//レポートを削除するAPI
-// Route::delete('/reports', 'ReportController@delete')->name('report.delete');
-
 //レポート詳細取得
 Route::get('/reports/{report_id}', 'ReportController@show')->name('report.show');
+// レポートを削除
+Route::delete('/reports/{report_id}', 'ReportController@destroy')->name('report.destroy');
+
 
 //コメントの投稿
 Route::post('/reports/{report}/comments', 'ReportController@addComment')->name('report.comment');

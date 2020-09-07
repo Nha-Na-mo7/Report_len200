@@ -13,9 +13,10 @@
     :title="`${item.report_title}`"
     >
     </RouterLink>
+    <button class="btn btn--destroy" v-on:click="destroyReport">削除</button>
+
+
   </div>
-
-
 
 </template>
 
@@ -30,6 +31,12 @@ export default {
       required: true
     }
   },
+  methods: {
+    async destroyReport() {
+      console.log('destroyReport! : ' + this.item.id)
+      const response = await axios.delete(`/api/reports/${this.item.id}`)
+    }
+  },
   filters: {
     moment: function (date) {
       return moment(date).format('YY/M/D HH:mm')
@@ -39,4 +46,3 @@ export default {
 </script>
 
 <!--まだの箇所-->
-<!--・詳細ページへのリンク-->

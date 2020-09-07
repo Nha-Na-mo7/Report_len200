@@ -20,7 +20,7 @@ class ReportDetailApiTest extends TestCase
     {
       factory(Report::class)->create()->each(function ($report) {
         $report->comments()->saveMany(factory(Comment::class, 3)->make());
-      });;
+      });
       $report = Report::first();
       
       $response = $this->json('GET', route('report.show', [

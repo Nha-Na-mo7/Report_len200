@@ -106,6 +106,35 @@ class ReportController extends Controller
   
     return response($new_comment, 201);
   }
+  
+  /**
+   * 日誌を削除する
+   * @param String $report_id
+   * @return false|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+   */
+  public function destroy(String $report_id)
+  {
+    Log::debug('ReportController : destroy : 日誌の削除');
+    
+    //ログインユーザーの持つreportsに$report_idと合致するものがあるか
+    $report = Auth::user()->reports()->find($report_id);
+    
+    if( $report ) {
+  
+      // reports_idが$idと合致するレコードを削除。
+      $report->comments->where('report_id', $report_id)->first()->delete();
+      $report->contents->where('report_id', $report_id)->first()->delete();
+      //最後に該当のreportを削除。
+      $report->delete();
+      Log::debug('日誌は削除されました');
+    } else {
+      Log::debug('ログインユーザーとレポートのオーナーが一致するレポートは存在しません');
+      return response(200);
+    }
+    return response(200);
+    // return redirect('/')->with('flash_message', __('Deleted.'));
+  }
+  
 }
 // // バリデーション
 // public function create(DrillRequest $request)
