@@ -2422,6 +2422,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -2553,6 +2554,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 
@@ -2585,14 +2587,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                console.log('ReportList : fetchReports');
+                _context.next = 3;
                 return axios.get("/api/reports/?page=".concat(_this.page));
 
-              case 2:
+              case 3:
                 response = _context.sent;
 
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
@@ -2600,12 +2603,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 6:
+              case 7:
                 _this.reports = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 9:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -2895,12 +2898,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context.sent;
                 console.log('レスポンス');
 
-              case 5:
+                _this.emitFetchReports();
+
+              case 6:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
+      }))();
+    },
+    emitFetchReports: function emitFetchReports() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                console.log('emitFetchReports');
+
+                _this2.$emit('reloadReports');
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     } //
     // async destroyReport() {
@@ -61274,7 +61299,8 @@ var render = function() {
                 return _c("Report", {
                   key: report.id,
                   staticClass: "report__item",
-                  attrs: { item: report }
+                  attrs: { item: report },
+                  on: { reloadReports: _vm.fetchReports }
                 })
               }),
               1
@@ -61344,7 +61370,8 @@ var render = function() {
             return _c("Report", {
               key: report.id,
               staticClass: "report__item",
-              attrs: { item: report }
+              attrs: { item: report },
+              on: { reloadReports: _vm.fetchReports }
             })
           }),
           1

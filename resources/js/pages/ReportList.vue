@@ -8,6 +8,7 @@
             v-for="report in reports"
             :key="report.id"
             :item="report"
+            @reloadReports="fetchReports"
         />
       </div>
       <Pagination :current-page="currentPage" :last-page="lastPage"></Pagination>
@@ -43,6 +44,7 @@ export default {
   },
   methods: {
     async fetchReports() {
+      console.log('ReportList : fetchReports')
       const response = await axios.get(`/api/reports/?page=${this.page}`);
 
       // エラー時

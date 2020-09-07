@@ -41,7 +41,14 @@ export default {
       console.log('destroyReport! : ' + this.item.id)
       const response = await axios.delete(`/api/reports/${this.item.id}`)
       console.log('レスポンス')
+
+      this.emitFetchReports();
+
     },
+    async emitFetchReports() {
+      console.log('emitFetchReports')
+      this.$emit('reloadReports');
+    }
     //
     // async destroyReport() {
     //   console.log('destroyReport! : ' + this.item.id)

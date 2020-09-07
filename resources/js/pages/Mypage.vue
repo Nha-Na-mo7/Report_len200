@@ -22,6 +22,7 @@
                 v-for="report in reports"
                 :key="report.id"
                 :item="report"
+                @reloadReports="fetchReports"
             />
           </div>
         </div>
