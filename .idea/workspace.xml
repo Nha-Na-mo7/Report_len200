@@ -20,16 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/ReportDestroyApiTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ReportDetailApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReportDetailApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/ReportDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/ReportDetail.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,12 +216,22 @@
       <workItem from="1598884955022" duration="16699000" />
       <workItem from="1599162699374" duration="8748000" />
       <workItem from="1599249421416" duration="12995000" />
-      <workItem from="1599464803551" duration="4078000" />
+      <workItem from="1599464803551" duration="7859000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -255,6 +261,10 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="1015" y="365" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1599467614071" />
+    <state x="840" y="147" width="917" height="925" key="DiffContextDialog" timestamp="1599489925135">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="840" y="147" width="917" height="925" key="DiffContextDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1599489925135" />
     <state x="922" y="172" width="750" height="467" key="EditFileWatcherDialog" timestamp="1598322926179">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>

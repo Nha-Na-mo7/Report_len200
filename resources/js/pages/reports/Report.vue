@@ -31,11 +31,25 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      currentPath: this.$route.path
+    }
+  },
   methods: {
     async destroyReport() {
       console.log('destroyReport! : ' + this.item.id)
       const response = await axios.delete(`/api/reports/${this.item.id}`)
-    }
+      console.log('レスポンス')
+    },
+    //
+    // async destroyReport() {
+    //   console.log('destroyReport! : ' + this.item.id)
+    //   const response = await axios.delete(`/api/reports/${this.item.id}`)
+    //
+    //
+    //   // this.$router.push(`${this.currentPath}`)
+    // }
   },
   filters: {
     moment: function (date) {

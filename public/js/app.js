@@ -2872,6 +2872,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       required: true
     }
   },
+  data: function data() {
+    return {
+      currentPath: this.$route.path
+    };
+  },
   methods: {
     destroyReport: function destroyReport() {
       var _this = this;
@@ -2888,15 +2893,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 response = _context.sent;
+                console.log('レスポンス');
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
       }))();
-    }
+    } //
+    // async destroyReport() {
+    //   console.log('destroyReport! : ' + this.item.id)
+    //   const response = await axios.delete(`/api/reports/${this.item.id}`)
+    //
+    //
+    //   // this.$router.push(`${this.currentPath}`)
+    // }
+
   },
   filters: {
     moment: function moment(date) {
@@ -61787,7 +61801,7 @@ var render = function() {
                         ? _c(
                             "ul",
                             _vm._l(_vm.commentErrors, function(msg) {
-                              return _c("li", { key: msg.comment }, [
+                              return _c("li", { key: msg }, [
                                 _vm._v(_vm._s(msg))
                               ])
                             }),

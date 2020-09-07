@@ -47,7 +47,7 @@
         <!-- エラーメッセージ -->
         <div class="errors" v-if="commentErrors">
           <ul v-if="commentErrors">
-            <li v-for="msg in commentErrors" :key="msg.comment">{{ msg }}</li>
+            <li v-for="msg in commentErrors" :key="msg">{{ msg }}</li>
           </ul>
         </div>
 

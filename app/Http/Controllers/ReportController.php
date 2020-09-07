@@ -122,13 +122,16 @@ class ReportController extends Controller
     if( $report ) {
   
       // reports_idが$idと合致するレコードを削除。
-      $report->comments->where('report_id', $report_id)->first()->delete();
+      // レポートに紐づけられたコメントを全て削除
+      $comments = $report->comments->where('report_id', $report_id);
+      foreach ($comments as $comment) {
+        $comment->delete();
+      }
+      // 本文を削除
       $report->contents->where('report_id', $report_id)->first()->delete();
       //最後に該当のreportを削除。
       $report->delete();
-      Log::debug('日誌は削除されました');
     } else {
-      Log::debug('ログインユーザーとレポートのオーナーが一致するレポートは存在しません');
       return response(200);
     }
     return response(200);
