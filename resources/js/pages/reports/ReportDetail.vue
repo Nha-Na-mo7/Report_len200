@@ -41,7 +41,7 @@
 
     <!--コメント投稿フォーム-->
     <h2 v-if="isLogin" class="report-detail__commentTitle">投稿する (250字以内)</h2>
-    <span>{{ content_length }} / 250</span>
+    <span v-if="isLogin">{{ content_length }} / 250</span>
     <form v-if="isLogin" @submit.prevent="addComment" class="form">
       <!-- エラーメッセージ -->
       <div class="errors" v-if="commentErrors">
