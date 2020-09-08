@@ -61328,7 +61328,7 @@ var render = function() {
       _c("div", { staticClass: "mypage__containerInfo" }, [
         _c("div", { staticClass: "mypage__username" }, [
           _c("span", [
-            _vm._v(_vm._s(this.mypageUser_data.name) + "さん マイページ")
+            _vm._v("USER : " + _vm._s(this.mypageUser_data.name) + " さん")
           ])
         ]),
         _vm._v(" "),
