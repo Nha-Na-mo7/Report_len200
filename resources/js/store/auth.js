@@ -27,7 +27,8 @@ const state = {
 // ===============
 const getters = {
   loginCheck: state => !! state.user,
-  username: state => state.user ? state.user.name : ''
+  username: state => state.user ? state.user.name : '',
+  user_id: state => state.user ? state.user.id : ''
 }
 
 

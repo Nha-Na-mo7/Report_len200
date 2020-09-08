@@ -2879,6 +2879,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       currentPath: this.$route.path
     };
   },
+  computed: {
+    loginUserId: function loginUserId() {
+      return this.$store.getters['auth/user_id'];
+    },
+    isOwner: function isOwner() {
+      var item_owner_id = this.item.owner.id;
+      return item_owner_id === this.loginUserId;
+    }
+  },
   methods: {
     destroyReport: function destroyReport() {
       var _this = this;
@@ -61689,11 +61698,16 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn--destroy", on: { click: _vm.destroyReport } },
-        [_vm._v("削除")]
-      )
+      _vm.isOwner
+        ? _c(
+            "button",
+            {
+              staticClass: "btn btn--destroy",
+              on: { click: _vm.destroyReport }
+            },
+            [_vm._v("削除")]
+          )
+        : _vm._e()
     ],
     1
   )
@@ -79497,6 +79511,9 @@ var getters = {
   },
   username: function username(state) {
     return state.user ? state.user.name : '';
+  },
+  user_id: function user_id(state) {
+    return state.user ? state.user.id : '';
   }
 }; // ===============
 // mutations

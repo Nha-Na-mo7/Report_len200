@@ -13,7 +13,7 @@
     :title="`${item.report_title}`"
     >
     </RouterLink>
-    <button class="btn btn--destroy" v-on:click="destroyReport">削除</button>
+    <button v-if="isOwner" class="btn btn--destroy" v-on:click="destroyReport">削除</button>
 
 
   </div>
@@ -34,6 +34,15 @@ export default {
   data() {
     return {
       currentPath: this.$route.path
+    }
+  },
+  computed: {
+    loginUserId () {
+      return this.$store.getters['auth/user_id']
+    },
+    isOwner() {
+      const item_owner_id = this.item.owner.id
+      return item_owner_id === this.loginUserId
     }
   },
   methods: {
