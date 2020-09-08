@@ -2088,6 +2088,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     isLogin: function isLogin() {
@@ -2095,6 +2097,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     username: function username() {
       return this.$store.getters['auth/username'];
+    },
+    user_id: function user_id() {
+      return this.$store.getters['auth/user_id'];
     },
     apiStatus: function apiStatus() {
       return this.$store.state.auth.apiStatus;
@@ -60855,7 +60860,10 @@ var render = function() {
           _vm.username
             ? _c(
                 "RouterLink",
-                { staticClass: "btn btn--link", attrs: { to: "/mypage" } },
+                {
+                  staticClass: "btn btn--link",
+                  attrs: { to: "/mypage/" + this.user_id }
+                },
                 [_vm._v(_vm._s(_vm.username))]
               )
             : _c(
