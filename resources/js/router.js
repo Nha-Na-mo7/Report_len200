@@ -43,7 +43,7 @@ const routes = [
     }
   },
   {
-    path: '/mypage',
+    path: '/mypage/:user_id',
     component: Mypage,
     beforeEnter(to, from, next) {
       // ログイン画面はログインしていない場合ログインページにリダイレクト
@@ -53,11 +53,13 @@ const routes = [
         next('/login')
       }
     },
-    props: route => {
+    props: (route) => {
       const page = route.query.page
       return {
         // 整数でない値を1扱いにする
-        page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
+        page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1,
+        // mypage/:user_id のuser_idの部分
+        user_id: Number(route.params.user_id)
       }
     }
   },

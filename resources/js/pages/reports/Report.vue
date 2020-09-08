@@ -41,11 +41,13 @@ export default {
       return this.$store.getters['auth/user_id']
     },
     isOwner() {
+      // 日誌のオーナーと、現在ログイン中のユーザーが同一人物かを判定するメソッドです
       const item_owner_id = this.item.owner.id
       return item_owner_id === this.loginUserId
     }
   },
   methods: {
+    // 日誌を削除するAPIを起動するメソッド。削除後は親コンポーネントに対し、リストを再描画するようemitします。
     async destroyReport() {
       const response = await axios.delete(`/api/reports/${this.item.id}`)
 

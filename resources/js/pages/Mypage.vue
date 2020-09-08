@@ -5,7 +5,7 @@
       <!--左サイド-->
       <div class="mypage__containerInfo">
         <div class="mypage__username">
-          <span>ユーザーネーム</span>
+          <span>{{this.mypageUser_data.name}}さん マイページ</span>
         </div>
         <div class="mypage__userInfo">
           <span>投稿 : 0</span>
@@ -41,6 +41,10 @@ import Pagination from "../components/Pagination.vue";
 
 export default {
   props: {
+    user_id: {
+      type: Number,
+      required: true
+    },
     page: {
       type: Number,
       required: false,
@@ -48,21 +52,20 @@ export default {
     }
   },
   components: {
-    Report,
-    Pagination
+    Pagination,
+    Report
   },
   data() {
     return {
       reports: [],
+      mypageUser_data: [],
       currentPage: 0,
       lastPage: 0
     }
   },
   methods: {
     async fetchReports() {
-      const response = await axios.get(`/api/reports/?page=${this.page}`, {
-        user_id: 2
-      });
+      const response = await axios.get(`/api/reports/?page=${this.page}`);
 
       //エラー時
       if (response.status !== OK) {
@@ -74,12 +77,18 @@ export default {
       this.reports = response.data.data;
       this.currentPage = response.data.current_page
       this.lastPage = response.data.last_page
-
+    },
+    async getMypageUser() {
+      const response = await axios.get(`/api/user/${this.user_id}`);
+      if (response.status === OK) {
+        this.mypageUser_data = response.data
+      }
     }
   },
   watch: {
     $route: {
       async handler() {
+        await this.getMypageUser()
         await this.fetchReports()
       },
       immediate: true

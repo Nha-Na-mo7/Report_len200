@@ -2428,6 +2428,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
+    user_id: {
+      type: Number,
+      required: true
+    },
     page: {
       type: Number,
       required: false,
@@ -2435,12 +2439,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   components: {
-    Report: _reports_Report_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Pagination: _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    Pagination: _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Report: _reports_Report_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       reports: [],
+      mypageUser_data: [],
       currentPage: 0,
       lastPage: 0
     };
@@ -2456,9 +2461,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.get("/api/reports/?page=".concat(_this.page), {
-                  user_id: 2
-                });
+                return axios.get("/api/reports/?page=".concat(_this.page));
 
               case 2:
                 response = _context.sent;
@@ -2485,27 +2488,58 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    getMypageUser: function getMypageUser() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.get("/api/user/".concat(_this2.user_id));
+
+              case 2:
+                response = _context2.sent;
+
+                if (response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"]) {
+                  _this2.mypageUser_data = response.data;
+                }
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   watch: {
     $route: {
       handler: function handler() {
-        var _this2 = this;
+        var _this3 = this;
 
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
             while (1) {
-              switch (_context2.prev = _context2.next) {
+              switch (_context3.prev = _context3.next) {
                 case 0:
-                  _context2.next = 2;
-                  return _this2.fetchReports();
+                  _context3.next = 2;
+                  return _this3.getMypageUser();
 
                 case 2:
+                  _context3.next = 4;
+                  return _this3.fetchReports();
+
+                case 4:
                 case "end":
-                  return _context2.stop();
+                  return _context3.stop();
               }
             }
-          }, _callee2);
+          }, _callee3);
         }))();
       },
       immediate: true
@@ -2884,11 +2918,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.$store.getters['auth/user_id'];
     },
     isOwner: function isOwner() {
+      // 日誌のオーナーと、現在ログイン中のユーザーが同一人物かを判定するメソッドです
       var item_owner_id = this.item.owner.id;
       return item_owner_id === this.loginUserId;
     }
   },
   methods: {
+    // 日誌を削除するAPIを起動するメソッド。削除後は親コンポーネントに対し、リストを再描画するようemitします。
     destroyReport: function destroyReport() {
       var _this = this;
 
@@ -61281,7 +61317,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "mypage__container" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "mypage__containerInfo" }, [
+        _c("div", { staticClass: "mypage__username" }, [
+          _c("span", [
+            _vm._v(_vm._s(this.mypageUser_data.name) + "さん マイページ")
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -61322,14 +61366,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mypage__containerInfo" }, [
-      _c("div", { staticClass: "mypage__username" }, [
-        _c("span", [_vm._v("ユーザーネーム")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mypage__userInfo" }, [
-        _c("span", [_vm._v("投稿 : 0")])
-      ])
+    return _c("div", { staticClass: "mypage__userInfo" }, [
+      _c("span", [_vm._v("投稿 : 0")])
     ])
   }
 ]
@@ -79412,7 +79450,7 @@ var routes = [{
     }
   }
 }, {
-  path: '/mypage',
+  path: '/mypage/:user_id',
   component: _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログインしていない場合ログインページにリダイレクト
@@ -79426,7 +79464,9 @@ var routes = [{
     var page = route.query.page;
     return {
       // 整数でない値を1扱いにする
-      page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
+      page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1,
+      // mypage/:user_id のuser_idの部分
+      user_id: Number(route.params.user_id)
     };
   }
 }, {

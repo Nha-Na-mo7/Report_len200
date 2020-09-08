@@ -25,6 +25,8 @@ Route::post('/register', 'Auth\RegisterController@register')->name('register');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 //ログアウトAPI
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+//指定のユーザーIDの情報を取得するAPI
+Route::get('/user/{user_id}', 'UserController@getUser')->name('userProf.getuser');
 //ログインしているユーザー情報を取得するAPI
 Route::get('/user', fn() => Auth::user())->name('user');
 
