@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     async fetchReports() {
-      console.log('ReportList : fetchReports')
       const response = await axios.get(`/api/reports/?page=${this.page}`);
 
       // エラー時

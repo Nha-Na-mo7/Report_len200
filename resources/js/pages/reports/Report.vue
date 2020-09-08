@@ -38,9 +38,7 @@ export default {
   },
   methods: {
     async destroyReport() {
-      console.log('destroyReport! : ' + this.item.id)
       const response = await axios.delete(`/api/reports/${this.item.id}`)
-      console.log('レスポンス')
 
       this.emitFetchReports();
 
@@ -49,14 +47,6 @@ export default {
       console.log('emitFetchReports')
       this.$emit('reloadReports');
     }
-    //
-    // async destroyReport() {
-    //   console.log('destroyReport! : ' + this.item.id)
-    //   const response = await axios.delete(`/api/reports/${this.item.id}`)
-    //
-    //
-    //   // this.$router.push(`${this.currentPath}`)
-    // }
   },
   filters: {
     moment: function (date) {

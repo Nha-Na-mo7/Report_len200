@@ -2587,15 +2587,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('ReportList : fetchReports');
-                _context.next = 3;
+                _context.next = 2;
                 return axios.get("/api/reports/?page=".concat(_this.page));
 
-              case 3:
+              case 2:
                 response = _context.sent;
 
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 7;
+                  _context.next = 6;
                   break;
                 }
 
@@ -2603,12 +2602,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 7:
+              case 6:
                 _this.reports = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 10:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -2890,17 +2889,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('destroyReport! : ' + _this.item.id);
-                _context.next = 3;
+                _context.next = 2;
                 return axios["delete"]("/api/reports/".concat(_this.item.id));
 
-              case 3:
+              case 2:
                 response = _context.sent;
-                console.log('レスポンス');
 
                 _this.emitFetchReports();
 
-              case 6:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -2927,15 +2924,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
-    } //
-    // async destroyReport() {
-    //   console.log('destroyReport! : ' + this.item.id)
-    //   const response = await axios.delete(`/api/reports/${this.item.id}`)
-    //
-    //
-    //   // this.$router.push(`${this.currentPath}`)
-    // }
-
+    }
   },
   filters: {
     moment: function moment(date) {

@@ -23,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/Mypage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Mypage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/ReportList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/ReportList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
     </list>
@@ -216,7 +215,7 @@
       <workItem from="1598884955022" duration="16699000" />
       <workItem from="1599162699374" duration="8748000" />
       <workItem from="1599249421416" duration="12995000" />
-      <workItem from="1599464803551" duration="8970000" />
+      <workItem from="1599464803551" duration="9224000" />
     </task>
     <servers />
   </component>
