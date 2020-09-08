@@ -79452,14 +79452,6 @@ var routes = [{
 }, {
   path: '/mypage/:user_id',
   component: _pages_Mypage_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-  beforeEnter: function beforeEnter(to, from, next) {
-    // ログイン画面はログインしていない場合ログインページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
-      next();
-    } else {
-      next('/login');
-    }
-  },
   props: function props(route) {
     var page = route.query.page;
     return {

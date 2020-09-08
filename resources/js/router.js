@@ -45,14 +45,6 @@ const routes = [
   {
     path: '/mypage/:user_id',
     component: Mypage,
-    beforeEnter(to, from, next) {
-      // ログイン画面はログインしていない場合ログインページにリダイレクト
-      if (store.getters['auth/loginCheck']) {
-        next()
-      } else {
-        next('/login')
-      }
-    },
     props: (route) => {
       const page = route.query.page
       return {
