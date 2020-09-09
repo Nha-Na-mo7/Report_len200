@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <div class="mypage__container">
-
+    <div v-if="isExistUser" class="mypage__container">
       <!--左サイド-->
       <div class="mypage__containerInfo">
         <div class="mypage__username">
@@ -27,8 +26,15 @@
           </div>
         </div>
         <Pagination :current-page="currentPage" :last-page="lastPage"></Pagination>
-
       </div>
+    </div>
+    <!-- ユーザーが存在しないor削除された場合-->
+    <div v-else>
+      <div class="title">
+        <h1>ユーザーが見つかりませんでした。</h1>
+        <p>削除されているか、あるいは元から存在しません。</p>
+      </div>
+      <RouterLink class="btn" to="/">日誌一覧へ戻る</RouterLink>
     </div>
   </div>
 </template>
@@ -61,6 +67,11 @@ export default {
       mypageUser_data: [],
       currentPage: 0,
       lastPage: 0
+    }
+  },
+  computed: {
+    isExistUser() {
+      return this.mypageUser_data.length !== 0
     }
   },
   methods: {

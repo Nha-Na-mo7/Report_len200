@@ -2428,6 +2428,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2454,6 +2460,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       currentPage: 0,
       lastPage: 0
     };
+  },
+  computed: {
+    isExistUser: function isExistUser() {
+      return this.mypageUser_data.length !== 0;
+    }
   },
   methods: {
     fetchReports: function fetchReports() {
@@ -61334,49 +61345,61 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "mypage__container" }, [
-      _c("div", { staticClass: "mypage__containerInfo" }, [
-        _c("div", { staticClass: "mypage__username" }, [
-          _c("span", [
-            _vm._v("USER : " + _vm._s(this.mypageUser_data.name) + " さん")
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mypage__containerReports" },
-        [
-          _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "report-list" }, [
-            _c(
-              "div",
-              { staticClass: "grid" },
-              _vm._l(_vm.reports, function(report) {
-                return _c("Report", {
-                  key: report.id,
-                  staticClass: "report__item",
-                  attrs: { item: report },
-                  on: { reloadReports: _vm.fetchReports }
-                })
-              }),
-              1
-            )
+    _vm.isExistUser
+      ? _c("div", { staticClass: "mypage__container" }, [
+          _c("div", { staticClass: "mypage__containerInfo" }, [
+            _c("div", { staticClass: "mypage__username" }, [
+              _c("span", [
+                _vm._v("USER : " + _vm._s(this.mypageUser_data.name) + " さん")
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
           ]),
           _vm._v(" "),
-          _c("Pagination", {
-            attrs: {
-              "current-page": _vm.currentPage,
-              "last-page": _vm.lastPage
-            }
-          })
-        ],
-        1
-      )
-    ])
+          _c(
+            "div",
+            { staticClass: "mypage__containerReports" },
+            [
+              _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "report-list" }, [
+                _c(
+                  "div",
+                  { staticClass: "grid" },
+                  _vm._l(_vm.reports, function(report) {
+                    return _c("Report", {
+                      key: report.id,
+                      staticClass: "report__item",
+                      attrs: { item: report },
+                      on: { reloadReports: _vm.fetchReports }
+                    })
+                  }),
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("Pagination", {
+                attrs: {
+                  "current-page": _vm.currentPage,
+                  "last-page": _vm.lastPage
+                }
+              })
+            ],
+            1
+          )
+        ])
+      : _c(
+          "div",
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
+              _vm._v("日誌一覧へ戻る")
+            ])
+          ],
+          1
+        )
   ])
 }
 var staticRenderFns = [
@@ -61386,6 +61409,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mypage__userInfo" }, [
       _c("span", [_vm._v("投稿 : 0")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title" }, [
+      _c("h1", [_vm._v("ユーザーが見つかりませんでした。")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("削除されているか、あるいは元から存在しません。")])
     ])
   }
 ]
