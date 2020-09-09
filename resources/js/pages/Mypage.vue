@@ -4,10 +4,7 @@
       <!--左サイド-->
       <div class="mypage__containerInfo">
         <div class="mypage__username">
-          <span>USER : {{this.mypageUser_data.name}} さん</span>
-        </div>
-        <div class="mypage__userInfo">
-          <span>投稿 : 0</span>
+          <p><span class="mypage__username-span">{{this.mypageUser_data.name}}</span> さんのマイページ</p>
         </div>
       </div>
 

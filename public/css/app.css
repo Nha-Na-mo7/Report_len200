@@ -293,12 +293,18 @@ main {
 }
 
 .btn--destroy {
-  background: #c80000;
-  color: #222;
+  background: #f14d7f;
+  color: #f3f3f3;
   position: absolute;
   right: 15px;
   bottom: 10px;
-  z-index: 2;
+  box-shadow: #8a8a8a 0 3px 3px;
+  transition: all 0.5s;
+}
+
+.btn--destroy:hover {
+  background: #dd57bd;
+  box-shadow: #8a8a8a 0 5px 10px;
 }
 
 .form__item {
@@ -813,9 +819,14 @@ main {
 
 .mypage__username {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
   margin-top: 30px;
+}
+
+.mypage__username-span {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .mypage__userInfo {

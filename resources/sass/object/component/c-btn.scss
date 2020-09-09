@@ -48,12 +48,17 @@
     width: 100%;
   }
   &--destroy {
-    background: #c80000;
-    color: $font-color_dark;
+    background: #f14d7f;
+    color: $font-color_white;
     position: absolute;
     right: $space_l;
     bottom: $space_m;
-    z-index: 2;
+    box-shadow: #8a8a8a 0 3px 3px;
+    transition: all .5s;
+    &:hover {
+      background: #dd57bd;
+      box-shadow: #8a8a8a 0 5px 10px;
+    }
   }
 
 

@@ -2431,9 +2431,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 
 
 
@@ -61349,12 +61346,13 @@ var render = function() {
       ? _c("div", { staticClass: "mypage__container" }, [
           _c("div", { staticClass: "mypage__containerInfo" }, [
             _c("div", { staticClass: "mypage__username" }, [
-              _c("span", [
-                _vm._v("USER : " + _vm._s(this.mypageUser_data.name) + " さん")
+              _c("p", [
+                _c("span", { staticClass: "mypage__username-span" }, [
+                  _vm._v(_vm._s(this.mypageUser_data.name))
+                ]),
+                _vm._v(" さんのマイページ")
               ])
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
+            ])
           ]),
           _vm._v(" "),
           _c(
@@ -61392,7 +61390,7 @@ var render = function() {
       : _c(
           "div",
           [
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
               _vm._v("日誌一覧へ戻る")
@@ -61403,14 +61401,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mypage__userInfo" }, [
-      _c("span", [_vm._v("投稿 : 0")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -38,9 +38,13 @@
 
   &__username {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
     margin-top: $space_xxl;
+    &-span {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
   }
   &__userInfo {
     font-size: 1.2rem;
