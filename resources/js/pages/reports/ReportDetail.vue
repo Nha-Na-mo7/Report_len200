@@ -4,10 +4,15 @@
     <!--レポート詳細部分-->
     <div class="report-detail">
       <h1 class="report-detail__title">{{ this.report.report_title }}</h1>
-      <h2 class="report-detail__about">{{ this.report.about }}</h2>
+      <h2 class="report-detail__about">{{ report_about }}</h2>
       <div class="report-detail__info">
         <span class="report-detail__date">{{ this.report.created_at | moment_report }}</span>
-        <span class="report-detail__username">{{ this.report.owner.name }}</span>
+        <RouterLink
+            class="report-detail__username"
+            :to="`/mypage/${ this.report.owner.id }`"
+        >
+          {{ this.report.owner.name }}
+        </RouterLink>
       </div>
       <div class="report-detail__content-area">
         <span class="report-detail__content">{{ this.report.contents.content }}</span>
@@ -88,6 +93,9 @@ export default {
     },
     content_length() {
       return this.commentContent.length;
+    },
+    report_about() {
+      return this.report.about ?? '　'
     }
   },
   methods: {

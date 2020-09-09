@@ -3083,6 +3083,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3105,6 +3110,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     content_length: function content_length() {
       return this.commentContent.length;
+    },
+    report_about: function report_about() {
+      var _this$report$about;
+
+      return (_this$report$about = this.report.about) !== null && _this$report$about !== void 0 ? _this$report$about : '　';
     }
   },
   methods: {
@@ -61790,18 +61800,32 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("h2", { staticClass: "report-detail__about" }, [
-          _vm._v(_vm._s(this.report.about))
+          _vm._v(_vm._s(_vm.report_about))
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "report-detail__info" }, [
-          _c("span", { staticClass: "report-detail__date" }, [
-            _vm._v(_vm._s(_vm._f("moment_report")(this.report.created_at)))
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "report-detail__username" }, [
-            _vm._v(_vm._s(this.report.owner.name))
-          ])
-        ]),
+        _c(
+          "div",
+          { staticClass: "report-detail__info" },
+          [
+            _c("span", { staticClass: "report-detail__date" }, [
+              _vm._v(_vm._s(_vm._f("moment_report")(this.report.created_at)))
+            ]),
+            _vm._v(" "),
+            _c(
+              "RouterLink",
+              {
+                staticClass: "report-detail__username",
+                attrs: { to: "/mypage/" + this.report.owner.id }
+              },
+              [
+                _vm._v(
+                  "\n          " + _vm._s(this.report.owner.name) + "\n        "
+                )
+              ]
+            )
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "report-detail__content-area" }, [
           _c("span", { staticClass: "report-detail__content" }, [
