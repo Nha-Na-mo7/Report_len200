@@ -49,10 +49,10 @@ export default {
   methods: {
     // 日誌を削除するAPIを起動するメソッド。削除後は親コンポーネントに対し、リストを再描画するようemitします。
     async destroyReport() {
-      const response = await axios.delete(`/api/reports/${this.item.id}`)
-
-      this.emitFetchReports();
-
+      if(confirm('削除した場合、日誌は復元できません。削除しますか？')) {
+        const response = await axios.delete(`/api/reports/${this.item.id}`)
+        this.emitFetchReports();
+      }
     },
     async emitFetchReports() {
       console.log('emitFetchReports')

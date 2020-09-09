@@ -2947,15 +2947,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (!confirm('削除した場合、日誌は復元できません。削除しますか？')) {
+                  _context.next = 5;
+                  break;
+                }
+
+                _context.next = 3;
                 return axios["delete"]("/api/reports/".concat(_this.item.id));
 
-              case 2:
+              case 3:
                 response = _context.sent;
 
                 _this.emitFetchReports();
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
