@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     async fetchReports() {
-      const response = await axios.get(`/api/reports/?page=${this.page}`);
+      const response = await axios.get(`/api/mypage/reports/${this.mypageUser_data.id}/?page=${this.page}`);
 
       //エラー時
       if (response.status !== OK) {
