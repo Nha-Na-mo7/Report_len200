@@ -2756,6 +2756,110 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      profileAddForm: {
+        username: '',
+        prof_content: ''
+      },
+      profileEditForm: {
+        username: '',
+        prof_content: ''
+      },
+      errors: null
+    };
+  },
+  computed: {
+    add_username_length: function add_username_length() {
+      return this.profileAddForm.username.length;
+    },
+    add_content_length: function add_content_length() {
+      return this.profileAddForm.prof_content.length;
+    },
+    edit_username_length: function edit_username_length() {
+      return this.profileEditForm.username.length;
+    },
+    edit_content_length: function edit_content_length() {
+      return this.profileEditForm.prof_content.length;
+    },
+    submit: function submit() {
+      return '';
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/reports/New.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/reports/New.vue?vue&type=script&lang=js& ***!
@@ -61590,6 +61694,268 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container--small" },
+    [
+      _c("div", {}, [
+        _c("div", { staticClass: "report-form" }, [
+          _c("h2", { staticClass: "title u__mb-3l" }, [
+            _vm._v("プロフィールを追加する")
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "form",
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                }
+              }
+            },
+            [
+              _c("label", { attrs: { for: "edit_username" } }, [
+                _vm._v("ユーザーネーム "),
+                _c("span", [
+                  _vm._v("( " + _vm._s(_vm.add_username_length) + " / 20文字 )")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.profileAddForm.username,
+                    expression: "profileAddForm.username"
+                  }
+                ],
+                staticClass: "form__item",
+                attrs: {
+                  type: "text",
+                  id: "add_username",
+                  placeholder: "名前を入力しましょう",
+                  autocomplete: "off"
+                },
+                domProps: { value: _vm.profileAddForm.username },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.profileAddForm,
+                      "username",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "edit_profile" } }, [
+                _vm._v("プロフィール "),
+                _c("span", [
+                  _vm._v(
+                    "( 入力文字数 : " +
+                      _vm._s(_vm.add_content_length) +
+                      " / 500文字 )"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.profileAddForm.prof_content,
+                    expression: "profileAddForm.prof_content"
+                  }
+                ],
+                staticClass: "form__item form__textarea",
+                attrs: {
+                  id: "add_profile",
+                  placeholder: "500字以内で入力してください。"
+                },
+                domProps: { value: _vm.profileAddForm.prof_content },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.profileAddForm,
+                      "prof_content",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(0)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", {}, [
+        _c("div", { staticClass: "report-form" }, [
+          _c("h2", { staticClass: "title u__mb-3l" }, [
+            _vm._v("プロフィール編集")
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "form",
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                }
+              }
+            },
+            [
+              _c("label", { attrs: { for: "edit_username" } }, [
+                _vm._v("ユーザーネーム "),
+                _c("span", [
+                  _vm._v(
+                    "( " + _vm._s(_vm.edit_username_length) + " / 20文字 )"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.profileEditForm.username,
+                    expression: "profileEditForm.username"
+                  }
+                ],
+                staticClass: "form__item",
+                attrs: {
+                  type: "text",
+                  id: "edit_username",
+                  placeholder: "名前を入力しましょう",
+                  autocomplete: "off"
+                },
+                domProps: { value: _vm.profileEditForm.username },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.profileEditForm,
+                      "username",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "edit_profile" } }, [
+                _vm._v("プロフィール "),
+                _c("span", [
+                  _vm._v(
+                    "( 入力文字数 : " +
+                      _vm._s(_vm.edit_content_length) +
+                      " / 500文字 )"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.profileEditForm.prof_content,
+                    expression: "profileEditForm.prof_content"
+                  }
+                ],
+                staticClass: "form__item form__textarea",
+                attrs: {
+                  id: "edit_profile",
+                  placeholder: "500字以内で入力してください。"
+                },
+                domProps: { value: _vm.profileEditForm.prof_content },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.profileEditForm,
+                      "prof_content",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
+        _vm._v("日誌一覧へ戻る")
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form__btn" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
+        [_vm._v("プロフィールを追加する")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form__btn" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
+        [_vm._v("更新する")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/reports/New.vue?vue&type=template&id=6608a257&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/reports/New.vue?vue&type=template&id=6608a257&scoped=true& ***!
@@ -79280,6 +79646,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/profiles/Edit.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/pages/profiles/Edit.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Edit.vue?vue&type=template&id=349aa316& */ "./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316&");
+/* harmony import */ var _Edit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Edit.vue?vue&type=script&lang=js& */ "./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Edit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/profiles/Edit.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/profiles/Edit.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Edit.vue?vue&type=template&id=349aa316& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/profiles/Edit.vue?vue&type=template&id=349aa316&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Edit_vue_vue_type_template_id_349aa316___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/reports/New.vue":
 /*!********************************************!*\
   !*** ./resources/js/pages/reports/New.vue ***!
@@ -79506,9 +79941,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/reports/ReportDetail.vue */ "./resources/js/pages/reports/ReportDetail.vue");
 /* harmony import */ var _pages_errors_System500_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/errors/System500.vue */ "./resources/js/pages/errors/System500.vue");
 /* harmony import */ var _pages_errors_NotFound404_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/errors/NotFound404.vue */ "./resources/js/pages/errors/NotFound404.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _pages_profiles_Edit_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/profiles/Edit.vue */ "./resources/js/pages/profiles/Edit.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 
  // ページコンポーネントのインポート
+
 
 
 
@@ -79537,7 +79974,7 @@ var routes = [{
   component: _pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログイン済みの場合トップページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__["default"].getters['auth/loginCheck']) {
       next('/');
     } else {
       next();
@@ -79560,7 +79997,7 @@ var routes = [{
   component: _pages_reports_New_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン画面はログインしていない場合ログインページにリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_9__["default"].getters['auth/loginCheck']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_10__["default"].getters['auth/loginCheck']) {
       next();
     } else {
       next('/login');
@@ -79570,6 +80007,17 @@ var routes = [{
   path: '/reports/:report_id',
   component: _pages_reports_ReportDetail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   props: true
+}, {
+  path: '/profile/edit',
+  component: _pages_profiles_Edit_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+  beforeEnter: function beforeEnter(to, from, next) {
+    // ログイン画面はログインしていない場合ログインページにリダイレクト
+    if (_store__WEBPACK_IMPORTED_MODULE_10__["default"].getters['auth/loginCheck']) {
+      next();
+    } else {
+      next('/login');
+    }
+  }
 }, {
   path: '/500',
   component: _pages_errors_System500_vue__WEBPACK_IMPORTED_MODULE_7__["default"]

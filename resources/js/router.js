@@ -9,6 +9,7 @@ import ReportNew from './pages/reports/New.vue'
 import ReportDetail from './pages/reports/ReportDetail.vue'
 import SystemError from './pages/errors/System500.vue'
 import NotFound from './pages/errors/NotFound404.vue'
+import Edit from './pages/profiles/Edit.vue'
 
 // ストアのインポート
 import store from './store'
@@ -71,6 +72,18 @@ const routes = [
     path: '/reports/:report_id',
     component: ReportDetail,
     props: true
+  },
+  {
+    path: '/profile/edit',
+    component: Edit,
+    beforeEnter(to, from, next) {
+      // ログイン画面はログインしていない場合ログインページにリダイレクト
+      if (store.getters['auth/loginCheck']) {
+        next()
+      } else {
+        next('/login')
+      }
+    }
   },
   {
     path: '/500',
