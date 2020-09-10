@@ -30,23 +30,27 @@ Route::get('/user/{user_id}', 'UserController@getUser')->name('userProf.getuser'
 //ログインしているユーザー情報を取得するAPI
 Route::get('/user', fn() => Auth::user())->name('user');
 
+
 //レポートを新規投稿するAPI
 Route::post('/reports', 'ReportController@create')->name('report.create');
-
 //レポート一覧を取得するAPI
 Route::get('/reports', 'ReportController@index')->name('report.index');
 //指定ユーザーのレポート一覧を取得するAPI
 Route::get('/mypage/reports/{user_id}', 'ReportController@index')->name('report.mypage_index');
-
 //レポート詳細取得
 Route::get('/reports/{report_id}', 'ReportController@show')->name('report.show');
 // レポートを削除
 Route::delete('/reports/{report_id}', 'ReportController@destroy')->name('report.destroy');
-
-
-//コメントの投稿
+//レポートへコメントの投稿
 Route::post('/reports/{report}/comments', 'ReportController@addComment')->name('report.comment');
 
+
+//プロフィールを新規作成するAPI
+Route::post('/profile', 'ProfileController@create')->name('profile.create');
+//プロフィールをエディットするAPI
+Route::put('/profile', 'ProfileController@edit')->name('profile.edit');
+//指定ユーザーのプロフィールを取得するAPI
+Route::get('/profile/{user_id}', 'ProfileController@show')->name('profile.show');
 
 
 //トークンリフレッシュ

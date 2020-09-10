@@ -19,4 +19,5 @@ class UserController extends Controller
       
       return $user ?? abort(404);
     }
+
 }

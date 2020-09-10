@@ -52,4 +52,13 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Comment');
     }
+  
+    /**
+     * リレーション - profilesテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function profiles()
+    {
+      return $this->hasOne('App\Profile');
+    }
 }
