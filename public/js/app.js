@@ -2431,6 +2431,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2461,6 +2470,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   computed: {
     isExistUser: function isExistUser() {
       return this.mypageUser_data.length !== 0;
+    },
+    loginUserId: function loginUserId() {
+      return this.$store.getters['auth/user_id'];
     }
   },
   methods: {
@@ -61350,15 +61362,25 @@ var render = function() {
     _vm.isExistUser
       ? _c("div", { staticClass: "mypage__container" }, [
           _c("div", { staticClass: "mypage__containerInfo" }, [
-            _c("div", { staticClass: "mypage__username" }, [
-              _c("p", [
-                _c("span", { staticClass: "mypage__username-span" }, [
-                  _vm._v(_vm._s(this.mypageUser_data.name))
-                ]),
-                _vm._v(" さんのマイページ")
+            _c("div", { staticClass: "mypage__usernameArea" }, [
+              _c("div", { staticClass: "mypage__username" }, [
+                _c("p", [
+                  _c("span", { staticClass: "mypage__username-span" }, [
+                    _vm._v(_vm._s(this.mypageUser_data.name))
+                  ]),
+                  _vm._v(" さんのマイページ")
+                ])
               ])
-            ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
           ]),
+          _vm._v(" "),
+          _vm.loginUserId === this.user_id
+            ? _c("a", { staticClass: "btn btn--profEdit" }, [
+                _vm._v("プロフィール編集")
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "div",
@@ -61395,7 +61417,7 @@ var render = function() {
       : _c(
           "div",
           [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
               _vm._v("日誌一覧へ戻る")
@@ -61410,8 +61432,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mypage__profArea" }, [
+      _c("p", { staticClass: "mypage__profile" }, [
+        _vm._v(
+          "あああああああああああああああああああああわあああああああああああああんあああああああああああああああああああああああああああああああああああああああああああフォオオおおおおおおおおおおおおおおおおおおおおおおおお秒おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおぬううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう。"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title" }, [
-      _c("h1", [_vm._v("ユーザーが見つかりませんでした。")]),
+      _c("h1", [_vm._v("ユーザーが見つかりませんでした^^")]),
       _vm._v(" "),
       _c("p", [_vm._v("削除されているか、あるいは元から存在しません。")])
     ])

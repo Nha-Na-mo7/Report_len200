@@ -3,10 +3,19 @@
     <div v-if="isExistUser" class="mypage__container">
       <!--左サイド-->
       <div class="mypage__containerInfo">
-        <div class="mypage__username">
-          <p><span class="mypage__username-span">{{this.mypageUser_data.name}}</span> さんのマイページ</p>
+
+        <div class="mypage__usernameArea">
+          <div class="mypage__username">
+            <p><span class="mypage__username-span">{{this.mypageUser_data.name}}</span> さんのマイページ</p>
+          </div>
         </div>
+
+        <div class="mypage__profArea">
+          <p class="mypage__profile">あああああああああああああああああああああわあああああああああああああんあああああああああああああああああああああああああああああああああああああああああああフォオオおおおおおおおおおおおおおおおおおおおおおおおお秒おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおぬううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう。</p>
+        </div>
+
       </div>
+      <a v-if="loginUserId === this.user_id" class="btn btn--profEdit">プロフィール編集</a>
 
       <!--右サイド-->
       <div class="mypage__containerReports">
@@ -28,7 +37,7 @@
     <!-- ユーザーが存在しないor削除された場合-->
     <div v-else>
       <div class="title">
-        <h1>ユーザーが見つかりませんでした。</h1>
+        <h1>ユーザーが見つかりませんでした^^</h1>
         <p>削除されているか、あるいは元から存在しません。</p>
       </div>
       <RouterLink class="btn" to="/">日誌一覧へ戻る</RouterLink>
@@ -69,6 +78,9 @@ export default {
   computed: {
     isExistUser() {
       return this.mypageUser_data.length !== 0
+    },
+    loginUserId () {
+      return this.$store.getters['auth/user_id']
     }
   },
   methods: {

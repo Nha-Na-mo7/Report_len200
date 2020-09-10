@@ -307,6 +307,21 @@ main {
   box-shadow: #8a8a8a 0 5px 10px;
 }
 
+.btn--profEdit {
+  background: #ffd0ee;
+  color: #222;
+  display: inline-block;
+  position: absolute;
+  margin: 10px 25%;
+  box-shadow: #8a8a8a 0 3px 3px;
+  transition: all 0.5s;
+}
+
+.btn--profEdit:hover {
+  background: #dd57bd;
+  box-shadow: #8a8a8a 0 5px 10px;
+}
+
 .form__item {
   border: 1px solid #dedede;
   border-radius: 0.25rem;
@@ -792,10 +807,12 @@ main {
 }
 
 .mypage__containerInfo {
-  background: #f6f6f6;
+  background: #f5f5f5;
   border-radius: 4px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
   padding: 15px 10px;
+  margin: 0 auto;
   margin-right: 15px;
   width: 33%;
 }
@@ -822,6 +839,13 @@ main {
   font-size: 1rem;
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.mypage__usernameArea {
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: #222 dotted 1px;
 }
 
 .mypage__username-span {
@@ -834,6 +858,12 @@ main {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+.mypage__profArea {
+  font-size: 1.5rem;
+  position: relative;
+  padding: 10px;
 }
 
 .u__mt-l {
