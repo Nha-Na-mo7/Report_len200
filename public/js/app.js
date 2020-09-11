@@ -2894,16 +2894,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      profile: '',
-      profileAddForm: {
+      isExistProfile: false,
+      profileEditForm: {
         username: '',
         profile: ''
       },
-      profileEditForm: {
+      profileAddForm: {
         username: '',
         profile: ''
       },
@@ -2929,9 +2930,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     // ===============
-    // プロフィール作成
+    // プロフィール更新
     // ===============
-    add_submit: function add_submit() {
+    edit_submit: function edit_submit() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -2941,23 +2942,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.post('../api/profile', _this.profileAddForm);
+                return axios.put('../api/profile', _this.profileEditForm);
 
               case 2:
                 response = _context.sent;
+                console.log(response.status); // バリデーションエラー
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 7;
+                  _context.next = 8;
                   break;
                 }
 
-                console.log('Edit.vue add_submit() : 422エラーです！');
+                console.log('Edit.vue edit_submit() : 422エラーです！');
                 _this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 7:
+              case 8:
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 10;
+                  _context.next = 11;
                   break;
                 }
 
@@ -2965,11 +2967,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 10:
+              case 11:
                 // 投稿後にマイページへ遷移させる
                 _this.$router.push("/mypage/".concat(_this.loginUserId));
 
-              case 11:
+              case 12:
               case "end":
                 return _context.stop();
             }
@@ -2978,9 +2980,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     // ===============
-    // プロフィール更新
+    // プロフィール作成
     // ===============
-    edit_submit: function edit_submit() {
+    add_submit: function add_submit() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -2990,7 +2992,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.put('../api/profile', _this2.profileEditForm);
+                return axios.post('../api/profile', _this2.profileAddForm);
 
               case 2:
                 response = _context2.sent;
@@ -3000,7 +3002,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   break;
                 }
 
-                console.log('Edit.vue edit_submit() : 422エラーです！');
+                console.log('Edit.vue add_submit() : 422エラーです！');
                 _this2.errors = response.data.errors;
                 return _context2.abrupt("return", false);
 
@@ -3045,7 +3047,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context3.sent;
 
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["NOT_FOUND"])) {
-                  _context3.next = 10;
+                  _context3.next = 11;
                   break;
                 }
 
@@ -3059,14 +3061,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context3.abrupt("return", false);
 
               case 7:
-                _this3.profile = response.data.profile;
-                _context3.next = 11;
+                _this3.isExistProfile = true;
+                _this3.profileEditForm.profile = response.data.profile;
+                _context3.next = 12;
                 break;
 
-              case 10:
-                _this3.profile = null;
-
               case 11:
+                _this3.isExistProfile = false;
+
+              case 12:
               case "end":
                 return _context3.stop();
             }
@@ -61961,8 +61964,69 @@ var render = function() {
     "div",
     { staticClass: "container--small" },
     [
-      this.profile === null
+      this.isExistProfile
         ? _c("div", { staticClass: "report-form" }, [
+            _c("h2", { staticClass: "title u__mb-3l" }, [
+              _vm._v("プロフィール編集")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "form",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.edit_submit($event)
+                  }
+                }
+              },
+              [
+                _c("label", { attrs: { for: "edit_profile" } }, [
+                  _vm._v("プロフィール "),
+                  _c("span", [
+                    _vm._v(
+                      "( 入力文字数 : " +
+                        _vm._s(_vm.edit_content_length) +
+                        " / 500文字 )"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.profileEditForm.profile,
+                      expression: "profileEditForm.profile"
+                    }
+                  ],
+                  staticClass: "form__item form__textarea",
+                  attrs: {
+                    id: "edit_profile",
+                    placeholder: "500字以内で入力してください。"
+                  },
+                  domProps: { value: _vm.profileEditForm.profile },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.profileEditForm,
+                        "profile",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        : _c("div", { staticClass: "report-form" }, [
             _c("h2", { staticClass: "title u__mb-3l" }, [
               _vm._v("プロフィールを追加する")
             ]),
@@ -62019,71 +62083,6 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _vm._m(0)
-              ]
-            )
-          ])
-        : _c("div", { staticClass: "report-form" }, [
-            _c("h2", { staticClass: "title u__mb-3l" }, [
-              _vm._v("プロフィール編集")
-            ]),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                staticClass: "form",
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.edit_submit($event)
-                  }
-                }
-              },
-              [
-                _c("label", { attrs: { for: "edit_profile" } }, [
-                  _vm._v("プロフィール "),
-                  _c("span", [
-                    _vm._v(
-                      "( 入力文字数 : " +
-                        _vm._s(_vm.edit_content_length) +
-                        " / 500文字 )"
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "textarea",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.profileEditForm.profile,
-                        expression: "profileEditForm.profile"
-                      }
-                    ],
-                    staticClass: "form__item form__textarea",
-                    attrs: {
-                      id: "edit_profile",
-                      placeholder: "500字以内で入力してください。"
-                    },
-                    domProps: { value: _vm.profileEditForm.profile },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.profileEditForm,
-                          "profile",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  },
-                  [_vm._v(_vm._s(this.profile))]
-                ),
-                _vm._v(" "),
                 _vm._m(1)
               ]
             )
@@ -62105,7 +62104,7 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
-        [_vm._v("プロフィールを追加する")]
+        [_vm._v("更新する")]
       )
     ])
   },
@@ -62117,7 +62116,7 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn--inverse", attrs: { type: "submit" } },
-        [_vm._v("更新する")]
+        [_vm._v("プロフィールを追加する")]
       )
     ])
   }
