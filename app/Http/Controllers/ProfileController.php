@@ -52,7 +52,7 @@ class ProfileController extends Controller
     public function show(int $user_id)
     {
       Log::debug('ProfileController : getUser : ID='.$user_id);
-      $profile = Profile::where('id', $user_id)->first();
+      $profile = Profile::where('user_id', $user_id)->first();
   
       return $profile ?? abort(404);
     }

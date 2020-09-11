@@ -2830,18 +2830,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      profile: '',
       profileAddForm: {
         username: '',
         profile: ''
@@ -2871,7 +2864,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   methods: {
+    // ===============
     // プロフィール作成
+    // ===============
     add_submit: function add_submit() {
       var _this = this;
 
@@ -2918,7 +2913,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
+    // ===============
     // プロフィール更新
+    // ===============
     edit_submit: function edit_submit() {
       var _this2 = this;
 
@@ -2964,6 +2961,78 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    // ===============
+    // プロフィールの取得
+    // ===============
+    fetchProfile: function fetchProfile() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios.get("../api/profile/".concat(_this3.loginUserId));
+
+              case 2:
+                response = _context3.sent;
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["NOT_FOUND"])) {
+                  _context3.next = 10;
+                  break;
+                }
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context3.next = 7;
+                  break;
+                }
+
+                _this3.$store.commit('error/setErrorCode', response.status);
+
+                return _context3.abrupt("return", false);
+
+              case 7:
+                _this3.profile = response.data.profile;
+                _context3.next = 11;
+                break;
+
+              case 10:
+                _this3.profile = null;
+
+              case 11:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    }
+  },
+  watch: {
+    $route: {
+      handler: function handler() {
+        var _this4 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+            while (1) {
+              switch (_context4.prev = _context4.next) {
+                case 0:
+                  _context4.next = 2;
+                  return _this4.fetchProfile();
+
+                case 2:
+                case "end":
+                  return _context4.stop();
+              }
+            }
+          }, _callee4);
+        }))();
+      },
+      immediate: true
     }
   }
 });
@@ -61836,129 +61905,133 @@ var render = function() {
     "div",
     { staticClass: "container--small" },
     [
-      _c("div", {}, [
-        _c("div", { staticClass: "report-form" }, [
-          _c("h2", { staticClass: "title u__mb-3l" }, [
-            _vm._v("プロフィールを追加する")
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              staticClass: "form",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.add_submit($event)
-                }
-              }
-            },
-            [
-              _c("label", { attrs: { for: "edit_profile" } }, [
-                _vm._v("プロフィール "),
-                _c("span", [
-                  _vm._v(
-                    "( 入力文字数 : " +
-                      _vm._s(_vm.add_content_length) +
-                      " / 500文字 )"
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.profileAddForm.profile,
-                    expression: "profileAddForm.profile"
-                  }
-                ],
-                staticClass: "form__item form__textarea",
-                attrs: {
-                  id: "add_profile",
-                  placeholder: "500字以内で入力してください。"
-                },
-                domProps: { value: _vm.profileAddForm.profile },
+      this.profile === null
+        ? _c("div", { staticClass: "report-form" }, [
+            _c("h2", { staticClass: "title u__mb-3l" }, [
+              _vm._v("プロフィールを追加する")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "form",
                 on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.profileAddForm, "profile", $event.target.value)
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.add_submit($event)
                   }
                 }
-              }),
-              _vm._v(" "),
-              _vm._m(0)
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", {}, [
-        _c("div", { staticClass: "report-form" }, [
-          _c("h2", { staticClass: "title u__mb-3l" }, [
-            _vm._v("プロフィール編集")
-          ]),
-          _vm._v(" "),
-          _c(
-            "form",
-            {
-              staticClass: "form",
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.edit_submit($event)
-                }
-              }
-            },
-            [
-              _c("label", { attrs: { for: "edit_profile" } }, [
-                _vm._v("プロフィール "),
-                _c("span", [
-                  _vm._v(
-                    "( 入力文字数 : " +
-                      _vm._s(_vm.edit_content_length) +
-                      " / 500文字 )"
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.profileEditForm.profile,
-                    expression: "profileEditForm.profile"
-                  }
-                ],
-                staticClass: "form__item form__textarea",
-                attrs: {
-                  id: "edit_profile",
-                  placeholder: "500字以内で入力してください。"
-                },
-                domProps: { value: _vm.profileEditForm.profile },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(
-                      _vm.profileEditForm,
-                      "profile",
-                      $event.target.value
+              },
+              [
+                _c("label", { attrs: { for: "edit_profile" } }, [
+                  _vm._v("プロフィール "),
+                  _c("span", [
+                    _vm._v(
+                      "( 入力文字数 : " +
+                        _vm._s(_vm.add_content_length) +
+                        " / 500文字 )"
                     )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.profileAddForm.profile,
+                      expression: "profileAddForm.profile"
+                    }
+                  ],
+                  staticClass: "form__item form__textarea",
+                  attrs: {
+                    id: "add_profile",
+                    placeholder: "500字以内で入力してください。"
+                  },
+                  domProps: { value: _vm.profileAddForm.profile },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.profileAddForm,
+                        "profile",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(0)
+              ]
+            )
+          ])
+        : _c("div", { staticClass: "report-form" }, [
+            _c("h2", { staticClass: "title u__mb-3l" }, [
+              _vm._v("プロフィール編集")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                staticClass: "form",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.edit_submit($event)
                   }
                 }
-              }),
-              _vm._v(" "),
-              _vm._m(1)
-            ]
-          )
-        ])
-      ]),
+              },
+              [
+                _c("label", { attrs: { for: "edit_profile" } }, [
+                  _vm._v("プロフィール "),
+                  _c("span", [
+                    _vm._v(
+                      "( 入力文字数 : " +
+                        _vm._s(_vm.edit_content_length) +
+                        " / 500文字 )"
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "textarea",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.profileEditForm.profile,
+                        expression: "profileEditForm.profile"
+                      }
+                    ],
+                    staticClass: "form__item form__textarea",
+                    attrs: {
+                      id: "edit_profile",
+                      placeholder: "500字以内で入力してください。"
+                    },
+                    domProps: { value: _vm.profileEditForm.profile },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.profileEditForm,
+                          "profile",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(this.profile))]
+                ),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ]),
       _vm._v(" "),
       _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
         _vm._v("日誌一覧へ戻る")
