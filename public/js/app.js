@@ -2564,19 +2564,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
+                if (!(_this3.mypageUser_data.length !== 0)) {
+                  _context3.next = 12;
+                  break;
+                }
+
+                _context3.next = 3;
                 return axios.get("../api/profile/".concat(_this3.mypageUser_data.id));
 
-              case 2:
+              case 3:
                 response = _context3.sent;
 
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["NOT_FOUND"])) {
-                  _context3.next = 10;
+                  _context3.next = 11;
                   break;
                 }
 
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context3.next = 7;
+                  _context3.next = 8;
                   break;
                 }
 
@@ -2584,15 +2589,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context3.abrupt("return", false);
 
-              case 7:
+              case 8:
                 _this3.mypageUser_profile = response.data.profile;
-                _context3.next = 11;
+                _context3.next = 12;
                 break;
 
-              case 10:
+              case 11:
                 _this3.mypageUser_profile = null;
 
-              case 11:
+              case 12:
               case "end":
                 return _context3.stop();
             }

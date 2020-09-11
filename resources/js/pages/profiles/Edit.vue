@@ -33,7 +33,7 @@
         <!--          <label for="edit_username">ユーザーネーム <span>( {{ edit_username_length }} / 20文字 )</span></label>-->
         <!--          <input type="text" class="form__item" id="edit_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileEditForm.username">-->
         <label for="edit_profile">プロフィール <span>( 入力文字数 : {{ edit_content_length }} / 500文字 )</span></label>
-        <textarea class="form__item form__textarea" id="edit_profile" placeholder="500字以内で入力してください。" v-model="profileEditForm.profile">{{this.profile}}</textarea>
+        <textarea class="form__item form__textarea" id="edit_profile" placeholder="500字以内で入力してください。" v-model="profileEditForm.profile">{{ this.profile }}</textarea>
 
 
         <div class="form__btn">
