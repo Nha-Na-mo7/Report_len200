@@ -48,7 +48,7 @@ Route::post('/reports/{report}/comments', 'ReportController@addComment')->name('
 //プロフィールを新規作成するAPI
 Route::post('/profile', 'ProfileController@create')->name('profile.create');
 //プロフィールをエディットするAPI
-Route::put('/profile', 'ProfileController@edit')->name('profile.edit');
+Route::put('/profile/{user_id}', 'ProfileController@edit')->name('profile.edit');
 //指定ユーザーのプロフィールを取得するAPI
 Route::get('/profile/{user_id}', 'ProfileController@show')->name('profile.show');
 

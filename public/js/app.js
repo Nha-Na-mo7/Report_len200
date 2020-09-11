@@ -2942,24 +2942,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios.put('../api/profile', _this.profileEditForm);
+                return axios.put("../api/profile/".concat(_this.loginUserId), _this.profileEditForm);
 
               case 2:
                 response = _context.sent;
-                console.log(response.status); // バリデーションエラー
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 8;
+                  _context.next = 6;
                   break;
                 }
 
-                console.log('Edit.vue edit_submit() : 422エラーです！');
                 _this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 8:
-                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 11;
+              case 6:
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 9;
                   break;
                 }
 
@@ -2967,11 +2965,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 11:
+              case 9:
                 // 投稿後にマイページへ遷移させる
                 _this.$router.push("/mypage/".concat(_this.loginUserId));
 
-              case 12:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -2998,17 +2996,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context2.sent;
 
                 if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context2.next = 7;
+                  _context2.next = 6;
                   break;
                 }
 
-                console.log('Edit.vue add_submit() : 422エラーです！');
                 _this2.errors = response.data.errors;
                 return _context2.abrupt("return", false);
 
-              case 7:
+              case 6:
                 if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context2.next = 10;
+                  _context2.next = 9;
                   break;
                 }
 
@@ -3016,11 +3013,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context2.abrupt("return", false);
 
-              case 10:
+              case 9:
                 // 投稿後にマイページへ遷移させる
                 _this2.$router.push("/mypage/".concat(_this2.loginUserId));
 
-              case 11:
+              case 10:
               case "end":
                 return _context2.stop();
             }

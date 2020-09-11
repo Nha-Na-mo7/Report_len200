@@ -39,7 +39,7 @@ class ProfileController extends Controller
       Log::debug('ProfileController : editUser : ID='.$user_id);
       // ユーザーIDを元にプロフィールカラムを取得
       $profile = Profile::where('user_id', $user_id)->first();
-      $profile->profile = $request->get('prof_content');
+      $profile->profile = $request->get('profile');
       $profile->save();
       
       return $profile;

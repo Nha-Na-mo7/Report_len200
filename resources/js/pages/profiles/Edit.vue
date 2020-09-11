@@ -91,17 +91,15 @@ export default {
     // プロフィール更新
     // ===============
     async edit_submit () {
-      const response = await axios.put('../api/profile', this.profileEditForm);
-      console.log(response.status)
+      const response = await axios.put(`../api/profile/${this.loginUserId}`, this.profileEditForm);
       // バリデーションエラー
       if (response.status === UNPROCESSABLE_ENTITY) {
-        console.log('Edit.vue edit_submit() : 422エラーです！')
         this.errors = response.data.errors;
         return false
       }
 
-      // 作成完了
-      if (response.status !== CREATED) {
+      // 更新完了
+      if (response.status !== OK) {
         this.$store.commit('error/setErrorCode', response.status)
         return false
       }
@@ -117,7 +115,6 @@ export default {
 
       // バリデーションエラー
       if (response.status === UNPROCESSABLE_ENTITY) {
-        console.log('Edit.vue add_submit() : 422エラーです！')
         this.errors = response.data.errors;
         return false
       }
