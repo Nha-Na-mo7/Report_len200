@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class createProfile extends FormRequest
 {
-    private $PROF_CONTENT_LENGTH = '500';
+    private $PROFILE_LENGTH = '500';
   
   /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,7 @@ class createProfile extends FormRequest
         extract(get_object_vars($this));
     
         return [
-              'prof_content' => "required|max:{$PROF_CONTENT_LENGTH}"
+              'profile' => "required|max:{$PROFILE_LENGTH}"
           ];
     }
     
@@ -37,8 +37,8 @@ class createProfile extends FormRequest
         extract(get_object_vars($this));
         
         return [
-            'prof_content.required' => '入力してください',
-            'prof_content.max' => "{$PROF_CONTENT_LENGTH}文字以内で入力してください",
+            'profile.required' => '入力してください',
+            'profile.max' => "{$PROFILE_LENGTH}文字以内で入力してください",
         ];
     }
 }

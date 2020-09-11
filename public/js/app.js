@@ -2844,11 +2844,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       profileAddForm: {
         username: '',
-        prof_content: ''
+        profile: ''
       },
       profileEditForm: {
         username: '',
-        prof_content: ''
+        profile: ''
       },
       errors: null
     };
@@ -2861,47 +2861,108 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.profileEditForm.username.length;
     },
     add_content_length: function add_content_length() {
-      return this.profileAddForm.prof_content.length;
+      return this.profileAddForm.profile.length;
     },
     edit_content_length: function edit_content_length() {
-      return this.profileEditForm.prof_content.length;
+      return this.profileEditForm.profile.length;
     },
     loginUserId: function loginUserId() {
       return this.$store.getters['auth/user_id'];
     }
   },
   methods: {
+    // プロフィール作成
     add_submit: function add_submit() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                // const response = await axios.post('../api/profile', this.profileAddForm);
-                //
-                // // バリデーションエラー
-                // if (response.status === UNPROCESSABLE_ENTITY) {
-                //   console.log('Edit.vue add_submit() : 422エラーです！')
-                //   this.errors = response.data.errors;
-                //   return false
-                // }
-                //
-                // // 作成完了
-                // if (response.status !== CREATED) {
-                //   this.$store.commit('error/setErrorCode', response.status)
-                //   return false
-                // }
+                _context.next = 2;
+                return axios.post('../api/profile', _this.profileAddForm);
+
+              case 2:
+                response = _context.sent;
+
+                if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context.next = 7;
+                  break;
+                }
+
+                console.log('Edit.vue add_submit() : 422エラーです！');
+                _this.errors = response.data.errors;
+                return _context.abrupt("return", false);
+
+              case 7:
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+                  _context.next = 10;
+                  break;
+                }
+
+                _this.$store.commit('error/setErrorCode', response.status);
+
+                return _context.abrupt("return", false);
+
+              case 10:
                 // 投稿後にマイページへ遷移させる
                 _this.$router.push("/mypage/".concat(_this.loginUserId));
 
-              case 1:
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
+      }))();
+    },
+    // プロフィール更新
+    edit_submit: function edit_submit() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios.put('../api/profile', _this2.profileEditForm);
+
+              case 2:
+                response = _context2.sent;
+
+                if (!(response.status === _util_js__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                console.log('Edit.vue edit_submit() : 422エラーです！');
+                _this2.errors = response.data.errors;
+                return _context2.abrupt("return", false);
+
+              case 7:
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+                  _context2.next = 10;
+                  break;
+                }
+
+                _this2.$store.commit('error/setErrorCode', response.status);
+
+                return _context2.abrupt("return", false);
+
+              case 10:
+                // 投稿後にマイページへ遷移させる
+                _this2.$router.push("/mypage/".concat(_this2.loginUserId));
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   }
@@ -61809,8 +61870,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.profileAddForm.prof_content,
-                    expression: "profileAddForm.prof_content"
+                    value: _vm.profileAddForm.profile,
+                    expression: "profileAddForm.profile"
                   }
                 ],
                 staticClass: "form__item form__textarea",
@@ -61818,17 +61879,13 @@ var render = function() {
                   id: "add_profile",
                   placeholder: "500字以内で入力してください。"
                 },
-                domProps: { value: _vm.profileAddForm.prof_content },
+                domProps: { value: _vm.profileAddForm.profile },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(
-                      _vm.profileAddForm,
-                      "prof_content",
-                      $event.target.value
-                    )
+                    _vm.$set(_vm.profileAddForm, "profile", $event.target.value)
                   }
                 }
               }),
@@ -61852,6 +61909,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
+                  return _vm.edit_submit($event)
                 }
               }
             },
@@ -61872,8 +61930,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.profileEditForm.prof_content,
-                    expression: "profileEditForm.prof_content"
+                    value: _vm.profileEditForm.profile,
+                    expression: "profileEditForm.profile"
                   }
                 ],
                 staticClass: "form__item form__textarea",
@@ -61881,7 +61939,7 @@ var render = function() {
                   id: "edit_profile",
                   placeholder: "500字以内で入力してください。"
                 },
-                domProps: { value: _vm.profileEditForm.prof_content },
+                domProps: { value: _vm.profileEditForm.profile },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
@@ -61889,7 +61947,7 @@ var render = function() {
                     }
                     _vm.$set(
                       _vm.profileEditForm,
-                      "prof_content",
+                      "profile",
                       $event.target.value
                     )
                   }
