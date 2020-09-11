@@ -11,7 +11,7 @@
         </div>
 
         <div class="mypage__profArea">
-          <p class="mypage__profile">あああああああああああああああああああああわあああああああああああああんあああああああああああああああああああああああああああああああああああああああああああフォオオおおおおおおおおおおおおおおおおおおおおおおおお秒おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおぬううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう。</p>
+          <p class="mypage__profile">{{ this.mypageUser_profile }}</p>
         </div>
 
       </div>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { OK } from '../util.js';
+import {NOT_FOUND, OK} from '../util.js';
 import Report from "./reports/Report.vue";
 import Pagination from "../components/Pagination.vue";
 
@@ -75,6 +75,7 @@ export default {
     return {
       reports: [],
       mypageUser_data: [],
+      mypageUser_profile: '',
       currentPage: 0,
       lastPage: 0
     }
@@ -88,6 +89,9 @@ export default {
     }
   },
   methods: {
+    // =======================
+    // 該当ユーザーのレポートの取得
+    // =======================
     async fetchReports() {
       const response = await axios.get(`/api/mypage/reports/${this.mypageUser_data.id}/?page=${this.page}`);
 
@@ -102,10 +106,29 @@ export default {
       this.currentPage = response.data.current_page
       this.lastPage = response.data.last_page
     },
+    // ==================================
+    // 該当ページのマイページユーザーの情報を取得
+    // ==================================
     async getMypageUser() {
       const response = await axios.get(`/api/user/${this.user_id}`);
       if (response.status === OK) {
         this.mypageUser_data = response.data
+      }
+    },
+    // ===========================
+    // 該当ユーザーのプロフィールを取得
+    // ===========================
+    async fetchProfile() {
+      const response = await axios.get(`../api/profile/${this.mypageUser_data.id}`)
+
+      if (response.status !== NOT_FOUND) {
+        if (response.status !== OK) {
+          this.$store.commit('error/setErrorCode', response.status)
+          return false
+        }
+        this.mypageUser_profile = response.data.profile;
+      }else{
+        this.mypageUser_profile = null
       }
     }
   },
@@ -113,6 +136,7 @@ export default {
     $route: {
       async handler() {
         await this.getMypageUser()
+        await this.fetchProfile()
         await this.fetchReports()
       },
       immediate: true

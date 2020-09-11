@@ -2467,6 +2467,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       reports: [],
       mypageUser_data: [],
+      mypageUser_profile: '',
       currentPage: 0,
       lastPage: 0
     };
@@ -2480,6 +2481,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   methods: {
+    // =======================
+    // 該当ユーザーのレポートの取得
+    // =======================
     fetchReports: function fetchReports() {
       var _this = this;
 
@@ -2518,6 +2522,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
+    // ==================================
+    // 該当ページのマイページユーザーの情報を取得
+    // ==================================
     getMypageUser: function getMypageUser() {
       var _this2 = this;
 
@@ -2544,31 +2551,83 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    // ===========================
+    // 該当ユーザーのプロフィールを取得
+    // ===========================
+    fetchProfile: function fetchProfile() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios.get("../api/profile/".concat(_this3.mypageUser_data.id));
+
+              case 2:
+                response = _context3.sent;
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["NOT_FOUND"])) {
+                  _context3.next = 10;
+                  break;
+                }
+
+                if (!(response.status !== _util_js__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context3.next = 7;
+                  break;
+                }
+
+                _this3.$store.commit('error/setErrorCode', response.status);
+
+                return _context3.abrupt("return", false);
+
+              case 7:
+                _this3.mypageUser_profile = response.data.profile;
+                _context3.next = 11;
+                break;
+
+              case 10:
+                _this3.mypageUser_profile = null;
+
+              case 11:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   },
   watch: {
     $route: {
       handler: function handler() {
-        var _this3 = this;
+        var _this4 = this;
 
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
             while (1) {
-              switch (_context3.prev = _context3.next) {
+              switch (_context4.prev = _context4.next) {
                 case 0:
-                  _context3.next = 2;
-                  return _this3.getMypageUser();
+                  _context4.next = 2;
+                  return _this4.getMypageUser();
 
                 case 2:
-                  _context3.next = 4;
-                  return _this3.fetchReports();
+                  _context4.next = 4;
+                  return _this4.fetchProfile();
 
                 case 4:
+                  _context4.next = 6;
+                  return _this4.fetchReports();
+
+                case 6:
                 case "end":
-                  return _context3.stop();
+                  return _context4.stop();
               }
             }
-          }, _callee3);
+          }, _callee4);
         }))();
       },
       immediate: true
@@ -61662,7 +61721,11 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(0)
+              _c("div", { staticClass: "mypage__profArea" }, [
+                _c("p", { staticClass: "mypage__profile" }, [
+                  _vm._v(_vm._s(this.mypageUser_profile))
+                ])
+              ])
             ]),
             _vm._v(" "),
             _vm.loginUserId === this.user_id
@@ -61713,7 +61776,7 @@ var render = function() {
       : _c(
           "div",
           [
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _c("RouterLink", { staticClass: "btn", attrs: { to: "/" } }, [
               _vm._v("日誌一覧へ戻る")
@@ -61724,18 +61787,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mypage__profArea" }, [
-      _c("p", { staticClass: "mypage__profile" }, [
-        _vm._v(
-          "あああああああああああああああああああああわあああああああああああああんあああああああああああああああああああああああああああああああああああああああああああフォオオおおおおおおおおおおおおおおおおおおおおおおおお秒おおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおぬううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううううう。"
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
