@@ -2509,12 +2509,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context.abrupt("return", false);
 
               case 6:
-                console.log(response.data.data);
                 _this.reports = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 10:
+              case 9:
               case "end":
                 return _context.stop();
             }
