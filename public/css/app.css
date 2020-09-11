@@ -312,7 +312,7 @@ main {
   color: #222;
   display: inline-block;
   position: absolute;
-  margin: 10px 25%;
+  margin: 5px 8%;
   box-shadow: #8a8a8a 0 3px 3px;
   transition: all 0.5s;
 }
