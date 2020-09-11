@@ -15,7 +15,11 @@
         </div>
 
       </div>
-      <a v-if="loginUserId === this.user_id" class="btn btn--profEdit">プロフィール編集</a>
+      <RouterLink
+          v-if="loginUserId === this.user_id"
+          class="btn btn--profEdit"
+          to="/profile/edit"
+      >プロフィール編集</RouterLink>
 
       <!--右サイド-->
       <div class="mypage__containerReports">

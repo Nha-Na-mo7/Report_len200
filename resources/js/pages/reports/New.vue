@@ -56,6 +56,9 @@ export default {
     content_length() {
       return this.reportForm.content.length;
     },
+    user_id() {
+      return this.reportForm.content.length;
+    },
   },
   methods: {
     async submit () {

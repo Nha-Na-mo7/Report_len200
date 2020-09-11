@@ -2440,6 +2440,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -2765,6 +2769,15 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util.js */ "./resources/js/util.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -2825,6 +2838,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2843,17 +2857,52 @@ __webpack_require__.r(__webpack_exports__);
     add_username_length: function add_username_length() {
       return this.profileAddForm.username.length;
     },
-    add_content_length: function add_content_length() {
-      return this.profileAddForm.prof_content.length;
-    },
     edit_username_length: function edit_username_length() {
       return this.profileEditForm.username.length;
+    },
+    add_content_length: function add_content_length() {
+      return this.profileAddForm.prof_content.length;
     },
     edit_content_length: function edit_content_length() {
       return this.profileEditForm.prof_content.length;
     },
-    submit: function submit() {
-      return '';
+    loginUserId: function loginUserId() {
+      return this.$store.getters['auth/user_id'];
+    }
+  },
+  methods: {
+    add_submit: function add_submit() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                // const response = await axios.post('../api/profile', this.profileAddForm);
+                //
+                // // バリデーションエラー
+                // if (response.status === UNPROCESSABLE_ENTITY) {
+                //   console.log('Edit.vue add_submit() : 422エラーです！')
+                //   this.errors = response.data.errors;
+                //   return false
+                // }
+                //
+                // // 作成完了
+                // if (response.status !== CREATED) {
+                //   this.$store.commit('error/setErrorCode', response.status)
+                //   return false
+                // }
+                // 投稿後にマイページへ遷移させる
+                _this.$router.push("/mypage/".concat(_this.loginUserId));
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -2932,6 +2981,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.reportForm.about.length;
     },
     content_length: function content_length() {
+      return this.reportForm.content.length;
+    },
+    user_id: function user_id() {
       return this.reportForm.content.length;
     }
   },
@@ -61464,60 +61516,70 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _vm.isExistUser
-      ? _c("div", { staticClass: "mypage__container" }, [
-          _c("div", { staticClass: "mypage__containerInfo" }, [
-            _c("div", { staticClass: "mypage__usernameArea" }, [
-              _c("div", { staticClass: "mypage__username" }, [
-                _c("p", [
-                  _c("span", { staticClass: "mypage__username-span" }, [
-                    _vm._v(_vm._s(this.mypageUser_data.name))
-                  ]),
-                  _vm._v(" さんのマイページ")
+      ? _c(
+          "div",
+          { staticClass: "mypage__container" },
+          [
+            _c("div", { staticClass: "mypage__containerInfo" }, [
+              _c("div", { staticClass: "mypage__usernameArea" }, [
+                _c("div", { staticClass: "mypage__username" }, [
+                  _c("p", [
+                    _c("span", { staticClass: "mypage__username-span" }, [
+                      _vm._v(_vm._s(this.mypageUser_data.name))
+                    ]),
+                    _vm._v(" さんのマイページ")
+                  ])
                 ])
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
-          ]),
-          _vm._v(" "),
-          _vm.loginUserId === this.user_id
-            ? _c("a", { staticClass: "btn btn--profEdit" }, [
-                _vm._v("プロフィール編集")
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "mypage__containerReports" },
-            [
-              _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "report-list" }, [
-                _c(
-                  "div",
-                  { staticClass: "grid" },
-                  _vm._l(_vm.reports, function(report) {
-                    return _c("Report", {
-                      key: report.id,
-                      staticClass: "report__item",
-                      attrs: { item: report },
-                      on: { reloadReports: _vm.fetchReports }
-                    })
-                  }),
-                  1
-                )
               ]),
               _vm._v(" "),
-              _c("Pagination", {
-                attrs: {
-                  "current-page": _vm.currentPage,
-                  "last-page": _vm.lastPage
-                }
-              })
-            ],
-            1
-          )
-        ])
+              _vm._m(0)
+            ]),
+            _vm._v(" "),
+            _vm.loginUserId === this.user_id
+              ? _c(
+                  "RouterLink",
+                  {
+                    staticClass: "btn btn--profEdit",
+                    attrs: { to: "/profile/edit" }
+                  },
+                  [_vm._v("プロフィール編集")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mypage__containerReports" },
+              [
+                _c("h1", { staticClass: "title" }, [_vm._v("投稿済み日誌")]),
+                _vm._v(" "),
+                _c("div", { staticClass: "report-list" }, [
+                  _c(
+                    "div",
+                    { staticClass: "grid" },
+                    _vm._l(_vm.reports, function(report) {
+                      return _c("Report", {
+                        key: report.id,
+                        staticClass: "report__item",
+                        attrs: { item: report },
+                        on: { reloadReports: _vm.fetchReports }
+                      })
+                    }),
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c("Pagination", {
+                  attrs: {
+                    "current-page": _vm.currentPage,
+                    "last-page": _vm.lastPage
+                  }
+                })
+              ],
+              1
+            )
+          ],
+          1
+        )
       : _c(
           "div",
           [
@@ -61726,48 +61788,11 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
+                  return _vm.add_submit($event)
                 }
               }
             },
             [
-              _c("label", { attrs: { for: "edit_username" } }, [
-                _vm._v("ユーザーネーム "),
-                _c("span", [
-                  _vm._v("( " + _vm._s(_vm.add_username_length) + " / 20文字 )")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.profileAddForm.username,
-                    expression: "profileAddForm.username"
-                  }
-                ],
-                staticClass: "form__item",
-                attrs: {
-                  type: "text",
-                  id: "add_username",
-                  placeholder: "名前を入力しましょう",
-                  autocomplete: "off"
-                },
-                domProps: { value: _vm.profileAddForm.username },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(
-                      _vm.profileAddForm,
-                      "username",
-                      $event.target.value
-                    )
-                  }
-                }
-              }),
-              _vm._v(" "),
               _c("label", { attrs: { for: "edit_profile" } }, [
                 _vm._v("プロフィール "),
                 _c("span", [
@@ -61831,46 +61856,6 @@ var render = function() {
               }
             },
             [
-              _c("label", { attrs: { for: "edit_username" } }, [
-                _vm._v("ユーザーネーム "),
-                _c("span", [
-                  _vm._v(
-                    "( " + _vm._s(_vm.edit_username_length) + " / 20文字 )"
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.profileEditForm.username,
-                    expression: "profileEditForm.username"
-                  }
-                ],
-                staticClass: "form__item",
-                attrs: {
-                  type: "text",
-                  id: "edit_username",
-                  placeholder: "名前を入力しましょう",
-                  autocomplete: "off"
-                },
-                domProps: { value: _vm.profileEditForm.username },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(
-                      _vm.profileEditForm,
-                      "username",
-                      $event.target.value
-                    )
-                  }
-                }
-              }),
-              _vm._v(" "),
               _c("label", { attrs: { for: "edit_profile" } }, [
                 _vm._v("プロフィール "),
                 _c("span", [

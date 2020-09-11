@@ -9,9 +9,9 @@
 
 
         <!-- フォーム -->
-        <form class="form" v-on:submit.prevent="">
-          <label for="edit_username">ユーザーネーム <span>( {{ add_username_length }} / 20文字 )</span></label>
-          <input type="text" class="form__item" id="add_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileAddForm.username">
+        <form class="form" v-on:submit.prevent="add_submit">
+<!--          <label for="edit_username">ユーザーネーム <span>( {{ add_username_length }} / 20文字 )</span></label>-->
+<!--          <input type="text" class="form__item" id="add_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileAddForm.username">-->
           <label for="edit_profile">プロフィール <span>( 入力文字数 : {{ add_content_length }} / 500文字 )</span></label>
           <textarea class="form__item form__textarea" id="add_profile" placeholder="500字以内で入力してください。" v-model="profileAddForm.prof_content"></textarea>
 
@@ -35,8 +35,8 @@
 
         <!-- フォーム -->
         <form class="form" v-on:submit.prevent="">
-          <label for="edit_username">ユーザーネーム <span>( {{ edit_username_length }} / 20文字 )</span></label>
-          <input type="text" class="form__item" id="edit_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileEditForm.username">
+<!--          <label for="edit_username">ユーザーネーム <span>( {{ edit_username_length }} / 20文字 )</span></label>-->
+<!--          <input type="text" class="form__item" id="edit_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileEditForm.username">-->
           <label for="edit_profile">プロフィール <span>( 入力文字数 : {{ edit_content_length }} / 500文字 )</span></label>
           <textarea class="form__item form__textarea" id="edit_profile" placeholder="500字以内で入力してください。" v-model="profileEditForm.prof_content"></textarea>
 
@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import { CREATED, UNPROCESSABLE_ENTITY } from '../../util.js'
+
 export default {
   data() {
     return {
@@ -77,19 +79,41 @@ export default {
     add_username_length() {
       return this.profileAddForm.username.length;
     },
-    add_content_length() {
-      return this.profileAddForm.prof_content.length;
-    },
     edit_username_length() {
       return this.profileEditForm.username.length;
+    },
+    add_content_length() {
+      return this.profileAddForm.prof_content.length;
     },
     edit_content_length() {
       return this.profileEditForm.prof_content.length;
     },
-    submit() {
-      return ''
+    loginUserId () {
+      return this.$store.getters['auth/user_id']
+    }
+  },
+  methods: {
+    async add_submit () {
+      // const response = await axios.post('../api/profile', this.profileAddForm);
+      //
+      // // バリデーションエラー
+      // if (response.status === UNPROCESSABLE_ENTITY) {
+      //   console.log('Edit.vue add_submit() : 422エラーです！')
+      //   this.errors = response.data.errors;
+      //   return false
+      // }
+      //
+      // // 作成完了
+      // if (response.status !== CREATED) {
+      //   this.$store.commit('error/setErrorCode', response.status)
+      //   return false
+      // }
+
+      // 投稿後にマイページへ遷移させる
+      this.$router.push(`/mypage/${this.loginUserId}`)
     }
   }
+
 }
 </script>
 
