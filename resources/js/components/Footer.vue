@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div>
-      <h3>{{ nowtime }} ... リロード時刻</h3>
+      <h3>{{ nowtime }}</h3>
       <span>©️ Copyright 2020</span>
     </div>
   </footer>

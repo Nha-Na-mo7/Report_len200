@@ -61179,7 +61179,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("footer", { staticClass: "footer" }, [
     _c("div", [
-      _c("h3", [_vm._v(_vm._s(_vm.nowtime) + " ... リロード時刻")]),
+      _c("h3", [_vm._v(_vm._s(_vm.nowtime))]),
       _vm._v(" "),
       _c("span", [_vm._v("©️ Copyright 2020")])
     ])
