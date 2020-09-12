@@ -2890,33 +2890,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       isExistProfile: false,
       profileEditForm: {
-        username: '',
         profile: ''
       },
       profileAddForm: {
-        username: '',
         profile: ''
       },
       errors: null
     };
   },
   computed: {
-    add_username_length: function add_username_length() {
-      return this.profileAddForm.username.length;
-    },
-    edit_username_length: function edit_username_length() {
-      return this.profileEditForm.username.length;
-    },
     add_content_length: function add_content_length() {
       return this.profileAddForm.profile.length;
     },

@@ -9,8 +9,6 @@
 
       <!-- フォーム -->
       <form class="form" v-on:submit.prevent="edit_submit">
-        <!--          <label for="edit_username">ユーザーネーム <span>( {{ edit_username_length }} / 20文字 )</span></label>-->
-        <!--          <input type="text" class="form__item" id="edit_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileEditForm.username">-->
         <label for="edit_profile">プロフィール <span>( 入力文字数 : {{ edit_content_length }} / 500文字 )</span></label>
         <textarea class="form__item form__textarea" id="edit_profile" placeholder="500字以内で入力してください。" v-model="profileEditForm.profile"></textarea>
 
@@ -31,8 +29,6 @@
 
       <!-- フォーム -->
       <form class="form" v-on:submit.prevent="add_submit">
-        <!--          <label for="edit_username">ユーザーネーム <span>( {{ add_username_length }} / 20文字 )</span></label>-->
-        <!--          <input type="text" class="form__item" id="add_username" placeholder="名前を入力しましょう" autocomplete="off" v-model="profileAddForm.username">-->
         <label for="edit_profile">プロフィール <span>( 入力文字数 : {{ add_content_length }} / 500文字 )</span></label>
         <textarea class="form__item form__textarea" id="add_profile" placeholder="500字以内で入力してください。" v-model="profileAddForm.profile"></textarea>
 
@@ -59,23 +55,15 @@ export default {
     return {
       isExistProfile: false,
       profileEditForm: {
-        username: '',
         profile: ''
       },
       profileAddForm: {
-        username: '',
         profile: ''
       },
       errors: null
     }
   },
   computed: {
-    add_username_length() {
-      return this.profileAddForm.username.length;
-    },
-    edit_username_length() {
-      return this.profileEditForm.username.length;
-    },
     add_content_length() {
       return this.profileAddForm.profile.length;
     },
