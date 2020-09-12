@@ -62428,10 +62428,7 @@ var render = function() {
             _vm._l(_vm.report.comments, function(comment) {
               return _c(
                 "li",
-                {
-                  key: comment.comment,
-                  staticClass: "report-detail__commentItem"
-                },
+                { key: comment.id, staticClass: "report-detail__commentItem" },
                 [
                   _c("p", { staticClass: "report-detail__commentText" }, [
                     _vm._v(

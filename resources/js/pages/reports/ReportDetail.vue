@@ -24,7 +24,7 @@
     <ul v-if="report.comments.length > 0" class="report-detail__comments">
       <li
           v-for="comment in report.comments"
-          :key="comment.comment"
+          :key="comment.id"
           class="report-detail__commentItem"
       >
         <p class="report-detail__commentText">
