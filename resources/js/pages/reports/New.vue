@@ -66,7 +66,6 @@ export default {
 
       // バリデーションエラー
       if (response.status === UNPROCESSABLE_ENTITY) {
-        console.log('422エラーです！')
         this.errors = response.data.errors;
         return false
       }

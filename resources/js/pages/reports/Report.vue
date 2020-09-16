@@ -55,7 +55,6 @@ export default {
       }
     },
     async emitFetchReports() {
-      console.log('emitFetchReports')
       this.$emit('reloadReports');
     }
   },

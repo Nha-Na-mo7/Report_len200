@@ -5,9 +5,8 @@
       <Header />
     </header>
 
-    <!-- メイン -->
+    <!-- メインエリア -->
     <main>
-      <h1>App.Vueエリア</h1>
       <div class="container">
         <RouterView />
       </div>
