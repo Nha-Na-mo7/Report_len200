@@ -3,6 +3,7 @@
     <div>
       <h3>{{ nowtime }}</h3>
       <span>©️ Copyright 2020</span>
+      <span>Laravel + Vue アウトプット</span>
     </div>
   </footer>
 </template>

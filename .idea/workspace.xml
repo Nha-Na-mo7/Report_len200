@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/New.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/New.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/reports/Report.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Footer.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +213,8 @@
       <workItem from="1599162699374" duration="8748000" />
       <workItem from="1599249421416" duration="12995000" />
       <workItem from="1599464803551" duration="53131000" />
-      <workItem from="1600262062287" duration="243000" />
+      <workItem from="1600262062287" duration="407000" />
+      <workItem from="1600525051649" duration="34000" />
     </task>
     <servers />
   </component>
