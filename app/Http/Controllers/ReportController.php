@@ -44,6 +44,8 @@ class ReportController extends Controller
     $content->content = $request->get('content');
     $content->save();
     
+    Log::debug('========= 日誌を作成しました =========');
+    
     return response($report, 201);
   }
   
