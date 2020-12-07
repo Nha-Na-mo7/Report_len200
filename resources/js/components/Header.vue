@@ -10,6 +10,7 @@
         <RouterLink class="btn btn--link" to="/login">ログイン/新規登録</RouterLink>
       </div>
 
+<!--      ログアウトボタン-->
       <button class="btn btn--link" v-on:click="logout" v-if="isLogin">ログアウトする</button>
 
     </div>

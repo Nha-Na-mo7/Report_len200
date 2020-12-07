@@ -43,6 +43,7 @@
       <div class="title">
         <h1>ユーザーが見つかりませんでした^^</h1>
         <p>削除されているか、あるいは元から存在しません。</p>
+        <p>最初からやり直してください</p>
       </div>
       <RouterLink class="btn" to="/">日誌一覧へ戻る</RouterLink>
     </div>
