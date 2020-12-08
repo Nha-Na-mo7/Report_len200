@@ -42,6 +42,7 @@ class LoginController extends Controller
     //ログイン用のトレイトのオーバーライド
     protected function authenticated(Request $request, $user)
     {
+      // ログイン時にユーザーデータを返すエンドポイントにアクセスさせる
       return $user;
     }
     

@@ -1,4 +1,5 @@
 <template>
+  <!-- ページネーション用のコンポーネント -->
   <div class="pagination">
     <RouterLink
         v-if="! isFirstPage"
