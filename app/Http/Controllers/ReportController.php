@@ -46,6 +46,7 @@ class ReportController extends Controller
     
     Log::debug('========= 日誌を作成しました =========');
     
+    // 必要ならjson形式にしてvueで受け取ってください
     return response($report, 201);
   }
   
