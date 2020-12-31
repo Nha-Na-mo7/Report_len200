@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Log;
 
 class ReportController extends Controller
 {
-  //コンストラクタで認証
+  // ================
+  // コンストラクタで認証
+  // ================
+  
   public function __construct()
   {
     // $this->middleware('auth')->except(['index']);
