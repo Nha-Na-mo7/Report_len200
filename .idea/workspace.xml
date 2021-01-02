@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +334,8 @@
       <workItem from="1606877757209" duration="386000" />
       <workItem from="1607245670064" duration="2086000" />
       <workItem from="1608047606701" duration="1269000" />
-      <workItem from="1609399940883" duration="329000" />
+      <workItem from="1609399940883" duration="591000" />
+      <workItem from="1609580620539" duration="13000" />
     </task>
     <servers />
   </component>
@@ -367,57 +368,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="980" y="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599404917253">
+    <state x="779" y="212" width="647" height="490" key="find.popup" timestamp="1609580558194">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
-    <state x="980" y="410" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1177@0.23.1920.1177" timestamp="1599404917253" />
-    <state x="949" y="264" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1598842260137">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="949" y="264" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1598842260137" />
-    <state x="1015" y="365" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599707156822">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="1015" y="365" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1599707156822" />
-    <state x="840" y="147" width="917" height="925" key="DiffContextDialog" timestamp="1599489925135">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="840" y="147" width="917" height="925" key="DiffContextDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1599489925135" />
-    <state x="922" y="172" width="750" height="467" key="EditFileWatcherDialog" timestamp="1598322926179">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="922" y="172" width="750" height="467" key="EditFileWatcherDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1598322926179" />
-    <state width="1513" height="311" key="GridCell.Tab.0.bottom" timestamp="1597011474135">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state width="1513" height="311" key="GridCell.Tab.0.bottom/0.23.1920.1177@0.23.1920.1177" timestamp="1597011474135" />
-    <state width="1513" height="311" key="GridCell.Tab.0.center" timestamp="1597011474134">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state width="1513" height="311" key="GridCell.Tab.0.center/0.23.1920.1177@0.23.1920.1177" timestamp="1597011474134" />
-    <state width="1513" height="311" key="GridCell.Tab.0.left" timestamp="1597011474133">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state width="1513" height="311" key="GridCell.Tab.0.left/0.23.1920.1177@0.23.1920.1177" timestamp="1597011474133" />
-    <state width="1513" height="311" key="GridCell.Tab.0.right" timestamp="1597011474134">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state width="1513" height="311" key="GridCell.Tab.0.right/0.23.1920.1177@0.23.1920.1177" timestamp="1597011474134" />
-    <state x="397" y="331" key="NewPhpClassDialog" timestamp="1597779152254">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="397" y="331" key="NewPhpClassDialog/0.23.1920.1177@0.23.1920.1177" timestamp="1597779152254" />
-    <state x="744" y="240" key="SettingsEditor" timestamp="1597370760793">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="744" y="240" key="SettingsEditor/0.23.1920.1177@0.23.1920.1177" timestamp="1597370760793" />
-    <state x="986" y="225" width="653" height="735" key="find.popup" timestamp="1600262152049">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="986" y="225" width="653" height="735" key="find.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1600262152049" />
-    <state x="908" y="292" width="670" height="676" key="search.everywhere.popup" timestamp="1599407215233">
-      <screen x="0" y="23" width="1920" height="1177" />
-    </state>
-    <state x="908" y="292" width="670" height="676" key="search.everywhere.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1599407215233" />
+    <state x="779" y="212" width="647" height="490" key="find.popup/0.23.1920.1177@0.23.1920.1177" timestamp="1609580558194" />
   </component>
 </project>
