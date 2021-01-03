@@ -50,6 +50,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // DNSに存在しないアドレスを弾く
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email:strict,dns,spoof', 'max:255', 'unique:users'],
