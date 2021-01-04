@@ -20,9 +20,8 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->text('profile');
+            $table->text('profile')->comment('ユーザーのプロフィール、文字数制限はバリデーションで制限します');
             $table->timestamps();
-    
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
