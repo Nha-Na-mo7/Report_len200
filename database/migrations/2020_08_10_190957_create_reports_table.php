@@ -16,7 +16,7 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->unsignedBigInteger('user_id');
-            $table->string('report_title');
+            $table->string('report_title')->comment('レポートのタイトル');
             $table->string('about')->nullable();
             $table->timestamps();
         });
