@@ -4,12 +4,12 @@
     <RouterLink
         v-if="! isFirstPage"
         :to="`${this.currentPath}?page=${currentPage - 1}`"
-        class="btn"
+        class="btn c-btn"
     >&laquo; PREV</RouterLink>
     <RouterLink
         v-if="! isLastPage"
         :to="`${this.currentPath}?page=${currentPage + 1}`"
-        class="btn"
+        class="btn c-btn"
     >NEXT &raquo;</RouterLink>
   </div>
 </template>
