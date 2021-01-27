@@ -44,3 +44,46 @@
     margin-left: 1rem;
   }
 }
+.c-navbar {
+  -webkit-box-align: center;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: flex;
+  height: 4rem;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  left: 0;
+  padding-right: 2%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+
+  &__brand {
+    color: inherit;
+    font-family: Merriweather, serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+    &:visited {
+      color: inherit;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__menu {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+  }
+
+  &__item {
+    margin-left: 1rem;
+  }
+}

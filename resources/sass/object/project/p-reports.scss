@@ -1,7 +1,226 @@
 // ==============
 //  p-reports
 //  =============
+.p-reports {
+  &:nth-child(4n+1){
+    background: #fff6fd;
+  }
 
+  &:nth-child(4n+2){
+    background: #eefff9;
+  }
+  &:nth-child(4n+3){
+    background: #fcfff6;
+  }
+
+  &:nth-child(4n){
+    background: #fff6ee;
+  }
+  box-sizing: border-box;
+  box-shadow: 0 4px 5px #cdcdcd;
+  width: 100%;
+  height: 320px;
+  border: 1px solid $font-color_dark;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: $space_xl;
+  padding: 0.5em 0.75em;
+  position: relative;
+  overflow: hidden;
+  &__main {
+    font-size: 1.1rem;
+    border-bottom: 1px solid $font-color_dark;
+    padding: $space_s $space_m;
+    display: flex;
+    justify-content: space-between;
+
+    .reports__date {
+      color: #32536e;
+    }
+    .reports__username {
+
+    }
+  }
+  &__title {
+    font-size: 2.2rem;
+    color: $font-color_dark;
+    border-bottom: 1px solid $font-color_dark;
+    padding: $space_s $space_m;
+    text-decoration: none;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  &__about {
+    padding: $space_l $space_3l;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    white-space: pre-wrap;
+    text-decoration: none;
+    &--title {
+      margin-left: $space_m;
+      margin-top: $space_m;
+    }
+  }
+  &__content {
+  }
+}
+
+.p-report {
+  &__overlay {
+    background: rgb(164, 195, 255);
+    transition: all 0.5s;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+  &__detail {
+    background: $color-report__detail-blue;
+    box-shadow: 0 0 10px #c8c5c5;
+    border: 1px solid $font-color_dark;
+    border-radius: 4px;
+    min-height: 800px;
+    margin-bottom: $space_3l;
+    padding: $space_l $space_xxl;
+    @include mq($breakpoint: sm) {
+      min-height: 400px;
+      padding: $space_m $space_l;
+    }
+    &--column {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      .report-detail__pane {
+        width: 100%;
+      }
+      .report-detail__image {
+        cursor: -webkit-zoom-out;
+        cursor: zoom-out;
+      }
+    }
+    &__pane {
+      width: 49%;
+    }
+    &__image {
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in;
+      margin-bottom: 1.5rem;
+      figcaption {
+        margin-top: 0.5rem;
+      }
+    }
+
+    &__info {
+      font-size: $font-size_l;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $font-color_dark;
+      padding: $space_m 0;
+      margin-bottom: $space_m;
+      @include mq($breakpoint: sm) {
+        display: none;
+      }
+    }
+
+    &__username {
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: #43a051;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 3.5rem;
+      @include mq($breakpoint: sm) {
+        font-size: 2rem;
+      }
+      padding: $space_m 0;
+      border-bottom: 1px solid $font-color_dark;
+      .icon {
+        margin-right: 0.5em;
+      }
+    }
+    &__about {
+      padding: $space_m 0;
+      border-bottom: 1px solid $font-color_dark;
+    }
+    &__content {
+      font-size: $font-size_xl;
+      line-height: 60px;
+      @include mq($breakpoint: sm) {
+        font-size: 1.2rem;
+        line-height: 32px;
+      }
+      margin-bottom: $space_m;
+
+      &-area{
+        background: #ffffff;
+        min-height: 500px;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: $space_xl;
+        padding: $space_l $space_xxl;
+        @include mq($breakpoint: sm) {
+          min-height: 250px;
+          margin-top: $space_l;
+          padding: $space_m $space_l;
+        }
+      }
+    }
+
+
+    &__comments {
+      list-style: none;
+      margin: $space_l 0;
+      padding: 0;
+    }
+
+    &__comment {
+      &Title {
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-bottom: $space_l;
+      }
+      &Item {
+        border-bottom: 1px solid #dedede;
+        margin-bottom: 1.5rem;
+        padding: $space_xl 0;
+      }
+      &Text {
+        margin: 0 0 1rem 0;
+        line-height: 1.5;
+        font-size: 1.4rem;
+
+      }
+      &Info {
+        color: #8a8a8a;
+        margin-top: $space_l;
+      }
+      &Area {
+        margin: $space_3l 0;
+        padding: $space_l $space_m;
+        box-shadow: 0 0 2px #c8c5c5;
+        background: $color-report__detail-blue;
+      }
+    }
+  }
+  &__form {
+    background: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+  }
+}
 
 //------------------------
 //.reports : 日誌一覧ページ
@@ -70,7 +289,6 @@
   &__content {
   }
 }
-
 .report__overlay {
   background: rgb(164, 195, 255);
   transition: all 0.5s;
@@ -85,34 +303,6 @@
     opacity: 0.3;
   }
 }
-//
-//.report__controls {
-//  text-align: right;
-//}
-//
-//.report__action {
-//  background: #fff;
-//  border: 0;
-//  border-radius: 0.25rem;
-//  color: #222;
-//  cursor: pointer;
-//  display: inline-block;
-//  font-family: inherit;
-//  font-size: 1rem;
-//  line-height: 1;
-//  margin-left: 0.25rem;
-//  opacity: 0.8;
-//  outline: none;
-//  padding: 0.5em 0.75em;
-//}
-//
-//.report__action:hover {
-//  opacity: 1;
-//}
-//
-
-
-
 //--------------------------
 //.report-detail : 日誌詳細
 //--------------------------
@@ -249,8 +439,6 @@
     }
   }
 }
-
-
 .report-form {
   background: #fff;
   border-radius: 0.25rem;
