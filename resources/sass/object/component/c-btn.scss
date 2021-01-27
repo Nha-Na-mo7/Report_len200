@@ -18,10 +18,8 @@
   .icon {
     margin-right: 0.5em;
   }
-
   &:hover {
     color: inherit;
-
   }
   &--link {
     border: 0;
@@ -72,7 +70,76 @@
       background: #dd57bd;
       box-shadow: #8a8a8a 0 5px 10px;
     }
-
   }
+}
+.c-btn {
+  border: 1px solid $color-corp-hover;
+  border-radius: 0.25rem;
+  color: #8a8a8a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  -webkit-transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+  .icon {
+    margin-right: 0.5em;
+  }
+  &:hover {
+    color: inherit;
+  }
+  &--link {
+    border: 0;
+  }
+  &--inverse {
+    background: $color-corp;
+    border-color: $color-corp;
+    color: $font-color_dark;
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+      background: $color-corp-hover;
+      color: $font-color_dark;
+      opacity: 0.8;
+    }
+    @include mq($breakpoint: sm) {
+      width: 100%;
+      padding: 1rem 1rem;
+      font-size: 1.2rem;
 
+    }
+  }
+  &--fluid {
+    width: 100%;
+  }
+  &--destroy {
+    background: #f14d7f;
+    color: $font-color_white;
+    position: absolute;
+    right: $space_l;
+    bottom: $space_m;
+    box-shadow: #8a8a8a 0 3px 3px;
+    transition: all .5s;
+    &:hover {
+      background: #dd57bd;
+      box-shadow: #8a8a8a 0 5px 10px;
+    }
+  }
+  &--profEdit {
+    background: $color-corp;
+    color: $font-color_dark;
+    display: inline-block;
+    position: absolute;
+    margin: $space_s 8%;
+    box-shadow: #8a8a8a 0 3px 3px;
+    transition: all .5s;
+    &:hover {
+      background: #dd57bd;
+      box-shadow: #8a8a8a 0 5px 10px;
+    }
+  }
 }

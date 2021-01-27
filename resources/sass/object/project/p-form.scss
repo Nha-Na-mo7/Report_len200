@@ -30,3 +30,33 @@
     }
   }
 }
+
+.p-form {
+  &__item {
+    border: 1px solid #dedede;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: $space_l;
+    padding: 0.5em 0.75em;
+    width: 100%;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  &__output {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &__btn {
+    text-align: right;
+  }
+  &__textarea {
+    resize: none;
+    font-size: 1.2rem;
+    height: 13rem;
+    @include mq($breakpoint: sm) {
+      height: 20rem;
+    }
+  }
+}
