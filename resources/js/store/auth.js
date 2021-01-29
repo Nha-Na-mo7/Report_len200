@@ -4,8 +4,6 @@
 import { OK, CREATED, UNPROCESSABLE_ENTITY } from '../util'
 
 
-
-
 // ===============
 // state
 // ===============
@@ -20,8 +18,6 @@ const state = {
 }
 
 
-
-
 // ===============
 // getter
 // ===============
@@ -30,8 +26,6 @@ const getters = {
   username: state => state.user ? state.user.name : '',
   user_id: state => state.user ? state.user.id : ''
 }
-
-
 
 
 // ===============
@@ -51,7 +45,6 @@ const mutations = {
     state.registerErrorMessages = messages
   }
 }
-
 
 
 // ===============

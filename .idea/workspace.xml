@@ -21,22 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e36ff74c-cc5c-4482-9ce3-f22afed65b22" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/l-allWrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/l-allWrapper.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/l-footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/l-footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/layout/l-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/l-grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-btn.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-errors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-errors.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-message.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-message.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-navbar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-tab.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-tab.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/component/c-title.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/component/c-title.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-container.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-loader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-loader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-mypage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-mypage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/object/project/p-reports.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,7 +338,9 @@
       <workItem from="1609768198405" duration="477000" />
       <workItem from="1609913629709" duration="626000" />
       <workItem from="1609923367631" duration="1000" />
-      <workItem from="1611754580399" duration="722000" />
+      <workItem from="1611754580399" duration="1885000" />
+      <workItem from="1611825330346" duration="14000" />
+      <workItem from="1611829746385" duration="1000" />
     </task>
     <servers />
   </component>
